@@ -14,17 +14,17 @@
                   <div id="ul1"  class="col-3">
                       <div class="list-group" id="myList" role="tablist">
                             <a class="list-group-item list-group-item-action active list-group-item-success" data-toggle="list" href="#" id="lait" role="tab" >Laitiers</a>
-                            <a class="list-group-item list-group-item-action list-group-item-success" data-toggle="list" href="#" role="tab" onclick="viandes()">Viandes</a>
-                            <a class="list-group-item list-group-item-action list-group-item-success" data-toggle="list" href="#" role="tab" onclick="legumes()">Légumes</a>
-                            <a class="list-group-item list-group-item-action list-group-item-success" data-toggle="list" href="#" role="tab" onclick="fruits()">Fruits</a>
+                            <a class="list-group-item list-group-item-action list-group-item-success" data-toggle="list" href="#" role="tab"id="viandes">Viandes</a>
+                            <a class="list-group-item list-group-item-action list-group-item-success" data-toggle="list" href="#" role="tab" id="legumes">Légumes</a>
+                            <a class="list-group-item list-group-item-action list-group-item-success" data-toggle="list" href="#" role="tab" id="fruits">Fruits</a>
                       </div>
                   </div>
                   <div class="text-left col-3">
                      <div class="list-group" id="myList" role="tablist">
-                            <a class="list-group-item list-group-item-action active list-group-item-secondary" data-toggle="list" href="#" role="tab" onclick="epicerie()">Epicerie</a>
-                            <a class="list-group-item list-group-item-action list-group-item-secondary" data-toggle="list" href="#" role="tab" onclick="condiments()">Condiments</a>
-                            <a class="list-group-item list-group-item-action list-group-item-secondary" data-toggle="list" href="#" role="tab" onclick="feculents()">Féculents</a>
-                            <a class="list-group-item list-group-item-action list-group-item-secondary" data-toggle="list" href="#" role="tab" onclick="autres()">Autres</a>
+                            <a class="list-group-item list-group-item-action active list-group-item-secondary" data-toggle="list" href="#" role="tab" id="epicerie">Epicerie</a>
+                            <a class="list-group-item list-group-item-action list-group-item-secondary" data-toggle="list" href="#" role="tab" id="condiments">Condiments</a>
+                            <a class="list-group-item list-group-item-action list-group-item-secondary" data-toggle="list" href="#" role="tab" id="feculents">Féculents</a>
+                            <a class="list-group-item list-group-item-action list-group-item-secondary" data-toggle="list" href="#" role="tab" id="autres">Autres</a>
                       </div>
                   </div>
                   <div class="col-4 offset-md-1">
