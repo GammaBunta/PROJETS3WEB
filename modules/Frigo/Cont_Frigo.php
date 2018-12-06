@@ -11,6 +11,11 @@
             $this->modele = new Modele_Frigo();
         }
 
+        public function init(){
+            $tab = $this->modele->getLaitiers();
+            $this->vue-> afficheInit($tab);
+        }
+
     }
 
 
