@@ -4,9 +4,6 @@
   <?php include "./composants/head.php"; ?>
   <link rel="stylesheet" type="text/css" href="./CSS/Frigo.css">
   <script type="text/javascript" src="scripts/frigo.js"> </script>
-  <script >
-      
-  </script>
 	<title>Frigo</title>
 </head>
 
@@ -48,7 +45,7 @@
                         </h4>
                     <div class="pre-scrollable bg-light border border-secondary" style="height: 150px;">
                         <ul class="list-group" id="aCuisiner">
-
+                        
                         </ul>
                     </div>
                      <button type="button" class="border border-secondary btn btn-secondary btn-block">Chercher une recette</button>

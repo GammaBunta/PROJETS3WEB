@@ -89,6 +89,5 @@ $(document).ready(function(){
 
 function ajoutCuisiner(nomingr){
     var brut= '<li href="#" class="list-group-item list-group-item-action list-group-item-success">'+nomingr+'</li>';
-
     document.getElementById("aCuisiner").innerHTML+=brut;
 }

@@ -5,7 +5,15 @@
             ModeleGenerique::init();
         }
 
-        
+
+        public function getLaitiers(){
+            $result = self::$bdd -> prepare('select * from Ingredient where famille="Produits Laitiers"');
+            $res = $result -> execute();
+            return $result->fetchAll();
+        }
+
+
+
 
     }
 ?>
