@@ -88,6 +88,12 @@ $(document).ready(function(){
 
 
 function ajoutCuisiner(nomingr){
-    var brut= '<li href="#" class="list-group-item list-group-item-action list-group-item-success">'+nomingr+'</li>';
+    var brut= '<li href="#" id="#'+nomingr+'" class="list-group-item list-group-item-action list-group-item-success">'+nomingr+'<button type="button" onclick="retirerElement(\''+nomingr+'\')" class="btn btn-success" >-</button></li>';
     document.getElementById("aCuisiner").innerHTML+=brut;
+}
+
+function retirerElement(nomingr){
+    var parent= document.getElementById("listeIngr");
+    var child = document.getElementById(nomingr);
+    parent.removeChild(child);
 }

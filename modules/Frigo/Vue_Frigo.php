@@ -41,8 +41,8 @@
                                   Produits Laitiers
                                 </h4>
                                 <div  class="pre-scrollable bg-light border border-secondary" style="height: 266.2px;">
-                                    <div id="listeIngr">
-                                        <ul class="list-group">';
+                                    <div>
+                                        <ul  id="listeIngr" class="list-group">';
 
                                         foreach($res as $item){
                                             echo' <li href="#"  class="list-group-item list-group-item-action list-group-item-success">'.$item['nomingr'].'<button type="button" onclick="ajoutCuisiner(\''.$item['nomingr'].'\')" class="btn btn-success" >+</button></li>';
