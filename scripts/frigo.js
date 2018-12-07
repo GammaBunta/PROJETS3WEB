@@ -88,6 +88,16 @@ $(document).ready(function(){
 
 
 function ajoutCuisiner(nomingr){
-    var brut= '<li href="#" class="list-group-item list-group-item-action list-group-item-success text-left">'+nomingr+'</li>';
-    document.getElementById("aCuisiner").innerHTML+=brut;
+
+    var li = document.getElementById(nomingr);
+    if(!document.getElementById("aCuisiner").contains(li)){
+        var brut= '<li href="#" id="'+nomingr+'" class="list-group-item list-group-item-action list-group-item-success text-left">'+nomingr+'<button type="button" onclick="retirerElement(\''+nomingr+'\')" class="btn btn-success float-right" >-</button></li>';
+        document.getElementById("aCuisiner").innerHTML+=brut;
+    }
+}
+
+function retirerElement(nomingr){
+    var el = document.getElementById(nomingr);
+    el.parentNode.removeChild(el);
+
 }
