@@ -50,18 +50,25 @@
 
 footer
 {
-	padding : 10px;
-	margin-top: 10px;
+background-color: #34475E;
+  color: white;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 130px;
+  box-sizing: content-box;
 }
 
 footer img
 {
-	width: 100px;
+	width: 70px;
 }
 
 footer p
 {
 	font-size: 13px;
 }
-
 
