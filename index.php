@@ -4,6 +4,7 @@
       require_once('./composants/header.php');
       require_once('./modules/Frigo/Frigo.php');
       require_once('./modules/Connexion/Connexion.php');
+      require_once('./modules/CreerCompte/CreerCompte.php');
     /*
 
 
@@ -39,6 +40,14 @@
                $vue = $mod->getAffichage();
 
             break;
+
+            case 'CreerCompte':
+               $mod = new $module();
+               $mod -> index();
+               $vue = $mod->getAffichage();
+
+            break;
+
            default:
               $vue = 'OUI';
               echo'<a href="index.php?module=Frigo">FRIGO</a>';

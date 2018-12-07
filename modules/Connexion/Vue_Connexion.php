@@ -56,7 +56,7 @@
                             <hr>
                             <small class="form-text text-muted">
                             Pas encore inscrit ? 
-                            <a href="CreerCompte.php">Créer un compte.</a></small>
+                            <a href="./index.php?module=CreerCompte">Créer un compte.</a></small>
                         </p>
                     </div>
                 </main>
