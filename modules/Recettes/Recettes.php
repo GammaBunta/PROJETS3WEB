@@ -10,7 +10,22 @@
 
         public function index(){
             $this->controleur->init();
+
+            if(isset($GET['action'])){
+                $action=htmlspecialchars($_GET['action']);
+            }else{
+                $action='';
+            }
+
+
+            switch($action){
+                case 'rechercheSpeciale':
+                    $this->controleur->rechercheSpeciale();
+            }
         }
+
+
+
 
 
     }

@@ -63,7 +63,7 @@
 
                                     </ul>
                                 </div>
-                                 <button type="button" class="border border-secondary btn btn-secondary btn-block">Chercher une recette</button>
+                                 <button type="button" class="border border-secondary btn btn-secondary btn-block" onclick="chercherRecettes()" >Chercher une recette</button>
                               </div>
                         </div>
                 </main>

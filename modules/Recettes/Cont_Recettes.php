@@ -15,6 +15,10 @@
             $this->vue-> afficheInit();
         }
 
+        public function rechercheSpeciale(){
+            
+        }
+
 
 
     }
