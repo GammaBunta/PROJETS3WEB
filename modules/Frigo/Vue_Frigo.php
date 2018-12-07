@@ -45,7 +45,7 @@
                                         <ul  id="listeIngr" class="list-group">';
 
                                         foreach($res as $item){
-                                            echo' <li href="#"  class="list-group-item list-group-item-action list-group-item-success">'.$item['nomingr'].'<button type="button" onclick="ajoutCuisiner(\''.$item['nomingr'].'\')" class="btn btn-success" >+</button></li>';
+                                            echo' <li href="#"  class="list-group-item list-group-item-action list-group-item-success text-left">'.$item['nomingr'].'<button type="button" onclick="ajoutCuisiner(\''.$item['nomingr'].'\')" class="btn btn-success float-right" >+</button></li>';
 
                                         }
                                         echo '
