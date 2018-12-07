@@ -30,7 +30,7 @@
 							<img class="img-responsive" style="width: 50px;" src="./Images/pprofil.png">
 						</div>
 						<div class="col text-center mt-3">
-							<a href="Connexion.php" class="text-center h6">Connexion</a>
+							<a href="index.php?module=Connexion" class="text-center h6">Connexion</a>
 						</div>
 					</div>
 				</div>

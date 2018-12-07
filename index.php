@@ -3,6 +3,7 @@
       require_once('./composants/head.php');
       require_once('./composants/header.php');
       require_once('./modules/Frigo/Frigo.php');
+      require_once('./modules/Connexion/Connexion.php');
     /*
 
 
@@ -32,6 +33,12 @@
 
            break;
 
+           case 'Connexion':
+               $mod = new $module();
+               $mod -> index();
+               $vue = $mod->getAffichage();
+
+            break;
            default:
               $vue = 'OUI';
               echo'<a href="index.php?module=Frigo">FRIGO</a>';
