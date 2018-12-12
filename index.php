@@ -5,6 +5,7 @@
       require_once('./modules/Frigo/Frigo.php');
       require_once('./modules/Connexion/Connexion.php');
       require_once('./modules/Accueil/Accueil.php');
+      require_once('./modules/Recettes/Recettes.php');
 
        if(isset($_GET['module'])){
                $module= htmlspecialchars($_GET['module']);
@@ -31,7 +32,6 @@
             break;
 
        }
-
        echo $vue;
 
 ?>

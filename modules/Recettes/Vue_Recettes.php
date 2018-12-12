@@ -8,7 +8,14 @@
 
 
         public function afficheInit(){
-            echo '';
+            echo 'OUI';
+        }
+
+        public function afficherRechercheSpeciale($array){
+            echo 'array';
+            foreach($array as $item){
+                 echo utf8_encode('ouais affichage ici');
+           }
         }
 
     }

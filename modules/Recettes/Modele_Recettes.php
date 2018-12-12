@@ -5,5 +5,13 @@
         public function __construct(){
             ModeleGenerique::init();
         }
+
+        public function rechercheSpeciale(){
+            echo 'rechercheSpe';
+
+            $result = self::$bdd -> prepare('select * from Recette ');
+            $res = $result -> execute();
+            return $result->fetchAll();
+        }
     }
 ?>

@@ -89,7 +89,7 @@ $(document).ready(function(){
 
 function ajoutCuisiner(nomingr){
     var li = document.getElementById(nomingr);
-    if(!document.getElementById("aCuisiner").contains(li)){
+    if(!document.getElementById("aCuisiner").contains(li) && document.getElementById("aCuisiner").getElementsByTagName("li").length < 8){
         var brut= '<li href="#" id="'+nomingr+'" class="list-group-item list-group-item-action list-group-item-success text-left">'+nomingr+'<button type="button" onclick="retirerElement(\''+nomingr+'\')" class="btn btn-success float-right" >-</button></li>';
         document.getElementById("aCuisiner").innerHTML+=brut;
     }
@@ -103,9 +103,7 @@ function retirerElement(nomingr){
 function chercherRecettes(){
     var IDs = [];
     $("#aCuisiner").find("li").each(function(){ IDs.push(this.id); });
-    for(var i =0; i<IDs.length; i++){
-        alert(IDs[i]);
-    }
-    $.post{"index.php?module=Recette?",{'IDs'}};
+    JSON.stringify(IDs);
+    window.location.replace("index.php?module=Recettes&action=rechercheSpeciale&ingredients="+IDs);
 
 }

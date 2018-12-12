@@ -58,7 +58,7 @@
                                     <h4 id="titre" class="text-light bg-dark border border-secondary mb-0">
                                   Ingrédients à cuisiner
                                     </h4>
-                                <div class="pre-scrollable bg-light border border-secondary" style="height: 150px;">
+                                <div class="pre-scrollable bg-light border border-secondary" style="height: 266.2px;">
                                     <ul class="list-group" id="aCuisiner">
 
                                     </ul>
