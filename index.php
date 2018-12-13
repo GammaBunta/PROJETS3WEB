@@ -1,7 +1,5 @@
 <?php
       session_start();
-      require_once('./composants/head.php');
-      require_once('./composants/header.php');
       require_once('./modules/Frigo/Frigo.php');
       require_once('./modules/Connexion/Connexion.php');
       require_once('./modules/Accueil/Accueil.php');
@@ -20,9 +18,11 @@
            case 'Frigo':
            case 'Connexion':
            case 'Recettes':
+            case 'CreerCompte':
                $mod = new $module();
                $mod -> index();
                $vue = $mod->getAffichage();
+
             break;
 
            default:
@@ -32,6 +32,8 @@
             break;
 
        }
+
+           include('./composants/header.php');
        echo $vue;
 
 ?>

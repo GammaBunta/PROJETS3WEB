@@ -30,7 +30,15 @@
 							<img class="img-responsive" style="width: 50px;" src="./Images/pprofil.png">
 						</div>
 						<div class="col text-center mt-3">
-							<a href="index.php?module=Connexion" class="text-center h6">Connexion</a>
+						<?php
+							if(isset($_SESSION['login'])){
+								echo '<a href="index.php?module=Connexion&action=deconnexion" class="text-center h6">Deconnexion</a>';
+            				}
+							else{
+								echo '<a href="index.php?module=Connexion" class="text-center h6">Connexion</a>';
+							}
+							
+						?>
 						</div>
 					</div>
 				</div>

@@ -12,6 +12,7 @@ class ModeleGenerique{
         $password = 'pubepete';
         self::$bdd = new PDO($b, $user, $password);
     */
+    
         $servername = "localhost";
         self::$bdd = new PDO("mysql:host=$servername;dbname=projetS3", 'root', '!Minou240499!');
 

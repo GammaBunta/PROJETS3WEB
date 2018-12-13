@@ -9,7 +9,26 @@
         }
 
         public function index(){
-            $this->controleur->init();
+            $action = '';
+            if(isset($_GET['action'])){
+                $action = htmlspecialchars($_GET['action']);
+            }
+            if(isset($_SESSION['login'])){
+                $action = "deconnexion";
+            }
+            switch ($action) {
+                case 'connecte':
+                    $this->controleur->connexion();
+                    break;
+
+                case'deconnexion':
+                     $this->controleur->deconnexion();
+                    break;
+
+                default:
+                    $this->controleur->init();
+                    break;
+            }
         }
 
 

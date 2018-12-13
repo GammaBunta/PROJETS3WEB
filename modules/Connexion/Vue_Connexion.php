@@ -25,15 +25,15 @@
                         </p>
                         <hr>
                         <p>
-                            <form action="index.php" method="post" id="needs-validation" novalidate>
+                            <form action="?module=Connexion&action=connecte" method="post" id="needs-validation" novalidate>
                                 <div class="form-group ">
-                                    <input type="text" class="form-control" id="email" placeholder="Nom d\'utilisateur ou E-mail" required>
+                                    <input type="text" class="form-control" id="email" name="login" placeholder="Nom d\'utilisateur ou E-mail" required>
                                     <div class="invalid-feedback text-left">
                                        Nom d\'utilisateur ou E-mail .
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" id="pwd" placeholder="Mot de passe" required>
+                                    <input type="password" class="form-control" id="pwd" name="mdp" placeholder="Mot de passe" required>
                                     <div class="invalid-feedback text-left">
                                       Mot de passe.
                                     </div>
@@ -56,7 +56,7 @@
                             <hr>
                             <small class="form-text text-muted">
                             Pas encore inscrit ? 
-                            <a href="CreerCompte.php">Créer un compte.</a></small>
+                            <a href="./index.php?module=CreerCompte">Créer un compte.</a></small>
                         </p>
                     </div>
                 </main>

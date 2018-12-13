@@ -6,19 +6,40 @@
         }
 
 
-        public function creer($l, $m, $e){
-            $login = $l;
-            $email = $e;
-            $mdp = crypt($m, 'CRYPT_STD_DES');
-            $req = self::$bdd-> prepare('insert into utilisateur values (default, :login, :mdp, :email, null');
-            $req->bindParam(':login', $login);
-            $req->bindParam(':mdp', $mdp);
-            $req->bindParam(':email', $email);
+        public function creer(){
+            $m = htmlspecialchars($_POST['mdp']);
+            $m2 = htmlspecialchars($_POST['mdp2']);
+            echo $m . '\n'. $m2. '\n';
+            echo strcmp($m, $m2);
+            if(strcmp($m, $m2) === 0){
+                $login = htmlspecialchars($_POST['login']);
+                $email = htmlspecialchars($_POST['email']);
+                $req1 = self::$bdd-> prepare('select * from Utilisateur where email like :email or pseudo like :pseudo');
+                $req1->bindParam(':email', $email);
+                $req1->bindParam(':pseudo', $login);
+                $req1->execute();
+                echo 'avant if creer \n';
+                if($req1->fetch() == false){
+                    $mdp = crypt($m, 'CRYPT_STD_DES');
+                    $req = self::$bdd-> prepare('INSERT INTO Utilisateur(pseudo, password, email) values (:login, :mdp, :email)');
+                    $req->bindParam(':login', $login);
+                    $req->bindParam(':mdp', $mdp);
+                    $req->bindParam(':email', $email);
+                    $res1 = $req->execute();
+                    // if($req->execute()){
+                    //     return "ok";  
+                    // }
+                    return true;
 
-            if($req->execute()){
-                return true;  
+                }
+                else{
+                    return "email";
+                }
+
+                
             }
-            return false;
+
+            return "mdp";
 
         }
 

@@ -16,13 +16,20 @@
         }
 
         public function creerCompte(){
-  
-            if(isset($_POST['login']) && isset($_POST['mdp']) && isset($_POST['email'])){
-                if($this->modele->connecte($_POST['login'],  $_POST['mdp'], $_POST['email'])){
-                    $this->vue->connecte();
+            echo'0 if';
+            if(isset($_POST['login']) && isset($_POST['mdp']) && isset($_POST['mdp2']) && isset($_POST['email'])){
+                if($this->modele->creer() !== true){
+                    $this->vue-> afficheInit();
+                }
+                else{
+                    header('Location: index.php'); 
+                    exit();
                 }
 
             }
+
+
+
 
         }
     }
