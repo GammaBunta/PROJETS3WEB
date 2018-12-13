@@ -20,16 +20,21 @@
                 echo'Déjà Connecté';
             }
             else{
-                $this->vue->connexion();
                 if(isset($_POST['login']) && isset($_POST['mdp'])){
                     if($this->modele->connecte($_POST['login'],  $_POST['mdp'])){
-                        $this->vue->connecte();
+                        echo 'connecté';
                     }
                     else{
-                        $this->vue->mdpIncorrecte();
+                        echo ' échec';
                     }
                 }
             }
+            echo'rien';
+        }
+
+        public function deconnexion(){
+            $this->modele->deconnexion();
+            $this->vue-> afficheInit();
         }
     }
 

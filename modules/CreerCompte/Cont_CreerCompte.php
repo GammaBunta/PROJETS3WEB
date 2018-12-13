@@ -18,11 +18,16 @@
         public function creerCompte(){
             echo'0 if';
             if(isset($_POST['login']) && isset($_POST['mdp']) && isset($_POST['mdp2']) && isset($_POST['email'])){
-                $res = $this->modele->creer();
-                echo'1er if';
-                echo $res;
+                if($this->modele->creer() !== true){
+                    $this->vue-> afficheInit();
+                }
+                else{
+                    header('Location: index.php'); 
+                    exit();
+                }
 
             }
+
 
 
 

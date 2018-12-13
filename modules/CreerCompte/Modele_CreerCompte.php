@@ -29,7 +29,7 @@
                     // if($req->execute()){
                     //     return "ok";  
                     // }
-                    var_dump($res1);
+                    return true;
 
                 }
                 else{
