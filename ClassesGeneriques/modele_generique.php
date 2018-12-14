@@ -7,6 +7,7 @@ class ModeleGenerique{
     }
 
     public static function init(){
+
        $b = 'mysql:host=database-etudiants.iut.univ-paris8.fr;dbname=dutinfopw201642';
         $user = 'dutinfopw201642';
         $password = 'pubepete';

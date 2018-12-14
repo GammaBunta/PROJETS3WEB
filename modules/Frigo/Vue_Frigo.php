@@ -1,4 +1,4 @@
-<?php
+  <?php
     require_once('./ClassesGeneriques/vue_generique.php');
     class Vue_Frigo extends VueGenerique{
 
@@ -55,7 +55,7 @@
                               </div>
                             </div>
                         <div class="row">
-                                <div class="col-4 offset-md-7 mt-4 ">
+                                <div class="col-4 offset-md-7 mt-5">
                                     <h4 id="titre" class="text-light bg-dark border border-secondary mb-0">
                                   Ingrédients à cuisiner
                                     </h4>

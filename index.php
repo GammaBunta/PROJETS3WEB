@@ -1,11 +1,18 @@
 <?php
       session_start();
+<<<<<<< HEAD
+=======
+             require_once('./composants/head.php');
+>>>>>>> Samuel
       require_once('./modules/Frigo/Frigo.php');
       require_once('./modules/Connexion/Connexion.php');
       require_once('./modules/Accueil/Accueil.php');
       require_once('./modules/Recettes/Recettes.php');
       require_once('./modules/CreerCompte/CreerCompte.php');
       require_once('./composants/head.php');
+
+      require_once('./modules/CreerCompte/CreerCompte.php');
+
 
        if(isset($_GET['module'])){
                $module= htmlspecialchars($_GET['module']);
@@ -27,6 +34,7 @@
 
             break;
 
+
            default:
               $mod = new Accueil();
               $mod -> index();
@@ -35,7 +43,12 @@
 
        }
 
+<<<<<<< HEAD
            include('./composants/header.php');
+=======
+
+       require_once('./composants/header.php');
+>>>>>>> Samuel
        echo $vue;
 
 ?>

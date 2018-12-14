@@ -2,10 +2,15 @@
     require_once('./ClassesGeneriques/vue_generique.php');
     class Vue_Connexion extends VueGenerique{
 
+        private $erreur;
         public function __construct(){
             parent::__construct();
+            $this->erreur ="";
         }
 
+        public function setErreur($er){
+          $this->erreur = $er;
+        }
 
         public function afficheInit(){
             echo'
@@ -24,10 +29,19 @@
                             </h1>
                         </p>
                         <hr>
-                        <p>
+                        <p>';
+
+            if ($this->erreur != "") {
+                echo '<ul class="list-group ">';
+                        echo '          <li class="list-group-item list-group-item-danger">';
+                        echo $this->erreur;
+                        echo "        </li>\n";
+                echo '</ul>';
+            }
+            echo'
                             <form action="?module=Connexion&action=connecte" method="post" id="needs-validation" novalidate>
                                 <div class="form-group ">
-                                    <input type="text" class="form-control" id="email" name="login" placeholder="Nom d\'utilisateur ou E-mail" required>
+                                    <input type="text" class="form-control mt-3" id="email" name="login" placeholder="Nom d\'utilisateur ou E-mail" required>
                                     <div class="invalid-feedback text-left">
                                        Nom d\'utilisateur ou E-mail .
                                     </div>
@@ -52,10 +66,10 @@
                                     </div>
                                 </small>
                                 <button type="submit" class="btn btn-success btn-lg">Connexion</button>
-                            </form> 
+                            </form>
                             <hr>
                             <small class="form-text text-muted">
-                            Pas encore inscrit ? 
+                            Pas encore inscrit ?
                             <a href="./index.php?module=CreerCompte">Créer un compte.</a></small>
                         </p>
                     </div>
