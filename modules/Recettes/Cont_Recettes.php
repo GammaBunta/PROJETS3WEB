@@ -16,15 +16,10 @@
         }
 
         public function rechercheSpeciale(){
-
             $array=explode(',',$_GET['ingredients']);
-            var_dump($array);
-        //    $tab = $this->modele->rechercheSpeciale();
-        //      $this->vue->afficherRechercheSpeciale($tab);
+            $tab = $this->modele->rechercheSpeciale($array);
+            $this->vue->afficherRechercheSpeciale($tab);
         }
-
-
-
     }
 
 

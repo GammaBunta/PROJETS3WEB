@@ -16,13 +16,9 @@
             }else{
                 $action='';
             }
-
-            var_dump($action);
-
             switch($action){
 
                 case 'rechercheSpeciale':
-                    echo 'speciale';
                     $this->controleur->rechercheSpeciale();
                     break;
 

@@ -8,13 +8,12 @@
 
 
         public function afficheInit(){
-            echo 'OUI';
+            echo 'afficheInit';
         }
 
         public function afficherRechercheSpeciale($array){
-            echo 'array';
             foreach($array as $item){
-                 echo utf8_encode('ouais affichage ici');
+                 echo utf8_encode(' </br> Titre : '.$item['titre'].' </br> nb personne : '.$item['nbpers'].' </br> Categorie : '.$item['categorie'].' </br> Texte : '.$item['textrec']);
            }
         }
 

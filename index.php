@@ -4,6 +4,8 @@
       require_once('./modules/Connexion/Connexion.php');
       require_once('./modules/Accueil/Accueil.php');
       require_once('./modules/Recettes/Recettes.php');
+      require_once('./modules/CreerCompte/CreerCompte.php');
+      require_once('./composants/head.php');
 
        if(isset($_GET['module'])){
                $module= htmlspecialchars($_GET['module']);
@@ -18,7 +20,7 @@
            case 'Frigo':
            case 'Connexion':
            case 'Recettes':
-            case 'CreerCompte':
+           case 'CreerCompte':
                $mod = new $module();
                $mod -> index();
                $vue = $mod->getAffichage();

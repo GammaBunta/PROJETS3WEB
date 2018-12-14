@@ -101,9 +101,14 @@ function retirerElement(nomingr){
 }
 
 function chercherRecettes(){
-    var IDs = [];
-    $("#aCuisiner").find("li").each(function(){ IDs.push(this.id); });
-    JSON.stringify(IDs);
-    window.location.replace("index.php?module=Recettes&action=rechercheSpeciale&ingredients="+IDs);
+    if(document.getElementById("aCuisiner").getElementsByTagName("li").length >0){
+        var IDs = [];
+        $("#aCuisiner").find("li").each(function(){ IDs.push(this.id); });
+        JSON.stringify(IDs);
+        window.location.replace("index.php?module=Recettes&action=rechercheSpeciale&ingredients="+IDs);
+    }else{
+        alert("il faut ajouter des ingrédients à cuisiner ! ");
+    }
+
 
 }
