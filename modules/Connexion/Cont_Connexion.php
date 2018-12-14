@@ -16,20 +16,22 @@
         }
 
         public function connexion(){
-            if(isset($_SESSION['login'])){
-                echo'Déjà Connecté';
-            }
-            else{
-                $this->vue->connexion();
                 if(isset($_POST['login']) && isset($_POST['mdp'])){
                     if($this->modele->connecte($_POST['login'],  $_POST['mdp'])){
-                        $this->vue->connecte();
+                        header('Location: index.php'); 
+                        exit();
                     }
                     else{
-                        $this->vue->mdpIncorrecte();
+                        $this->vue->setErreur("Login ou mot de passe incorrecte");
+                        $this->vue->afficheInit();
                     }
                 }
-            }
+            
+        }
+
+        public function deconnexion(){
+            $this->modele->deconnexion();
+            $this->vue->afficheInit();
         }
     }
 

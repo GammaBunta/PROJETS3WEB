@@ -1,4 +1,4 @@
-<?php
+  <?php
     require_once('./ClassesGeneriques/vue_generique.php');
     class Vue_Frigo extends VueGenerique{
 
@@ -41,11 +41,12 @@
                                   Produits Laitiers
                                 </h4>
                                 <div  class="pre-scrollable bg-light border border-secondary" style="height: 266.2px;">
-                                    <div>
-                                        <ul  id="listeIngr" class="list-group">';
+                                    <div id="listeIngr">
+                                        <ul class="list-group">';
 
                                         foreach($res as $item){
                                            echo utf8_encode(' <li href="#"  class="list-group-item list-group-item-action list-group-item-success text-left col-12">'.$item['nomingr'].'<button type="button" onclick="ajoutCuisiner(\''.$item['nomingr'].'\')" class="btn btn-success float-right" >+</button></li>');
+
                                         }
                                         echo '
                                         </ul>
@@ -54,7 +55,7 @@
                               </div>
                             </div>
                         <div class="row">
-                                <div class="col-4 offset-md-7 mt-4 ">
+                                <div class="col-4 offset-md-7 mt-5">
                                     <h4 id="titre" class="text-light bg-dark border border-secondary mb-0">
                                   Ingrédients à cuisiner
                                     </h4>
