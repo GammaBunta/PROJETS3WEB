@@ -25,6 +25,7 @@
                         Haec igitur prima lex amicitiae sanciatur, ut ab amicis
                        <hr>
                        <a href="index.php?module=Recettes" class="mb-1">Recettes</a>
+                       <a href="index.php?module=ajoutRecette" class="mb-1">ajoutRecette</a>
                     </p>
                     </div>
               </div>
