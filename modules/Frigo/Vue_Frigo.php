@@ -13,7 +13,7 @@
               <?php include "./composants/head.php"; ?>
               <link rel="stylesheet" type="text/css" href="./CSS/Frigo.css">
               <script type="text/javascript" src="../scripts/frigo.js"> </script>
-            	<title>Frigo</title>
+
             </head>
 
             <body>
@@ -48,7 +48,7 @@
                                            echo utf8_encode(' <li href="#"  class="list-group-item list-group-item-action list-group-item-success text-left col-12">'.$item['nomingr'].'<button type="button" onclick="ajoutCuisiner(\''.$item['nomingr'].'\')" class="btn btn-success float-right" >+</button></li>');
 
                                         }
-                                        echo '
+                                        echo'
                                         </ul>
                                     </div>
                                 </div>
