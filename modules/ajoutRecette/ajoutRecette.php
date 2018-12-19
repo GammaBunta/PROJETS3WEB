@@ -1,11 +1,11 @@
 <?php
     require_once('./ClassesGeneriques/module_generique.php');
-    include('Cont_Frigo.php');
+    include('Cont_ajoutRecette.php');
 
-    class Frigo extends ModuleGenerique{
+    class ajoutRecette extends ModuleGenerique{
 
         public function __construct(){
-        	$this->controleur = new Controleur_Frigo();
+        	$this->controleur = new Controleur_ajoutRecette();
         }
 
         public function index(){

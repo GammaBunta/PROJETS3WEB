@@ -16,7 +16,7 @@
 			<!-- Nom du site -->
 			<header class="col-4 text-center">
 				<div>
-					<H2>O•FR!GO</H2>
+					<a href="index.php" id="ofrigo" class="text-center h2">O•FR!GO</a>
 				</div>
 			</header>
 			<!-- Fin Nom du site -->
@@ -30,7 +30,15 @@
 							<img class="img-responsive" style="width: 50px;" src="./Images/pprofil.png">
 						</div>
 						<div class="col text-center mt-3">
-							<a href="Connexion.php" class="text-center h6">Connexion</a>
+						<?php
+							if(isset($_SESSION['login'])){
+								echo '<a href="index.php?module=Connexion&action=deconnexion" class="text-center h6">Deconnexion</a>';
+            				}
+							else{
+								echo '<a href="index.php?module=Connexion" class="text-center h6">Connexion</a>';
+							}
+							
+						?>
 						</div>
 					</div>
 				</div>
