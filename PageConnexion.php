@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <?php include "head.php"; ?>
+    <?php include "./composants/head.php"; ?>
 	<title>Connexion</title>
 </head>
- <?php include "header.php"; ?>
+ <?php include "./composants/header.php"; ?>
 <body>
  	<main class="text-center padding-bottom padding-top-xl">
         <a class="logo logo-lg" href="index.php">
