@@ -31,7 +31,7 @@
 						</div>
 						<div class="col text-center mt-3">
 						<?php
-							if(isset($_SESSION['login'])){
+							if(isset($_SESSION['id'])){
 								echo '<a href="index.php?module=Connexion&action=deconnexion" class="text-center h6">Deconnexion</a>';
             				}
 							else{

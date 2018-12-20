@@ -5,9 +5,10 @@
             ModeleGenerique::init();
         }
 
-        public function getIngredients($famille){
-            $result = self::$bdd -> prepare('select * from Ingredient where famille=:famille');
+        public function getIngredients($famille, $id){
+            $result = self::$bdd -> prepare('select * from Utilisateur natural join possede natural join Ingredient where famille=:famille and idUser =:id');
             $result -> bindParam(':famille',$famille);
+            $result -> bindParam(':famille',$id);
             $res = $result -> execute();
             return $result->fetchAll();
 

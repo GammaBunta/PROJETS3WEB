@@ -12,8 +12,5 @@
             return $result->fetchAll();
         }
 
-
-
-
     }
 ?>

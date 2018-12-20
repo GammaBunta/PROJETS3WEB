@@ -4,6 +4,8 @@
       require_once('./modules/Connexion/Connexion.php');
       require_once('./modules/CreerCompte/CreerCompte.php');
       require_once('./composants/head.php');
+      require_once('./modules/ModifFrigo/ModifFrigo.php');
+
     /*
 
 
@@ -27,21 +29,9 @@
        switch($module){
 
            case 'Frigo':
-               $mod = new $module();
-               $mod -> index();
-               $vue = $mod->getAffichage();
-
-           break;
-
            case 'Connexion':
-
-               $mod = new $module();
-               $mod -> index();
-               $vue = $mod->getAffichage();
-
-            break;
-
-            case 'CreerCompte':
+           case 'CreerCompte':
+           case 'ModifFrigo':
                $mod = new $module();
                $mod -> index();
                $vue = $mod->getAffichage();

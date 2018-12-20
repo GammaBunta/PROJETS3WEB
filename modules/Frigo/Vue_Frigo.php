@@ -12,7 +12,7 @@
             <head>
               <?php include "./composants/head.php"; ?>
               <link rel="stylesheet" type="text/css" href="./CSS/Frigo.css">
-              <script type="text/javascript" src="../scripts/frigo.js"> </script>
+              <script type="text/javascript" src="./scripts/frigo.js"> </script>
             	<title>Frigo</title>
             </head>
 
