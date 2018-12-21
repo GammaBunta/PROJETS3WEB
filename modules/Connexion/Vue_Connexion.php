@@ -35,7 +35,7 @@
                 echo '<ul class="list-group ">';
                         echo '          <li class="list-group-item list-group-item-danger">';
                         echo $this->erreur;
-                        echo "        </li>\n";             
+                        echo "        </li>\n";
                 echo '</ul>';
             }
             echo'
@@ -66,10 +66,10 @@
                                     </div>
                                 </small>
                                 <button type="submit" class="btn btn-success btn-lg">Connexion</button>
-                            </form> 
+                            </form>
                             <hr>
                             <small class="form-text text-muted">
-                            Pas encore inscrit ? 
+                            Pas encore inscrit ?
                             <a href="./index.php?module=CreerCompte">Créer un compte.</a></small>
                         </p>
                     </div>

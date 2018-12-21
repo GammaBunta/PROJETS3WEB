@@ -12,8 +12,13 @@
             <head>
               <?php include "./composants/head.php"; ?>
               <link rel="stylesheet" type="text/css" href="./CSS/Frigo.css">
+<<<<<<< HEAD
               <script type="text/javascript" src="./scripts/frigo.js"> </script>
             	<title>Frigo</title>
+=======
+              <script type="text/javascript" src="../scripts/frigo.js"> </script>
+
+>>>>>>> Sarah
             </head>
 
             <body>
@@ -48,7 +53,7 @@
                                            echo utf8_encode(' <li href="#"  class="list-group-item list-group-item-action list-group-item-success text-left col-12">'.$item['nomingr'].'<button type="button" onclick="ajoutCuisiner(\''.$item['nomingr'].'\')" class="btn btn-success float-right" >+</button></li>');
 
                                         }
-                                        echo '
+                                        echo'
                                         </ul>
                                     </div>
                                 </div>
@@ -59,12 +64,12 @@
                                     <h4 id="titre" class="text-light bg-dark border border-secondary mb-0">
                                   Ingrédients à cuisiner
                                     </h4>
-                                <div class="pre-scrollable bg-light border border-secondary" style="height: 150px;">
+                                <div class="pre-scrollable bg-light border border-secondary" style="height: 266.2px;">
                                     <ul class="list-group" id="aCuisiner">
 
                                     </ul>
                                 </div>
-                                 <button type="button" class="border border-secondary btn btn-secondary btn-block">Chercher une recette</button>
+                                 <button type="button" class="border border-secondary btn btn-secondary btn-block" onclick="chercherRecettes()" >Chercher une recette</button>
                               </div>
                         </div>
                 </main>

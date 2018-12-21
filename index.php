@@ -1,8 +1,12 @@
 <?php
       session_start();
+      require_once('./composants/head.php');
       require_once('./modules/Frigo/Frigo.php');
       require_once('./modules/Connexion/Connexion.php');
+      require_once('./modules/Accueil/Accueil.php');
+      require_once('./modules/Recettes/Recettes.php');
       require_once('./modules/CreerCompte/CreerCompte.php');
+      require_once('./modules/ajoutRecette/ajoutRecette.php');
       require_once('./composants/head.php');
       require_once('./modules/ModifFrigo/ModifFrigo.php');
 
@@ -17,6 +21,7 @@
         echo '<br>';
     }*/
 
+      require_once('./modules/CreerCompte/CreerCompte.php');
 
 
        if(isset($_GET['module'])){
@@ -28,10 +33,13 @@
 
        switch($module){
 
+           case 'Accueil':
            case 'Frigo':
            case 'Connexion':
-           case 'CreerCompte':
            case 'ModifFrigo':
+           case 'Recettes':
+           case 'CreerCompte':
+           case 'ajoutRecette':
                $mod = new $module();
                $mod -> index();
                $vue = $mod->getAffichage();
@@ -39,19 +47,18 @@
             break;
 
            default:
-              $vue = 'OUI';
-              echo'<a href="index.php?module=Frigo">FRIGO</a>';
-              break;
+              $mod = new Accueil();
+              $mod -> index();
+              $vue = $mod->getAffichage();
+            break;
 
        }
 
-      require_once('./composants/header.php');
 
+       require_once('./composants/header.php');
        echo $vue;
 
 ?>
-
-
 
 <?php
     include('./composants/footer.php');

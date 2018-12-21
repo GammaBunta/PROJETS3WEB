@@ -48,6 +48,12 @@
 	padding-right: 5px;
 }
 
+#ofrigo:hover
+{
+	color:#FFFFFF;
+	text-decoration : none;
+}
+
 footer
 {
 background-color: #34475E;
@@ -71,4 +77,3 @@ footer p
 {
 	font-size: 13px;
 }
-

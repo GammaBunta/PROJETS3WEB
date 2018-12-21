@@ -18,7 +18,7 @@
         public function creerCompte(){
                 $err;
                 if (isset($_POST['login']) && isset($_POST['mdp']) && isset($_POST['mdp2']) && isset($_POST['email'])) {
-                 
+
                     $m = htmlspecialchars($_POST['mdp']);
                     $m2 = htmlspecialchars($_POST['mdp2']);
                     $email = htmlspecialchars($_POST['email']);
@@ -36,17 +36,17 @@
                 else{
                     $err = "Veuillez remplir tous les champs";
                 }
-                 
+
                 if (empty($err)) {
 
                     if(isset($_POST['login']) && isset($_POST['email'])){
                         if($this->modele->creer() !== true){
                             $err = "Adresse mail ou login déjà existant";
-                            $this->vue->setErreur($err);   
+                            $this->vue->setErreur($err);
                             $this->vue-> afficheInit();
                         }
                         else{
-                            header('Location: index.php'); 
+                            header('Location: index.php');
                             exit();
                         }
 
@@ -56,6 +56,9 @@
                     $this->vue->setErreur($err);
                     $this->vue->afficheInit();
                 }
+
+
+
 
         }
     }
