@@ -16,7 +16,7 @@ class ModeleGenerique{
 */
 
         $servername = "localhost";
-        self::$bdd = new PDO("mysql:host=$servername;dbname=projetS3", 'root', '!Minou240499!');
+        self::$bdd = new PDO("mysql:host=$servername;dbname=frigo", 'root', '!Minou240499!');
 
     }
 }
