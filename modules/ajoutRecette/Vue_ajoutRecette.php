@@ -118,8 +118,7 @@ class Vue_ajoutRecette extends VueGenerique{
                                         <div class="col-5 ">
                                             <label>Dans la recette il y a ...</label>
                                             <div class="pre-scrollable border border-secondary" style="height: 120.2px;" >
-                                                <ul class="list-group">
-                                                    <li href="#" class="list-group-item list-group-item-action list-group-item-success text-left">oui<button type="button" onclick="" class="btn btn-success float-right" >-</button></li>
+                                                <ul class="list-group" id="listeingr">
                                                 </ul>
                                             </div>
                                         </div>
