@@ -7,21 +7,7 @@
       require_once('./modules/Recettes/Recettes.php');
       require_once('./modules/CreerCompte/CreerCompte.php');
       require_once('./modules/ajoutRecette/ajoutRecette.php');
-      require_once('./composants/head.php');
       require_once('./modules/ModifFrigo/ModifFrigo.php');
-
-    /*
-
-
-     // AFFICHE TABLE INGREDIENT
-     /*$result= $bdd -> query ('select * from Ingredient');
-     $res = $result->fetchAll();
-     foreach($res as $item){
-        echo $item['nomingr'].' '.$item['unite'].' '.$item['protide'].' '.$item['lipide'].' '.$item['glucide'].' '.$item['calorie'].' '.$item['congele'].' '.$item['famille'];
-        echo '<br>';
-    }*/
-
-      require_once('./modules/CreerCompte/CreerCompte.php');
 
 
        if(isset($_GET['module'])){
@@ -57,9 +43,5 @@
 
        require_once('./composants/header.php');
        echo $vue;
-
-?>
-
-<?php
-    include('./composants/footer.php');
+       require_once('./composants/footer.php');
 ?>

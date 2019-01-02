@@ -12,18 +12,14 @@
             <head>
               <?php include "./composants/head.php"; ?>
               <link rel="stylesheet" type="text/css" href="./CSS/Frigo.css">
-<<<<<<< HEAD
               <script type="text/javascript" src="./scripts/frigo.js"> </script>
-            	<title>Frigo</title>
-=======
-              <script type="text/javascript" src="../scripts/frigo.js"> </script>
 
->>>>>>> Sarah
+            	<title>Frigo</title>
             </head>
 
-            <body>
-             	<main class="text-center padding-bottom padding-top-xl">
-                    <div class="container mt-5">
+            <body onload="setId(' . $_SESSION['id'] . ');">
+             	<main class="text-center padding-bottom padding-top-xl mb-4">
+                    <div class="container mt-5 mb-3">
                             <div class="row">
                               <div id="ul1"  class="col-3">
                                   <div class="list-group" id="myList" role="tablist">
@@ -50,7 +46,7 @@
                                         <ul class="list-group">';
 
                                         foreach($res as $item){
-                                           echo utf8_encode(' <li href="#"  class="list-group-item list-group-item-action list-group-item-success text-left col-12">'.$item['nomingr'].'<button type="button" onclick="ajoutCuisiner(\''.$item['nomingr'].'\')" class="btn btn-success float-right" >+</button></li>');
+                                           echo utf8_encode(' <li href="#"  class="list-group-item list-group-item-action list-group-item-success text-left col-12"><acronnym title ="Quantite :'.$item['quantite'].'">'.$item['nomingr'].'</acronym><button type="button" onclick="ajoutCuisiner(\''.$item['nomingr'].'\')" class="btn btn-success float-right" >+</button></li>');
 
                                         }
                                         echo'

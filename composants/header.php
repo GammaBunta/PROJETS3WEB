@@ -1,4 +1,4 @@
-<div class="sticky-top bg-success" id="headerTop">
+<div class="sticky-top fuide bg-success" id="headerTop">
 	<div>
 		<div class="row justify-content-around">
 		<!-- Bouton déroulant BURGER-->
@@ -37,7 +37,7 @@
 							else{
 								echo '<a href="index.php?module=Connexion" class="text-center h6">Connexion</a>';
 							}
-							
+
 						?>
 						</div>
 					</div>

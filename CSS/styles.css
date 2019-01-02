@@ -1,3 +1,9 @@
+body, html{
+	width: auto;
+	overflow-x: hidden;
+	min-height: 100%;
+}
+
 .container {
 	    display: inline-block;
 	    cursor: pointer;
@@ -46,6 +52,7 @@
 	padding-top: 10px;
 	padding-left: 5px;
 	padding-right: 5px;
+	width: auto;
 }
 
 #ofrigo:hover
@@ -56,17 +63,24 @@
 
 footer
 {
-background-color: #34475E;
+/* background-color: #34475E;
   color: white;
-  width: 100%;
+  width: auto;
   height: auto;
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   right: 0;
-
-  box-sizing: content-box;
+	margin-top: 50px;
+  box-sizing: content-box; */
+	position: relative;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background: #000000;
+    color: #FFFFFF;
 }
+
 
 footer img
 {

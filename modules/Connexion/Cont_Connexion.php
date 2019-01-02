@@ -18,13 +18,7 @@
         public function connexion(){
                 if(isset($_POST['login']) && isset($_POST['mdp'])){
                     if($this->modele->connecte($_POST['login'],  $_POST['mdp'])){
-<<<<<<< HEAD
-                         header('Location: index.php'); 
-                         exit();
-=======
-                        header('Location: index.php');
-                        exit();
->>>>>>> Sarah
+                         echo'<script>location.replace("index.php"); </script>';
                     }
                     else{
                         $this->vue->setErreur("Login ou mot de passe incorrect");
@@ -39,6 +33,4 @@
             $this->vue->afficheInit();
         }
     }
-
-
  ?>

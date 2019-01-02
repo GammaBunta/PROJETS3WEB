@@ -7,23 +7,17 @@ class ModeleGenerique{
     }
 
     public static function init(){
-<<<<<<< HEAD
-        $b = 'mysql:host=localhost;dbname=ProjetFrigo';
+/*        $b = 'mysql:host=localhost;dbname=ProjetFrigo';
         $user = 'root';
         $password = 'samsam974';
-=======
-/*
-       $b = 'mysql:host=database-etudiants.iut.univ-paris8.fr;dbname=dutinfopw201642';
-        $user = 'dutinfopw201642';
-        $password = 'pubepete';
->>>>>>> Sarah
         self::$bdd = new PDO($b, $user, $password);
         self::$bdd->exec('SET CHARACTER SET UTF-8');
-*/    
+*/
 
         $servername = "localhost";
-        self::$bdd = new PDO("mysql:host=$servername;dbname=projetS3", 'root', '!Minou240499!');
+        self::$bdd = new PDO("mysql:host=$servername;dbname=ProjetFrigo", 'root', 'samsam974');
 
     }
+
 }
 ?>

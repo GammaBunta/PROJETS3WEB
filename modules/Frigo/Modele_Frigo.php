@@ -7,7 +7,8 @@
 
 
         public function getLaitiers(){
-            $result = self::$bdd -> prepare('select * from Ingredient where famille="Produits Laitiers"');
+
+            $result = self::$bdd -> prepare('select * from Utilisateur natural join possede natural join Ingredient where famille= "Produits Laitiers" and idUser = '.$_SESSION['id']);
             $res = $result -> execute();
             return $result->fetchAll();
         }
