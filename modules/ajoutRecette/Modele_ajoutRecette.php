@@ -5,6 +5,10 @@
             ModeleGenerique::init();
         }
 
+        public function publier(){
+            
+        }
+
 
 
 

@@ -6,19 +6,19 @@ class Vue_ajoutRecette extends VueGenerique{
         parent::__construct();
     }
 
-//faire une array et y ajouter chaque ingrédient
+
     public function afficheInit(){
         echo '
         <head>
             <?php include "./composants/head.php"; ?>
-            <script type="text/javascript" src="../scripts/ajoutRecette.js"> </script>
+            <script type="text/javascript" src="./scripts/ajoutRecette.js"> </script>
         </head>
         <body>
             <main class="mt-5 row align-items-center justify-content-center"">
                 <div class="container ">
                     <div class="row">
-                        <div class="col-">
-                            <form action="?module=Connexion&action=connecte" method="post" id="needs-validation" novalidate>
+                        <div class="col- ">
+                            <form action="index.php?module=ajoutRecette&action=publier" method="post" id="needs-validation" novalidate>
                                 <div class="form-group ">
                                     <label>Nom de la recette</label>
                                     <input type="text" class="form-control " id="nomRecette" placeholder="Nom de la Recette">
@@ -101,18 +101,18 @@ class Vue_ajoutRecette extends VueGenerique{
                                     </div>
                                 </div>
 
-                                <div class="col-md ml-5 mt-5">
+                                <div class="col-md ml-5 mt-5 border-left-3 border-success">
                                     <div class="row">
                                         <div class="col-7 mt-5">
                                             <div class="form-group row ">
                                                 <div class="col-md-5">
-                                                    <input type="text"  class="form-control " id="tpsPrepa" placeholder="Quantité">
+                                                    <input type="text"  class="form-control " id="unite" placeholder="Quantité">
                                                 </div>
                                                 <label for="npPers" class="col-form-label">(de)</label>
                                                 <div class="col-sm-5">
-                                                    <input type="text"  class="form-control " id="tpsPrepa" placeholder="Ingrédient">
+                                                    <input type="text"  class="form-control " id="ingredient" placeholder="Ingrédient">
                                                 </div>
-                                                <button type="button" onclick="" class="btn btn-success float-right" >+</button>
+                                                <button type="button" onclick="ingrExiste()" class="btn btn-success float-right" >+</button>
                                             </div>
                                         </div>
                                         <div class="col-5 ">
@@ -136,9 +136,6 @@ class Vue_ajoutRecette extends VueGenerique{
                     </div>
 
                 </main>
-
-
-
 
             </body>';
     }

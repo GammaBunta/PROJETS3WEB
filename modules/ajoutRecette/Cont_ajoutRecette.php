@@ -15,6 +15,11 @@
             $this->vue-> afficheInit();
         }
 
+
+        public function publier(){
+            $this->vue-> publier();
+        }
+
     }
 
 

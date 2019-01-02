@@ -12,5 +12,12 @@
             return $result->fetchAll();
 
         }
+
+        public function ingredientExiste($nomIngr){
+            $result = self::$bdd -> prepare('select * from Ingredient where UPPER(nomingr)=:ingr');
+            $result -> bindParam(':ingr',strtoupper($nomIngr));
+            $res = $result-> execute();
+            return isset($res);
+        }
     }
 ?>

@@ -13,7 +13,7 @@ class ModeleGenerique{
         $password = 'pubepete';
         self::$bdd = new PDO($b, $user, $password);
         self::$bdd->exec('SET CHARACTER SET UTF-8');
-*/    
+*/
 
         $servername = "localhost";
         self::$bdd = new PDO("mysql:host=$servername;dbname=projetS3", 'root', '!Minou240499!');
