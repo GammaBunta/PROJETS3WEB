@@ -6,7 +6,11 @@
         }
 
         public function publier(){
+            $nomRecette = htmlspecialchars($_POST['nomRecette']);
+            $categorie = htmlspecialchars($_POST['categorie']);
+            $niveau = htmlspecialchars($_POST['niveau']);
             
+
         }
 
 

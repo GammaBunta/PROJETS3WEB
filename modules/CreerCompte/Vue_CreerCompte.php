@@ -35,7 +35,7 @@
             }
 
 			echo'
-			                <form action="./index.php?module=CreerCompte&action=creer" method="post" id="needs-validation" novalidate>
+			                <form action="./index.php?module=CreerCompte&action=creer" method="post" id="needs-validation">
 			                    <div class="form-group ">
 			                        <input type="text" class="form-control mt-4" name="login" placeholder="Nom d\'utilisateur" required>
 			                        <div class="invalid-feedback text-left">

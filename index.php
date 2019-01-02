@@ -43,5 +43,5 @@
 
        require_once('./composants/header.php');
        echo $vue;
-       require_once('./composants/footer.php');
+     //  require_once('./composants/footer.php');
 ?>

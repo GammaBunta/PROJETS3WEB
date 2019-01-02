@@ -17,7 +17,12 @@
 
 
         public function publier(){
-            $this->vue-> publier();
+            if(isset($_POST['nomRecette'])){
+                $this->modele->publier();
+            }else{
+                echo 'pas de nom';
+            }
+
         }
 
     }
