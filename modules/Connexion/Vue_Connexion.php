@@ -22,7 +22,7 @@
                     <a class="logo logo-lg" href="index.php">
 
                     </a>
-                    <div class="col-4 container bg-light border border-primary rounded mt-5">
+                    <div class="col-4 container bg-light border border-primary rounded mt-5" style="margin-bottom: 115px;">
                         <p>
                             <h1 class="display-5">
                                 Connexion

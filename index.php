@@ -7,9 +7,7 @@
       require_once('./modules/Recettes/Recettes.php');
       require_once('./modules/CreerCompte/CreerCompte.php');
       require_once('./modules/ajoutRecette/ajoutRecette.php');
-      require_once('./composants/head.php');
-
-      require_once('./modules/CreerCompte/CreerCompte.php');
+      require_once('./modules/ModifFrigo/ModifFrigo.php');
 
 
        if(isset($_GET['module'])){
@@ -24,6 +22,7 @@
            case 'Accueil':
            case 'Frigo':
            case 'Connexion':
+           case 'ModifFrigo':
            case 'Recettes':
            case 'CreerCompte':
            case 'ajoutRecette':
@@ -32,7 +31,6 @@
                $vue = $mod->getAffichage();
 
             break;
-
 
            default:
               $mod = new Accueil();
@@ -45,9 +43,5 @@
 
        require_once('./composants/header.php');
        echo $vue;
-
-?>
-
-<?php
-    include('./composants/footer.php');
+       require_once('./composants/footer.php');
 ?>

@@ -7,10 +7,9 @@ class ModeleGenerique{
     }
 
     public static function init(){
-/*
-       $b = 'mysql:host=database-etudiants.iut.univ-paris8.fr;dbname=dutinfopw201642';
-        $user = 'dutinfopw201642';
-        $password = 'pubepete';
+/*        $b = 'mysql:host=localhost;dbname=ProjetFrigo';
+        $user = 'root';
+        $password = 'samsam974';
         self::$bdd = new PDO($b, $user, $password);
         self::$bdd->exec('SET CHARACTER SET UTF-8');
 */
@@ -19,5 +18,6 @@ class ModeleGenerique{
         self::$bdd = new PDO("mysql:host=$servername;dbname=frigo", 'root', '!Minou240499!');
 
     }
+
 }
 ?>

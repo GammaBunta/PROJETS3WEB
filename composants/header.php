@@ -1,4 +1,4 @@
-<div class="sticky-top bg-success" id="headerTop">
+<div class="sticky-top fuide bg-success" id="headerTop">
 	<div>
 		<div class="row justify-content-around">
 		<!-- Bouton déroulant BURGER-->
@@ -31,13 +31,13 @@
 						</div>
 						<div class="col text-center mt-3">
 						<?php
-							if(isset($_SESSION['login'])){
+							if(isset($_SESSION['id'])){
 								echo '<a href="index.php?module=Connexion&action=deconnexion" class="text-center h6">Deconnexion</a>';
             				}
 							else{
 								echo '<a href="index.php?module=Connexion" class="text-center h6">Connexion</a>';
 							}
-							
+
 						?>
 						</div>
 					</div>

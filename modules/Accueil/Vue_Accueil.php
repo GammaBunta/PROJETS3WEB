@@ -10,7 +10,7 @@
         public function afficheInit(){
             echo '
 <body>
- 	<main class="text-center padding-bottom padding-top-xl" style="margin-bottom: 140px;">
+ 	<main class="text-center padding-bottom padding-top-xl" style="margin-bottom: 50px;">
         <div class="container mt-5">
           <div class="row">
             <img src="Images/imageIndex.jpg" class="img-fluid rounded mx-auto d-block" alt="Courses">

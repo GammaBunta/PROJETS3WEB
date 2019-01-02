@@ -13,7 +13,7 @@
             if(isset($_GET['action'])){
                 $action = htmlspecialchars($_GET['action']);
             }
-            if(isset($_SESSION['login'])){
+            if(isset($_SESSION['id'])){
                 $action = "deconnexion";
             }
             switch ($action) {
