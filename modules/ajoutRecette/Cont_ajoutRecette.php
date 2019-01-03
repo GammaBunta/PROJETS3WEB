@@ -17,11 +17,10 @@
 
 
         public function publier(){
-            if(isset($_POST['nomRecette'])){
-                $this->modele->publier();
-            }else{
-                echo 'pas de nom';
-            }
+            $idRecette = $this->modele->publier();
+        //    header('Location: index.php?module=Recettes&action=affichageSpecial&id='.$idRecette);
+        //    exit();
+
 
         }
 

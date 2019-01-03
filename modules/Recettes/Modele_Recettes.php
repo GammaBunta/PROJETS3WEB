@@ -39,5 +39,12 @@
 
 
         }
+
+
+        public function infoRecette($id){
+
+            //TODO
+
+        }
     }
 ?>

@@ -22,6 +22,14 @@
                     $this->controleur->rechercheSpeciale();
                     break;
 
+                case 'rechercheSimple':
+                    $this->controleur->rechercheSimple();
+                    break;
+
+                case 'affichageSpecial':
+                    echo 'recette pour l\'affichage';
+                    break;
+
                 default:
                     $this->controleur->init();
                     break;

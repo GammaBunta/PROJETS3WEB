@@ -20,6 +20,16 @@
             $tab = $this->modele->rechercheSpeciale($array);
             $this->vue->afficherRechercheSpeciale($tab);
         }
+
+        public function rechercheSimple(){
+            //TODO
+        }
+
+        public function affichageSpecial(){
+            $id = htmlspecialchars($_GET['id']);
+            $info = $this->modele->infoRecette($id);
+            $this->vue->affichageRecette($info);
+        }
     }
 
 

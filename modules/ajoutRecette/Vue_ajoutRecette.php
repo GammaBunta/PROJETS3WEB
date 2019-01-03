@@ -15,7 +15,7 @@ class Vue_ajoutRecette extends VueGenerique{
         </head>
         <body>
             <main class="mt-5 row align-items-center justify-content-center"">
-            <form action="./index.php?module=ajoutRecette&action=publier" method="post" id="form" >
+            <form action="?module=ajoutRecette&action=publier" enctype="multipart/form-data" method="post" id="form" >
                 <div class="container ">
                     <div class="row">
                         <div class="col- ">
@@ -97,6 +97,7 @@ class Vue_ajoutRecette extends VueGenerique{
                                 </div>
 
                                 <div class="custom-file">
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
                                     <input type="file" class="custom-file-input" name="customFile">
                                     <label class="custom-file-label" for="customFile">Photo du plat<label>
                                     </div>

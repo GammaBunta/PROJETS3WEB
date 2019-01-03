@@ -17,5 +17,10 @@
            }
         }
 
+
+        public function affichageRecette($item){
+            echo utf8_encode(' </br> Titre : '.$item['titre'].' </br> nb personne : '.$item['nbpers'].' </br> Categorie : '.$item['categorie'].' </br> Texte : '.$item['textrec']);
+        }
+
     }
 ?>
