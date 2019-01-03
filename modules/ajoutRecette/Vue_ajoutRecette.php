@@ -15,19 +15,19 @@ class Vue_ajoutRecette extends VueGenerique{
         </head>
         <body>
             <main class="mt-5 row align-items-center justify-content-center"">
-            <form action="?module=ajoutRecette&action=publier" method="post" id="form" >
+            <form action="./index.php?module=ajoutRecette&action=publier" method="post" id="form" >
                 <div class="container ">
                     <div class="row">
                         <div class="col- ">
 
                                 <div class="form-group ">
                                     <label>Nom de la recette</label>
-                                    <input type="text" class="form-control " id="nomRecette" placeholder="Nom de la Recette" required>
+                                    <input type="text" class="form-control " name="nomRecette" placeholder="Nom de la Recette" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Catégorie</label>
-                                    <select class="form-control-sm float-right" id="categorie" required>
+                                    <select class="form-control-sm float-right" name="categorie" required>
                                         <option>Entrée</option>
                                         <option>Plat</option>
                                         <option>Dessert</option>
@@ -36,7 +36,7 @@ class Vue_ajoutRecette extends VueGenerique{
 
                                 <div class="form-group">
                                     <label>Niveau</label>
-                                    <select class="form-control-sm float-right " id="niveau" required>
+                                    <select class="form-control-sm float-right " name="niveau" required>
                                         <option>Très Facile</option>
                                         <option>Facile</option>
                                         <option>Intermédiaire</option>
@@ -70,34 +70,34 @@ class Vue_ajoutRecette extends VueGenerique{
 
                                 <div class="form-group row ">
                                     <div class="col-sm-3">
-                                        <input type="number" min="1" value="1" class="form-control " id="nbPers" placeholder="2" required>
+                                        <input type="number" min="1" value="1" class="form-control " name="nbPers" placeholder="2" required>
                                     </div>
                                     <label for="npPers" class="col-form-label">Personnes</label>
                                 </div>
 
                                 <div class="form-group row ">
                                     <div class="col-sm-3">
-                                        <input type="number"  min="0" class="form-control " id="tpsPrepa" placeholder="20" required>
+                                        <input type="number"  min="0" class="form-control " name="tpsPrepa" placeholder="20" required>
                                     </div>
                                     <label for="npPers" class="col-form-label">min de préparation</label>
                                 </div>
 
                                 <div class="form-group row ">
                                     <div class="col-sm-3">
-                                        <input type="number"  min="0"  class="form-control " id="tpsRepos" placeholder="30" required>
+                                        <input type="number"  min="0"  class="form-control " name="tpsRepos" placeholder="30" required>
                                     </div>
                                     <label for="npPers" class="col-form-label">min de repos</label>
                                 </div>
 
                                 <div class="form-group row ">
                                     <div class="col-sm-3">
-                                        <input type="number"  min="0"  class="form-control " id="tpsCuisson" placeholder="60" required>
+                                        <input type="number"  min="0"  class="form-control " name="tpsCuisson" placeholder="60" required>
                                     </div>
                                     <label for="npPers" class="col-form-label">min de cuisson</label>
                                 </div>
 
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <input type="file" class="custom-file-input" name="customFile">
                                     <label class="custom-file-label" for="customFile">Photo du plat<label>
                                     </div>
                                 </div>
@@ -107,7 +107,8 @@ class Vue_ajoutRecette extends VueGenerique{
                                         <div class="col-7 mt-5">
                                             <div class="form-group row ">
                                                 <div class="col-md-5">
-                                                    <input type="text"  class="form-control " id="unite" placeholder="Quantité">
+                                                    <input type="text"  class="form-control " id="unite" name="unite" placeholder="Quantité">
+
                                                 </div>
                                                 <label for="npPers" class="col-form-label">(de)</label>
                                                 <div class="col-sm-5">
@@ -128,18 +129,17 @@ class Vue_ajoutRecette extends VueGenerique{
                                 </div>
                                 <div class="form-group">
                                     <label>Instructions de la recette</label>
-                                    <textarea class="form-control" id="texteRecette" rows="12"  required></textarea>
+                                    <textarea class="form-control" name="texteRecette" rows="12"  required></textarea>
                                 </div>
                                 <div class="row ml-5">
                                     <button type="submit" class="btn btn-success btn-lg">Publier ma recette</button>
                                 </div>
-
+                            </div>
                         </div>
-                        </form>
-
-                </main>
-
-            </body>';
+                    </div>
+                </form>
+            </main>
+        </body>';
 
 
     }

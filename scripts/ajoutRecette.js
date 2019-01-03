@@ -11,7 +11,6 @@ function ingrExiste(){
             if(!document.getElementById("listeingr").contains(oui)){
                 document.getElementById("listeingr").innerHTML+=li;
                 ingredients.push(lenomingr);
-                alert(ingredients.toString());
             }else{
                 alert("vous avez déjà ajouté cet ingrédient");
             }
@@ -30,7 +29,6 @@ function retirerIngr(nomingr){
             ingredients.splice(i,1);
         }
     }
-    alert(ingredients.toString());
 }
 
 $(document).ready(function(){
