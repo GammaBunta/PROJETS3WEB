@@ -15,14 +15,14 @@ class Vue_ajoutRecette extends VueGenerique{
         </head>
         <body>
             <main class="mt-5 row align-items-center justify-content-center"">
-            <form action="?module=ajoutRecette&action=publier" enctype="multipart/form-data" method="post" id="form" >
+            <form action="./index.php?module=ajoutRecette&action=publier" enctype="multipart/form-data" method="post" id="form" >
                 <div class="container ">
                     <div class="row">
-                        <div class="col- ">
+                        <div class="col-">
 
                                 <div class="form-group ">
                                     <label>Nom de la recette</label>
-                                    <input type="text" class="form-control " name="nomRecette" placeholder="Nom de la Recette" required>
+                                    <input type="text" class="form-control"  id="nomRecette" name="nomRecette" placeholder="Nom de la Recette" required>
                                 </div>
 
                                 <div class="form-group">
@@ -58,7 +58,7 @@ class Vue_ajoutRecette extends VueGenerique{
 
                                 <div class="form-group">
                                     <label>Sans Gluten</label>
-                                    <div class="form-check form-check-inline" required>
+                                    <div class="form-check form-check-inline" >
                                         <input class="form-check-input" type="radio" name="optionsGluten" id="ouiGlutenFree" value="option1">
                                         <label class="form-check-label" for="inlineRadio1">Oui</label>
                                     </div>
@@ -77,21 +77,21 @@ class Vue_ajoutRecette extends VueGenerique{
 
                                 <div class="form-group row ">
                                     <div class="col-sm-3">
-                                        <input type="number"  min="0" class="form-control " name="tpsPrepa" placeholder="20" required>
+                                        <input type="number"  value="0" min="0" class="form-control " name="tpsPrepa" placeholder="20" required>
                                     </div>
                                     <label for="npPers" class="col-form-label">min de préparation</label>
                                 </div>
 
                                 <div class="form-group row ">
                                     <div class="col-sm-3">
-                                        <input type="number"  min="0"  class="form-control " name="tpsRepos" placeholder="30" required>
+                                        <input type="number"  min="0"  value="0" class="form-control " name="tpsRepos" placeholder="30" required>
                                     </div>
                                     <label for="npPers" class="col-form-label">min de repos</label>
                                 </div>
 
                                 <div class="form-group row ">
                                     <div class="col-sm-3">
-                                        <input type="number"  min="0"  class="form-control " name="tpsCuisson" placeholder="60" required>
+                                        <input type="number"  min="0"  value="0" class="form-control " name="tpsCuisson" placeholder="60" required>
                                     </div>
                                     <label for="npPers" class="col-form-label">min de cuisson</label>
                                 </div>
@@ -141,6 +141,7 @@ class Vue_ajoutRecette extends VueGenerique{
                 </form>
             </main>
         </body>';
+
 
 
     }

@@ -41,8 +41,17 @@ $(document).ready(function(){
             alert("Il n'y a pas d'ingrédients dans votre recette ! ");
             return false;
         }
-        document.getElementById("form").innerHTML+=('<input type="text" name="listeQuantites" value="'+quantites+'">')
-        document.getElementById("form").innerHTML+=('<input type="text" name="listeIngredients" value="'+ingredients+'">');
+        var container = document.getElementById("form");
+        var inputq = document.createElement("input");
+        inputq.type="text";
+        inputq.name = "listeQuantites";
+        inputq.value=quantites;
+        container.appendChild(inputq);
+        var inputi = document.createElement("input");
+        inputi.type="text";
+        inputi.name="listeIngredients";
+        inputi.value=ingredients;
+        container.appendChild(inputi);
         return true;
     });
 }
