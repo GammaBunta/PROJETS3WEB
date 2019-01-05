@@ -17,8 +17,7 @@
 
 
         public function publier(){
-            var_dump($_POST);
-            //$idRecette = $this->modele->publier();
+            $idRecette = $this->modele->publier();
         //    header('Location: index.php?module=Recettes&action=affichageSpecial&id='.$idRecette);
         //    exit();
 
