@@ -11,8 +11,8 @@
             $res = $result -> execute();
             $idingr=$result->fetch()[0];
             $req = self::$bdd -> prepare('INSERT INTO `utiliser` (`idrec`, `idingr`, `quantite`) VALUES (:idrec,:idingr,:quantite)');
-            array(':idUser'=>$idUser,
             $res = $req -> execute(array(':idrec'=>$idRecette,':idingr'=>$idingr,'quantite'=>$quantite));
+            
         }
 
         public function publier(){
@@ -50,7 +50,7 @@
             $res = $req -> execute(array(':idUser'=>$idUser,':titre'=> $nomRecette,':nbpers'=>$nbPers,':categorie'=>$categorie,':vegetarien'=>$vegetarien,':gluteen'=>$gluten,':avisInternaut'=> $avis,':niveau'=>$niveau,':cout'=>$cout,':tpsprepa'=>$tpsPrepa,':tpscuisson'=>$tpsCuisson,':tpsrepos'=>$tpsRepos,
             ':textrec'=>$text,':img'=>$img,':nombreAvis'=>$nbavis));
 
-            //$res = $req -> execute();
+            $res = $req -> execute();
 
             if($res===FALSE){
                 echo 'non insert Recette';

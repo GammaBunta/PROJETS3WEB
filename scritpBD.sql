@@ -250,16 +250,6 @@ CREATE TABLE IF NOT EXISTS `Recette` (
   KEY `Recette_Utilisateur_FK` (`idUser`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
---
--- Contenu de la table `Recette`
---
-/*
-INSERT INTO `Recette` (`idrec`, `titre`, `nbpers`, `categorie`, `vegetarien`, `gluteenFree`, `avisInternaut`, `niveau`, `cout`, `tpsprepa`, `tpscuisson`, `tpsrepose`, `textrec`, `img`, `nombreAvis`) VALUES
-(1, 'Gâteau au chocolat au micro-onde', 8, 'Dessert', 0, 0, NULL, 'très facile', NULL, 10, 5, NULL, 'Faire fondre le chocolat dans un grand bol 1 min sur puissance maxi.\nAjouter le beurre en morceaux, et recuire 1 min; bien mélanger à la sortie du four.\nMélanger les oeufs et le sucre dans un saladier, ajouter le chocolat et le beurre, la farine, la\nlevure puis la crème.\nChemiser de papier sulfurisé le fond d''un moule rond (diamètre 22 cm) transparent aux\nondes (type pyrex), et verser la préparation.\nCuire 5 à 6 min à puissance maxi et vérifier la cuisson : la pointe du couteau doit ressortir\nsèche, même si la surface du gâteau vous paraît humide.\nDémouler et laisser refroidir sur une grille.', NULL, NULL),
-(2, 'Gâteau au chocolat', 6, 'Dessert', 0, 0, NULL, 'très facile', NULL, 20, 25, NULL, 'Faire fondre le chocolat avec le beurre à feu doux. \r\nSéparer le blanc des jaunes d''oeuf. \r\nMélanger le sucre avec les jaunes d''oeuf. \r\nAjouter la maïzena puis le chocolat fondu. \r\nMonter les blancs en neige et incorporer les délicatement au mélange. \r\nVerser le mélange dans un moule beurré. \r\nFaire cuire au four thermostat 6 pendant 20 à 25mn.', NULL, NULL),
-(3, 'Gratin de courgettes', 4, 'Légume', 0, 0, NULL, 'très facile', NULL, 15, 15, NULL, 'Emincer les oignons et les faire fondre dans le beurre.\nRâper 4 courgettes avec leur peau et les ajouter aux oignons.\nMélanger le gruyère râpé, les oeufs, la crème fraîche, puis saler et poivrer.\nMettre les courgettes dans un plat et verser par dessus la sauce et faire à four chaud pendant 15 min.', NULL, NULL);
-*/
--- --------------------------------------------------------
 
 --
 -- Structure de la table `suit`

@@ -27,7 +27,7 @@
                     break;
 
                 case 'affichageSpecial':
-                    echo 'recette pour l\'affichage';
+                    $this->controleur->affichageSpecial();
                     break;
 
                 default:

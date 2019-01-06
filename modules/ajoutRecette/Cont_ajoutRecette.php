@@ -18,8 +18,8 @@
 
         public function publier(){
             $idRecette = $this->modele->publier();
-        //    header('Location: index.php?module=Recettes&action=affichageSpecial&id='.$idRecette);
-        //    exit();
+            header('Location: index.php?module=Recettes&action=affichageSpecial&id='.$idRecette);
+            exit();
 
 
         }
