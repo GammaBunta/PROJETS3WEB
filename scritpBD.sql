@@ -42,7 +42,6 @@ CREATE TABLE IF NOT EXISTS `contient` (
 CREATE TABLE IF NOT EXISTS `Ingredient` (
   `idingr` int(11) NOT NULL AUTO_INCREMENT,
   `nomingr` varchar(64) CHARACTER SET utf8 NOT NULL,
-  `unite` smallint(6) NOT NULL,
   `protide` double DEFAULT NULL,
   `lipide` double DEFAULT NULL,
   `glucide` double DEFAULT NULL,
@@ -239,7 +238,6 @@ CREATE TABLE IF NOT EXISTS `Recette` (
   `gluteenFree` tinyint(1) NOT NULL,
   `avisInternaut` int(11) DEFAULT NULL,
   `niveau` varchar(32) NOT NULL,
-  `cout` decimal(15,3) DEFAULT NULL,
   `tpsprepa` smallint(6) NOT NULL,
   `tpscuisson` smallint(6) NOT NULL,
   `tpsrepose` smallint(6) DEFAULT NULL,

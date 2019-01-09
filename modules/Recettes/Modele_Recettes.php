@@ -42,8 +42,10 @@
 
 
         public function infoRecette($id){
-
-            //TODO
+            $req = self::$bdd -> prepare('SELECT * FROM Recette where idrec=:id');
+            $req->bindParam(':id', $id);
+            $req -> execute();
+            return $req -> fetch();
 
         }
     }

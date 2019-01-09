@@ -12,7 +12,7 @@
             $idingr=$result->fetch()[0];
             $req = self::$bdd -> prepare('INSERT INTO `utiliser` (`idrec`, `idingr`, `quantite`) VALUES (:idrec,:idingr,:quantite)');
             $res = $req -> execute(array(':idrec'=>$idRecette,':idingr'=>$idingr,'quantite'=>$quantite));
-            
+
         }
 
         public function publier(){
@@ -60,14 +60,14 @@
 
             $ingredients=explode(',',$_POST['listeIngredients']);
             $quantites = explode(',',$_POST['listeQuantites']);
-            var_dump($ingredients);
-            var_dump($quantites);
             $idRecette = self::$bdd -> lastInsertId();
             $i =0;
             foreach($ingredients as $item){
                 $this->ajoutUtiliser($idRecette,$quantites[$i],$item);
                 $i++;
             }
+
+            return $idRecette;
 
         }
 
