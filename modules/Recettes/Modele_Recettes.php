@@ -48,5 +48,13 @@
             return $req -> fetch();
 
         }
+
+        public function infoIngrRecette($id){
+            $req = self::$bdd -> prepare('select * from utiliser natural join Ingredient where idrec=:id');
+            $req->bindParam(':id',$id);
+            $req -> execute();
+            return $req->fetchAll();
+
+        }
     }
 ?>

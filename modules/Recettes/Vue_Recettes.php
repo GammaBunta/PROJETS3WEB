@@ -22,8 +22,9 @@
             //TODO
             //IL RESTE A AFFICHER LES INGREDIENTS,
             foreach($ingr as $petit){
-
-           }
+                echo '</br> nom ingr : '.$petit['nomingr'];
+                echo ' quantite : '.$petit['quantite'];
+            }
             //ET LE TEXTE :   $item['textrec']
             if($item['vegetarien']==0){
                 $vege="non";

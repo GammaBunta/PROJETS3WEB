@@ -27,8 +27,9 @@
 
         public function affichageSpecial(){
             $id = $_GET['id'];
+            $ingr = $this->modele->infoIngrRecette($id);
             $info = $this->modele->infoRecette($id);
-            $this->vue->affichageRecette($info);
+            $this->vue->affichageRecette($info,$ingr);
         }
     }
 
