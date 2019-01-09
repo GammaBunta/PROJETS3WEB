@@ -41,14 +41,12 @@
             $tpsCuisson = $_POST['tpsCuisson'];
             $text = $_POST['texteRecette'];
             $avis = NULL;
-            $cout = NULL;
             $img = NULL;
             $nbavis=NULL;
             $idUser = $_SESSION['id'];
 
-            $req = self::$bdd -> prepare('INSERT INTO Recette (idrec,idUser,titre, nbpers, categorie, vegetarien, gluteenFree, avisInternaut, niveau, cout, tpsprepa, tpscuisson, tpsrepose, textrec, img, nombreAvis) values (DEFAULT,:idUser,:titre,:nbpers,:categorie,:vegetarien,:gluteen,:avisInternaut,:niveau,:cout,:tpsprepa,:tpscuisson,:tpsrepos,:textrec,:img,:nombreAvis)');
-            $res = $req -> execute(array(':idUser'=>$idUser,':titre'=> $nomRecette,':nbpers'=>$nbPers,':categorie'=>$categorie,':vegetarien'=>$vegetarien,':gluteen'=>$gluten,':avisInternaut'=> $avis,':niveau'=>$niveau,':cout'=>$cout,':tpsprepa'=>$tpsPrepa,':tpscuisson'=>$tpsCuisson,':tpsrepos'=>$tpsRepos,
-            ':textrec'=>$text,':img'=>$img,':nombreAvis'=>$nbavis));
+            $req = self::$bdd -> prepare('INSERT INTO Recette (idrec,idUser,titre, nbpers, categorie, vegetarien, gluteenFree, avisInternaut, niveau, tpsprepa, tpscuisson, tpsrepose, textrec, img, nombreAvis) values (DEFAULT,:idUser,:titre,:nbpers,:categorie,:vegetarien,:gluteen,:avisInternaut,:niveau,:tpsprepa,:tpscuisson,:tpsrepos,:textrec,:img,:nombreAvis)');
+            $res = $req -> execute(array(':idUser'=>$idUser,':titre'=> $nomRecette,':nbpers'=>$nbPers,':categorie'=>$categorie,':vegetarien'=>$vegetarien,':gluteen'=>$gluten,':avisInternaut'=> $avis,':niveau'=>$niveau,':tpsprepa'=>$tpsPrepa,':tpscuisson'=>$tpsCuisson,':tpsrepos'=>$tpsRepos,':textrec'=>$text,':img'=>$img,':nombreAvis'=>$nbavis));
 
             $res = $req -> execute();
 

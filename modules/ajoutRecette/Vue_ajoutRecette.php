@@ -98,7 +98,7 @@ class Vue_ajoutRecette extends VueGenerique{
 
                                 <div class="custom-file">
                                     <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-                                    <input type="file" class="custom-file-input" name="customFile">
+                                    <input type="file" class="custom-file-input" name="userfile">
                                     <label class="custom-file-label" for="customFile">Photo du plat<label>
                                     </div>
                                 </div>
