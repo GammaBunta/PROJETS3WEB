@@ -40,16 +40,29 @@
                                 if(move_uploaded_file($imageRecette['tmp_name'],$chemin)){
                                     echo 'img def';
                                     $img = $chemin;
-                                }
-                                else{
-                                    $img=NULL;
+                                }else{
+                                    $img = NULL;
                                 }
 
+                            }else{
+                                $img = NULL;
                             }
+
+                        }else{
+                            $img = NULL;
                         }
+
+                    }else{
+                        $img = NULL;
                     }
+                }else{
+                    $img = NULL;
                 }
+            }else{
+                $img = NULL;
             }
+
+
 
             $nomRecette = $_POST['nomRecette'];
             $categorie = $_POST['categorie'];
@@ -74,12 +87,11 @@
             $tpsRepos = $_POST['tpsRepos'];
             $tpsCuisson = $_POST['tpsCuisson'];
             $text = $_POST['texteRecette'];
-            $avis = 2.5;
             $nbavis=0;
             $idUser = $_SESSION['id'];
 
-            $req = self::$bdd -> prepare('INSERT INTO Recette (idrec,idUser,titre, nbpers, categorie, vegetarien, gluteenFree, avisInternaut, niveau, tpsprepa, tpscuisson, tpsrepose, textrec, img, nombreAvis) values (DEFAULT,:idUser,:titre,:nbpers,:categorie,:vegetarien,:gluteen,:avisInternaut,:niveau,:tpsprepa,:tpscuisson,:tpsrepos,:textrec,:img,:nombreAvis)');
-            $res = $req -> execute(array(':idUser'=>$idUser,':titre'=> $nomRecette,':nbpers'=>$nbPers,':categorie'=>$categorie,':vegetarien'=>$vegetarien,':gluteen'=>$gluten,':avisInternaut'=> $avis,':niveau'=>$niveau,':tpsprepa'=>$tpsPrepa,':tpscuisson'=>$tpsCuisson,':tpsrepos'=>$tpsRepos,':textrec'=>$text,':img'=>$img,':nombreAvis'=>$nbavis));
+            $req = self::$bdd -> prepare('INSERT INTO Recette (idrec,idUser,titre, nbpers, categorie, vegetarien, gluteenFree, avisPositif,avisNegatif, niveau, tpsprepa, tpscuisson, tpsrepose, textrec, img, nombreAvis) values (DEFAULT,:idUser,:titre,:nbpers,:categorie,:vegetarien,:gluteen,0,0,:niveau,:tpsprepa,:tpscuisson,:tpsrepos,:textrec,:img,:nombreAvis)');
+            $res = $req -> execute(array(':idUser'=>$idUser,':titre'=> $nomRecette,':nbpers'=>$nbPers,':categorie'=>$categorie,':vegetarien'=>$vegetarien,':gluteen'=>$gluten,':niveau'=>$niveau,':tpsprepa'=>$tpsPrepa,':tpscuisson'=>$tpsCuisson,':tpsrepos'=>$tpsRepos,':textrec'=>$text,':img'=>$img,':nombreAvis'=>$nbavis));
 
             if($res===FALSE){
                 echo 'non insert Recette';

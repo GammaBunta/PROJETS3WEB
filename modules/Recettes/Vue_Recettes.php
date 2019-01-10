@@ -19,27 +19,43 @@
 
 
         public function affichageRecette($item,$ingr){
-            //TODO
-            //IL RESTE A AFFICHER LES INGREDIENTS,
+
+            //FAUT GERER LES ACCENTS AVEC UTF8 ENCODE AUSSI
+
+            //si personne est co dans le onLoad on met en enable les boutons pour pouvoir voter
+            if(isset($_SESSION['id'])){
+                $co=true;
+            }else{
+                $co=false;
+            }
             foreach($ingr as $petit){
                 echo '</br> nom ingr : '.$petit['nomingr'];
                 echo ' quantite : '.$petit['quantite'];
             }
 
             //ET NOTE AVI :
-            echo $item['avisInternaut'];
+            echo '</br>nombre avis positifs : ';
+            echo $item['avisPositif'];
+
+            echo '</br>nombre avis negatif : ';
+            echo $item['avisNegatif'];
+
 
             //NB AVIS :
+            echo '</br>nombre avis  : ';
             echo $item['nombreAvis'];
-            //BOUTON pour noter :
+
+            //BOUTONS pour noter :
             echo '
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-secondary" onclick="moinsAvis()">+</button>
-              <button type="button" class="btn btn-secondary" onclick="plusAvis()">-</button>
+              <button type="button" class="btn btn-" id="plusAvis" onclick="plusAvis()" disabled><img src="./Images/thumbsup.svg" alt="pouce vers le haut "</button>
+              <button type="button" class="btn btn-" id="moinsAvis" onclick="moinsAvis()" disabled><img src="./Images/thumbsdown.svg" alt="pouce vers le bas"></button>
             </div>
 
             ';
 
+            echo '
+            ';
 
             //POUR l'image :
             echo '
@@ -63,8 +79,7 @@
                 <?php include "./composants/head.php"; ?>
                 <script type="text/javascript" src="./scripts/recette.js"> </script>
             </head>
-
-            <body>
+            <body onLoad="setId(' . $_SESSION['id'] . ');onLoad('.$co.');" >
                 <main class="mt-5 row align-items-center justify-content-center">
                     <div class="container border border-secondary rounded mt-5 p-5">
 

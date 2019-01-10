@@ -17,16 +17,60 @@
         public function ingredientExiste($nomIngr){
             $result = self::$bdd -> prepare('select * from Ingredient where nomingr=:nom');
             $result -> bindParam(':nom', $nomIngr);
-            $res = $result -> execute();
+            $result -> execute();
             return $result->fetch();
         }
 
-        public function verifVote($idRec){
+        public function userAVote($idRec,$idUser){
             $result = self::$bdd -> prepare('SELECT * from aVote where idrec=:idrec and idUser=:idUser');
             $result -> bindParam(':idrec',$idRec);
-            $result -> bindParam(':idUser',$_SESSION['id']);
-            $res = $result -> execute();
-            return $result -> fetch();
+            $result -> bindParam(':idUser',$idUser);
+            $result -> execute();
+            return $result->fetch();
+        }
+
+        public function votePlus($idrec,$idUser){
+
+            $resultNote = self::$bdd -> prepare('SELECT avisPositif from Recette where idrec=:idrec');
+            $resultNote -> bindParam(':idrec',$idrec);
+            $resultNote -> execute();
+            $res = $resultNote -> fetch();
+            $notetmp = $res['avisPositif'];
+
+            $note= $notetmp+1;
+            $result = self::$bdd -> prepare('UPDATE Recette SET avisPositif=:note where idrec=:idrec');
+            $result -> bindParam(':idrec',$idrec);
+            $result -> bindParam(':note',$note);
+            $result -> execute();
+
+            $result = self::$bdd -> prepare('INSERT INTO aVote (`idrec`,`idUser`) VALUES (:idrec,:iduser)');
+            $result -> bindParam(':idrec',$idrec);
+            $result -> bindParam(':iduser',$idUser);
+            $result -> execute();
+
+
+
+        }
+
+        public function voteMoins($idrec, $idUser){
+            $resultNote = self::$bdd -> prepare('SELECT avisNegatif from Recette where idrec=:idrec');
+            $resultNote -> bindParam(':idrec',$idrec);
+            $resultNote -> execute();
+            $res = $resultNote -> fetch();
+            $notetmp = $res['avisNegatif'];
+
+            $note= $notetmp+1;
+            $result = self::$bdd -> prepare('UPDATE Recette SET avisNegatif=:note where idrec=:idrec');
+            $result -> bindParam(':idrec',$idrec);
+            $result -> bindParam(':note',$note);
+            $result -> execute();
+
+
+            $result = self::$bdd -> prepare('INSERT INTO aVote (`idrec`,`idUser`) VALUES (:idrec,:iduser)');
+            $result -> bindParam(':idrec',$idrec);
+            $result -> bindParam(':iduser',$idUser);
+            $result -> execute();
+
         }
     }
 ?>

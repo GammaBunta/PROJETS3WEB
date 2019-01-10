@@ -155,8 +155,8 @@ INSERT INTO `Ingredient` (`idingr`, `nomingr`, `protide`, `lipide`, `glucide`, `
 -- Contenu de la table `Recette`
 --
 
-INSERT INTO Recette (idrec,idUser,titre, nbpers, categorie, vegetarien, gluteenFree, avisInternaut, niveau, tpsprepa, tpscuisson, tpsrepose, textrec, img, nombreAvis) values
-(1, 1, 'Risotto aux champignons','1','Plat',1,0,2.5,'Intermédiaire', 45,30,0,'Séparer les champignons en deux (préférer des cèpes) : une partie servira à élaborer le bouillon et cuira avec le riz.
+INSERT INTO Recette (idrec,idUser,titre, nbpers, categorie, vegetarien, gluteenFree, avisPositif,avisNegatif, niveau, tpsprepa, tpscuisson, tpsrepose, textrec, img, nombreAvis) values
+(1, 1, 'Risotto aux champignons','1','Plat',1,0,0,0,'Intermédiaire', 45,30,0,'Séparer les champignons en deux (préférer des cèpes) : une partie servira à élaborer le bouillon et cuira avec le riz.
 L\'autre partie sera poêlé au dernier moment pour la présentation et mettre en avant le champignon tout en conservant une texture ferme.
 Faire blondir dans une casserole un demi-oignon émincé dans un mélange de beurre et d\'huile d\'olive.
 Ajouter et poêler les champignons.

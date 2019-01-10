@@ -1,25 +1,43 @@
+var id;
 
-$(window).load(function(){
-    alert("oui");
-});
+function setId(idUser){
+  id = idUser;
+}
+
+
+function onLoad(co){
+    idrecette =  document.URL.charAt( document.URL.length - 1 );
+    if(co){
+        $.get("./ajax/ajaxVerifVoteRecette.php", {idrec : idrecette , idUser : id}).done(function(data){
+            if(data==1){
+                alert("deja vote");
+            }else{
+                document.getElementById("plusAvis").disabled = false;
+                document.getElementById("moinsAvis").disabled = false;
+            }
+        });
+
+
+    }else{
+        alert("pas connecté")
+    }
+}
 
 function moinsAvis(){
-    $.get("./ajax/ajaxAjoutRecette.php", {idrec : url.charAt( url.length - 1 )}).done(function(data){
-
-    }
-
+    idrecette =  document.URL.charAt( document.URL.length - 1 );
+    $.get("./ajax/ajaxMoinsRecette.php", {idrec : idrecette, idUser : id}).done(function(data){
+    });
 }
 
 function plusAvis(){
-
+    idrecette =  document.URL.charAt( document.URL.length - 1 );
+    $.get("./ajax/ajaxPlusRecette.php", {idrec : idrecette, idUser : id}).done(function(data){
+        alert(data);
+        window.location.replace("index.php?module=Recettes&action=affichageSpecial&id="+idrecette);
+    });
 }
 
 function disableVoteButton(){
     document.getElementById("myBtn").disabled = true;
-    $.get("./ajax/ajaxRecette.php", {idrec : url.charAt( url.length - 1 )}).done(function(data){
-        if(data==1){
-            alert("deja vôté");
-        }else{
-            alert("pas vôté");
-        }
+
 }

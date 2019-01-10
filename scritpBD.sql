@@ -83,7 +83,8 @@ CREATE TABLE IF NOT EXISTS `Recette` (
   `categorie` varchar(32) NOT NULL,
   `vegetarien` tinyint(1) NOT NULL,
   `gluteenFree` tinyint(1) NOT NULL,
-  `avisInternaut` float(11) DEFAULT NULL,
+  `avisPositif` int(11) DEFAULT NULL,
+  `avisNegatif` int(11) DEFAULT NULL,
   `niveau` varchar(32) NOT NULL,
   `tpsprepa` smallint(6) NOT NULL,
   `tpscuisson` smallint(6) NOT NULL,
@@ -144,6 +145,7 @@ CREATE TABLE IF NOT EXISTS `utiliser` (
 CREATE TABLE IF NOT EXISTS `aVote` (
   `idrec` int(11) NOT NULL,
   `idUser` int(11) NOT NULL,
+
   PRIMARY KEY (`idrec`,`idUser`),
   KEY `aVote_Recette0_FK` (`idrec`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
