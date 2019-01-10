@@ -14,8 +14,7 @@
             if($req->execute()){
                 $res = $req -> fetch();
                 $id = $res['idUser'];
-                if(strcmp($mdp, $res['password'] )==0 ){
-                    var_dump($id);
+                if(strcmp($mdp, $res['password'])==0){;
                     $_SESSION['id'] = $id;
                     return true;
                 }

@@ -25,6 +25,27 @@
                 echo '</br> nom ingr : '.$petit['nomingr'];
                 echo ' quantite : '.$petit['quantite'];
             }
+
+            //ET NOTE AVI :
+            echo $item['avisInternaut'];
+
+            //NB AVIS :
+            echo $item['nombreAvis'];
+            //BOUTON pour noter :
+            echo '
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-secondary" onclick="moinsAvis()">+</button>
+              <button type="button" class="btn btn-secondary" onclick="plusAvis()">-</button>
+            </div>
+
+            ';
+
+
+            //POUR l'image :
+            echo '
+            <img src="'.$item['img'].'" alt="Photo de la Recette">';
+
+
             //ET LE TEXTE :   $item['textrec']
             if($item['vegetarien']==0){
                 $vege="non";
@@ -40,7 +61,7 @@
             echo '
             <head>
                 <?php include "./composants/head.php"; ?>
-                <script type="text/javascript" src="./scripts/ajoutRecette.js"> </script>
+                <script type="text/javascript" src="./scripts/recette.js"> </script>
             </head>
 
             <body>

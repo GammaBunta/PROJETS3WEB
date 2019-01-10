@@ -72,6 +72,9 @@ $(document).ready(function(){
 }
 );
 
+function moinsAvis(){
+
+}
 
 function ajoutCuisiner(nomingr){
     var li = document.getElementById(nomingr);

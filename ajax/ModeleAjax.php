@@ -20,5 +20,13 @@
             $res = $result -> execute();
             return $result->fetch();
         }
+
+        public function verifVote($idRec){
+            $result = self::$bdd -> prepare('SELECT * from aVote where idrec=:idrec and idUser=:idUser');
+            $result -> bindParam(':idrec',$idRec);
+            $result -> bindParam(':idUser',$_SESSION['id']);
+            $res = $result -> execute();
+            return $result -> fetch();
+        }
     }
 ?>
