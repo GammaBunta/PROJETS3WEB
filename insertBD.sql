@@ -200,6 +200,6 @@ INSERT INTO `utiliser` (`idrec`,`idingr`,`quantite`) values
 -- Contenu de la table `possede`
 --
 
-INSERT INTO `possede` (`idingr`, `idUser`, `quantite`) VALUES
-(1, 1, 3),
-(50, 1, 4);
+INSERT INTO `possede` (`idingr`, `idUser`, `quantite`, `datePeremption`) VALUES
+(1, 1, 3,'2019/01/02'),
+(50, 1, 4,'2019/01/02');
