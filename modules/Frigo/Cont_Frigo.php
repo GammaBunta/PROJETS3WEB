@@ -13,7 +13,8 @@
 
         public function init(){
             $tab = $this->modele->getLaitiers();
-            $this->vue-> afficheInit($tab);
+            $tab2 = $this->modele->getLaitiers2();
+            $this->vue-> afficheInit($tab, $tab2);
         }
 
     }
