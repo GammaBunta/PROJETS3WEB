@@ -13,5 +13,12 @@
             return $result->fetchAll();
         }
 
+        public function getLaitiers2(){
+            $result = self::$bdd -> prepare('select * from Ingredient where famille= "Produits Laitiers"');
+            $res = $result -> execute();
+            return $result->fetchAll();
+
+        }
+
     }
 ?>
