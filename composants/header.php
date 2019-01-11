@@ -2,7 +2,7 @@
 	<nav class="navbar navbar-expand-lg navbar-success bg-success">
 		<a id="ofrigo" class="float-left ml-5" href="index.php"><img  src="./Images/logo_blanc.png" /><a>
 			<div class="collapse navbar-collapse" id="navbarText">
-				<ul class="navbar-nav mr-auto">
+				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
 						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 					</li>
@@ -13,9 +13,7 @@
 						<a class="nav-link" href="#">Pricing</a>
 					</li>
 				</ul>
-				<span class="navbar-text">
-					Navbar text with an inline element
-				</span>
+				
 			</div>
 		</nav>
 	</header>
