@@ -13,18 +13,15 @@
 						<a class="nav-link" href="#">Pricing</a>
 					</li>
 				</ul>
-				
+
 			</div>
 		</nav>
 	</header>
 	<!-- fin header du site -->
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	
 
-
-	</nav>
-
-
+<!---
 	<?php
 	if(isset($_SESSION['id'])){
 		echo '<a href="index.php?module=Connexion&action=deconnexion" class="text-center h6">Deconnexion</a>';
@@ -33,3 +30,4 @@
 		echo '<a href="index.php?module=Connexion" class="text-center h6">Connexion</a>';
 	}
 	?>
+-->
