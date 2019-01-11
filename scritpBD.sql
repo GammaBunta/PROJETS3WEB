@@ -61,6 +61,7 @@ CREATE TABLE IF NOT EXISTS `possede` (
   `idingr` int(11) NOT NULL,
   `idUser` int(11) NOT NULL,
   `quantite` double NOT NULL,
+  'date' date NOT NULL,
   PRIMARY KEY (`idingr`,`idUser`),
   KEY `possede_Utilisateur0_FK` (`idUser`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
