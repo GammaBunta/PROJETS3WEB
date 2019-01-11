@@ -1,5 +1,8 @@
-<footer class="page-footer font-small bg-success ">
-		<div class="row ">
-			<p class="mx-auto pt-2">Site réalisé par Sarah Brood, Samuel Michel, Arthur Vadrot et Bootstrap</p>
-		</div>
+<footer class="card-footer font-small bg-success">
+      <div class="container">
+          <div class="col-4 text-center">
+                  <a href="index.php" id="ofrigo" class="text-center h4">O•FR!GO</a>
+
+          </div>
+      </div>
 </footer>

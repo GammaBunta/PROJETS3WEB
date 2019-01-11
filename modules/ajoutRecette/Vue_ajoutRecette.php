@@ -13,6 +13,7 @@ class Vue_ajoutRecette extends VueGenerique{
             <?php include "./composants/head.php"; ?>
             <script type="text/javascript" src="./scripts/ajoutRecette.js"> </script>
         </head>
+
         <body>
             <main class="mt-5 row align-items-center justify-content-center"">
             <form action="./index.php?module=ajoutRecette&action=publier" enctype="multipart/form-data" method="post" id="form" >

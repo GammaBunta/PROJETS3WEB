@@ -11,6 +11,8 @@ function onLoad(co){
         $.get("./ajax/ajaxVerifVoteRecette.php", {idrec : idrecette , idUser : id}).done(function(data){
             if(data==1){
                 alert("deja vote");
+                document.getElementById("plusAvis").disabled = true;
+                document.getElementById("moinsAvis").disabled = true;
             }else{
                 document.getElementById("plusAvis").disabled = false;
                 document.getElementById("moinsAvis").disabled = false;
