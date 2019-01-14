@@ -51,18 +51,18 @@
                                                                 <button type="button" class="btn btn-success float-right" data-toggle="collapse" data-target="#'.$id.'" aria-expanded="false" aria-controls="'.$id.'">
                                                                 +
                                                                 </button>
-                                                                    <div class="container collapse  mt-4 p-1" id="'.$id.'" required>
+                                                                    <div class="container collapse mt-4 p-1" id="'.$id.'">
                                                                       <label for="dte">Date de peremption :</label>
                                                                       <div class = "row">
                                                                         <div class="col-sm-5">
-                                                                          <input id="'.$iddate.'" type="date"  name="date" class="date" required>
+                                                                          <input id="'.$iddate.'" type="date"  name="date" class="date">
                                                                         </div>
                                                                       </div>
                                                                       <label for="quantite">Quantite :</label>
                                                                       <div class = "row">
 
                                                                         <div class="col-sm-5">
-                                                                          <input class="form-control" type="number" min="1" id="'.$idquantite.'"  min="0" max="64" name="quantite" required>
+                                                                          <input class="form-control" type="number" min="1" id="'.$idquantite.'"  min="0" max="64" name="quantite">
                                                                         </div>
                                                                       </div>
                                                                       <div class = "row">
@@ -94,7 +94,10 @@
                                         <ul class="list-group">';
 
                                         foreach($res as $item){
-                                           echo utf8_encode(' <li href="#"  class="list-group-item list-group-item-action list-group-item-success text-left col-12"><acronnym title ="Quantite :'.$item['quantite'].'">'.$item['nomingr'].'</acronym><button type="button" onclick="ajoutCuisiner(\''.$item['nomingr'].'\')" class="btn btn-success float-right" >+</button></li>');
+                                           echo utf8_encode(' <li href="#"  class="list-group-item list-group-item-action list-group-item-success text-left col-12"><acronnym title ="Quantite :'.$item['quantite'].'">'.$item['nomingr'].'</acronym>
+                                               <button type="button" onclick="retirerun(\''.$item['idingr'].'\')" class="btn btn-success float-right ml-1"><img   style="height: 22px;width:22px;" src="./Images/trash.svg" alt="-1 ingrédient "/></button>
+                                           <button type="button" onclick="ajoutCuisiner(\''.$item['nomingr'].'\')" class="btn btn-success float-right" >+</button><acronym title="retirer 1 '.$item['nomingr'].'"></acronym>
+                                           ');
 
                                         }
                                         echo'
