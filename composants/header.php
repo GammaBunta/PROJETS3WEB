@@ -1,8 +1,8 @@
 <header>
 	<nav class="navbar navbar-expand-lg navbar-success bg-success">
 		<div class="container-fluid">
-			<a id="ofrigo" class="navbar-brand" href="index.php" ><img  src="./Images/logo_blanc.png" width="40" height="40" alt="logofrigo"/></a>
 			<div class="float-left">
+			<a id="ofrigo" class="navbar-brand float-left" href="index.php" ><img  src="./Images/logo_blanc.png" width="40" height="40" alt="logofrigo"/></a>
 			<ul class="nav navbar-nav">
 			  <li class="nav-item">
 			    <a class="nav-link text-light" href="index.php">Accueil</a>
