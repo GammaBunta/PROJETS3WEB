@@ -17,11 +17,8 @@
 			</div>
 		</nav>
 	</header>
-	<!-- fin header du site -->
 
-	
 
-<!---
 	<?php
 	if(isset($_SESSION['id'])){
 		echo '<a href="index.php?module=Connexion&action=deconnexion" class="text-center h6">Deconnexion</a>';
@@ -30,4 +27,3 @@
 		echo '<a href="index.php?module=Connexion" class="text-center h6">Connexion</a>';
 	}
 	?>
--->

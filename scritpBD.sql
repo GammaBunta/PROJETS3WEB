@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `ListeDeCourse` (
 CREATE TABLE IF NOT EXISTS `possede` (
   `idingr` int(11) NOT NULL,
   `idUser` int(11) NOT NULL,
-  `quantite` double NOT NULL,
+  `quantite` int(11) NOT NULL,
   `datePeremption` DATE NOT NULL,
   PRIMARY KEY (`idingr`,`idUser`),
   KEY `possede_Utilisateur0_FK` (`idUser`)

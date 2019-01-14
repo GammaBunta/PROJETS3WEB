@@ -17,7 +17,7 @@
             	<title>Frigo</title>
             </head>
 
-            <body onload="setId(' . $_SESSION['id'] . ');">
+            <body onload="setId(' . $_SESSION['id'] . ');minDate();">
              	<main class="text-center padding-bottom padding-top-xl mb-4">
                     <div class="container mt-5 mb-3">
                             <div class="row">
@@ -36,54 +36,49 @@
                                    </div>
                               </div>
                               <div class="text-left col-3">
-                                <h4 id="titre1" class="text-light bg-dark border border-secondary mb-0">
+                                <h4 id="titre1" class="text-light bg-dark border border-secondary mb-0 centered">
                                   Ajouter Produits Laitiers
                                 </h4>
                                 <div  class="pre-scrollable bg-light border border-secondary" style="height: 266.2px;">
-                                    <div id="listeIngr">
-                                        <ul class="list-group">
+                                    <div >
+                                        <ul id="listeIngrTout" class="list-group">
                                         ';
-                                        $compteur = 0;
-                                        $id ="item".$compteur;
                                         foreach($res2 as $item){
-                                          $id ="item".$compteur;
+                                          $id =$item['idingr'];
+                                          $idquantite = "quantite".$id;
+                                          $iddate = "date".$id;
                                            echo utf8_encode(' <li class="list-group-item list-group-item-action list-group-item-success text-left col-12">'.$item['nomingr'].'
-                                                                <button type="button" onclick="ajout\''.$item['nomingr'].'\')" class="btn btn-success float-right" data-toggle="collapse" data-target="#'.$id.'" aria-expanded="false" aria-controls="'.$id.'">
+                                                                <button type="button" class="btn btn-success float-right" data-toggle="collapse" data-target="#'.$id.'" aria-expanded="false" aria-controls="'.$id.'">
                                                                 +
                                                                 </button>
-                                                                <div class="container collapse bg-white  mt-4 p-1" id="'.$id.'">
-                                                                <form>
-                                                                  <label for="dte">Date de peremption :</label>
-                                                                  <div class = "row">
-                                                                    <div class="col-sm-5">
-                                                                      <input type="date" name="date">
+                                                                    <div class="container collapse  mt-4 p-1" id="'.$id.'" required>
+                                                                      <label for="dte">Date de peremption :</label>
+                                                                      <div class = "row">
+                                                                        <div class="col-sm-5">
+                                                                          <input id="'.$iddate.'" type="date"  name="date" class="date" required>
+                                                                        </div>
+                                                                      </div>
+                                                                      <label for="quantite">Quantite :</label>
+                                                                      <div class = "row">
+
+                                                                        <div class="col-sm-5">
+                                                                          <input class="form-control" type="number" min="1" id="'.$idquantite.'"  min="0" max="64" name="quantite" required>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class = "row">
+                                                                        <div class="col-12 mt-2">
+                                                                          <button id="submit" onclick="submitAjoutFrigo(\''.$id.'\')" class="btn btn-success float-right">Ajouter</button>
+                                                                        </div>
+                                                                      </div>
+                                                                      <input id="idingr" name="idingr" type="hidden" value="'.$id.'">
                                                                     </div>
-                                                                  </div>
-                                                                  <label for="quantite">Quantite :</label>
-                                                                  <div class = "row">
-
-                                                                    <div class="col-sm-5">
-                                                                      <input class="form-control" type="number"  min="0" max="64" name="quantite">
-
-                                                                    </div>
-                                                                  </div>
-                                                                  <div class = "row">
-                                                                    <div class="col-12 mt-2">
-                                                                      <button type="submit" class="btn btn-success float-right">Ajouter</button>
-
-                                                                    </div>
-                                                                  </div>
-                                                                </form>
+                                                                  </li>
 
 
-
-                                                                </div>
-                                                              </li>
 
                                                               ');
-                                        $compteur ++;
 
-                                        }
+                                    }
                                         echo'
                                         </ul>
                                     </div>
@@ -92,6 +87,7 @@
                               <div class="col-4 offset-md-2">
                                 <h4 id="titre" class="text-light bg-dark border border-secondary mb-0">
                                   Produits Laitiers
+                                  <button type="button" class="btn btn- btn-success" onclick="refresh()"><img   style="height: 20px;" src="./Images/refresh.png" alt="pouce vers le haut "</button>
                                 </h4>
                                 <div  class="pre-scrollable bg-light border border-secondary" style="height: 266.2px;">
                                     <div id="listeIngr">
