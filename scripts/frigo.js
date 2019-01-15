@@ -121,7 +121,6 @@ function submitAjoutFrigo(idingr){
     if(date!=0 && quantite!=0){
         $.get("./ajax/ajaxModifFrigo.php", {quantite : quantite, date : date , idUser : id , idingr : idingr}).done(function(data){
                 alert("Vous avez ajouté "+quantite+" "+data);
-                refresh();
         });
     }
 

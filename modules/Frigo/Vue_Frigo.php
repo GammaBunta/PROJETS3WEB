@@ -43,15 +43,17 @@
                                     <div >
                                         <ul id="listeIngrTout" class="list-group">
                                         ';
+                                        $compteur=0;
                                         foreach($res2 as $item){
+                                            $idcollapse="item".$compteur;
                                           $id =$item['idingr'];
                                           $idquantite = "quantite".$id;
                                           $iddate = "date".$id;
                                            echo utf8_encode(' <li class="list-group-item list-group-item-action list-group-item-success text-left col-12">'.$item['nomingr'].'
-                                                                <button type="button" class="btn btn-success float-right" data-toggle="collapse" data-target="#'.$id.'" aria-expanded="false" aria-controls="'.$id.'">
+                                                                <button type="button" class="btn btn-success float-right" data-toggle="collapse" data-target="#'.$idcollapse.'" aria-expanded="false" aria-controls="'.$idcollapse.'">
                                                                 +
                                                                 </button>
-                                                                    <div class="container collapse mt-4 p-1" id="'.$id.'">
+                                                                    <div class="container collapse bg-white mt-4 p-1" id="'.$idcollapse.'">
                                                                       <label for="dte">Date de peremption :</label>
                                                                       <div class = "row">
                                                                         <div class="col-sm-5">
@@ -77,8 +79,10 @@
 
 
                                                               ');
+                                                              $compteur++;
 
                                     }
+
                                         echo'
                                         </ul>
                                     </div>
