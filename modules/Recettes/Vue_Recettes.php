@@ -23,7 +23,7 @@
             <div class="container">
 
               <!-- Page Heading -->
-              <h1 class="my-4 text-light bg-success mt-5">TOUTES LES RECETTES DISPONIBLES
+              <h1 class="my-4 text-light bg-success mt-5">TOUTES LES RECETTES DISPONIBLES OUI
               </h1>
 
               ';
