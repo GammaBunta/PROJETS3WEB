@@ -48,7 +48,7 @@
                                         foreach($res2 as $item){
                                           $id ="item".$compteur;
                                            echo utf8_encode(' <li class="list-group-item list-group-item-action list-group-item-success text-left col-12">'.$item['nomingr'].'
-                                                                <button type="button" onclick="ajout\''.$item['nomingr'].'\')" class="btn btn-success float-right" data-toggle="collapse" data-target="#'.$id.'" aria-expanded="false" aria-controls="'.$id.'">
+                                                                <button type="button" class="btn btn-success float-right" data-toggle="collapse" data-target="#'.$id.'" aria-expanded="false" aria-controls="'.$id.'">
                                                                 +
                                                                 </button>
                                                                 <div class="container collapse bg-white  mt-4 p-1" id="'.$id.'">
