@@ -198,7 +198,6 @@
                 </main>
             </body>';
         }
-        echo' bonjour';
 
     }
 ?>
