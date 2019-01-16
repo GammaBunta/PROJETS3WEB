@@ -12,7 +12,11 @@
         }
 
         public function init(){
-            $this->vue-> afficheInit();
+            if(isset($_SESSION['id'])){
+                $this->vue->afficheInitCo();
+            }else{
+                $this->vue->afficheInitPasCo();
+            }
         }
 
 

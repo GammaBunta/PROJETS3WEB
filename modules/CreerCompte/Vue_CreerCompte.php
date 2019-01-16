@@ -13,12 +13,13 @@
 
         public function afficheInit(){
         	echo '
+
         	<body>
-			 	<main class="text-center padding-bottom padding-top-xl" style="min-height: calc(72.5vh);">
+			 	<main class="text-center padding-bottom padding-top-xl mt-5   " style="min-height: calc(72.5vh);">
 			        <a class="logo logo-lg" href="index.php">
 
 			        </a>
-			        <div class="col-4 container bg-light border border-primary rounded mt-5">
+			        <div class="col-4 container bg-light border border-primary mt-5 rounded ">
 			            <p>
 			                <h1 class="display-5">
 			                    Créer un compte

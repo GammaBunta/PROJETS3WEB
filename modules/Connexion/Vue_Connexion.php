@@ -14,15 +14,11 @@
 
         public function afficheInit(){
             echo'
-            <head>
-              <title>Connexion</title>
-            </head>
-            <body>
-              <main class="text-center padding-bottom padding-top-xl" style="min-height: calc(72.5vh);">
-                    <a class="logo logo-lg" href="index.php">
 
-                    </a>
-                    <div class="col-4 container bg-light border border-primary rounded mt-5">
+            <body>
+              <main class="text-center padding-bottom padding-top-xl mt-5 ">
+                <div class ="row mt-5">
+                    <div class="col-4 container bg-light border border-primary rounded mt-5   ">
                         <p>
                             <h1 class="display-5">
                                 Connexion
@@ -72,6 +68,7 @@
                             Pas encore inscrit ?
                             <a href="./index.php?module=CreerCompte">Créer un compte.</a></small>
                         </p>
+                    </div>
                     </div>
                 </main>
             </body>

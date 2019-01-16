@@ -18,7 +18,7 @@ class Vue_ajoutRecette extends VueGenerique{
             <main class="mt-5 row align-items-center justify-content-center"">
             <form action="./index.php?module=ajoutRecette&action=publier" enctype="multipart/form-data" method="post" id="form" >
                 <div class="container ">
-                    <div class="row">
+                    <div class="row mt-5">
                         <div class="col-">
 
                                 <div class="form-group ">

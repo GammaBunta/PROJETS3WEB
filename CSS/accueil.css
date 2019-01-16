@@ -1,8 +1,9 @@
 body{
 width: 100%;
 background-color:white;
-background-image:url(../Images/fondFrigo.jpg);
+background-image:url(../Images/accueil.jpg);
 overflow-x: hidden;
 overflow: scroll;
 background-repeat:no-repeat;
+background-size: 100%;
 }

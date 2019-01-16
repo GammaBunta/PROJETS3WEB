@@ -1,5 +1,5 @@
 <header>
-	<nav class="navbar navbar-expand-lg navbar-success bg-success">
+	<nav class="navbar navbar-expand-lg navbar-success bg-success fixed-top">
 		<div class="container-fluid">
 			<div class="float-left">
 			<a id="ofrigo" class="navbar-brand float-left" href="index.php" ><img  src="./Images/logo_blanc.png" width="40" height="40" alt="logofrigo"/></a>
@@ -11,7 +11,14 @@
 			    <a class="nav-link dropdown-toggle text-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Recettes</a>
 			    <div class="dropdown-menu">
 			      <a class="dropdown-item" href="index.php?module=Recettes">Recettes disponibles</a>
-			      <a class="dropdown-item" href="index.php?module=ajoutRecette">Créer une recette</a>
+				  <?php
+				  if(isset($_SESSION['id'])){
+					  echo '<a class="dropdown-item" href="index.php?module=ajoutRecette">Publier une recette</a>';
+				  }else{
+					  echo '<a class="dropdown-item disabled" >Publier une recette</a>';
+				  }
+				  ?>
+
 			    </div>
 			  </li>
 				<li class="nav-item">

@@ -21,6 +21,10 @@
                 case 'rechercheSpeciale':
                     $this->controleur->rechercheSpeciale();
                     break;
+                    
+                case 'rechercheNormale':
+                    $this->controleur->rechercheNormale();
+                    break;
 
                 case 'affichageSpecial':
                     $this->controleur->affichageSpecial();

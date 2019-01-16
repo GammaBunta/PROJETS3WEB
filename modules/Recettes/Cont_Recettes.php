@@ -16,6 +16,11 @@
             $this->vue-> afficheInit($tab);
         }
 
+        public function rechercheNormale(){
+            $tab = $this->modele->rechercheNormale();
+            $this->vue->afficheInit($tab);
+        }
+
         public function rechercheSpeciale(){
             $array=explode(',',$_GET['ingredients']);
             $tab = $this->modele->rechercheSpeciale($array);

@@ -7,7 +7,6 @@
       require_once('./modules/Recettes/Recettes.php');
       require_once('./modules/CreerCompte/CreerCompte.php');
       require_once('./modules/ajoutRecette/ajoutRecette.php');
-      require_once('./modules/ModifFrigo/ModifFrigo.php');
 
 
        if(isset($_GET['module'])){
@@ -22,7 +21,6 @@
            case 'Accueil':
            case 'Frigo':
            case 'Connexion':
-           case 'ModifFrigo':
            case 'Recettes':
            case 'CreerCompte':
            case 'ajoutRecette':

@@ -18,7 +18,7 @@
             </head>
 
             <body onload="setId(' . $_SESSION['id'] . ');minDate();">
-             	<main class="text-center padding-bottom padding-top-xl mb-4">
+             	<main class="text-center padding-bottom padding-top-xl mt-5 mb-5">
                     <div class="container mt-5 mb-3">
                             <div class="row">
                               <div id="ul1"  class="col-3">

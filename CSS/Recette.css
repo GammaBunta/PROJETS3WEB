@@ -6,3 +6,7 @@ overflow-x: hidden;
 overflow: scroll;
 background-repeat:no-repeat;
 }
+
+.form-check-input{
+    outline: 1px solid #1e5180
+}
