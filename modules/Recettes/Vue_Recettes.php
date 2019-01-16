@@ -175,9 +175,9 @@
                               <h4 class="container-fluid font-weight-bold text-success-dark text-center">Recette</h4>
                           </div>
                           <div class="row mt-4">
-                              <div class="col-4">
+                              <div class="col-4 mr-5 ml-5">
                               </div>
-                                  <div class="col-6">';
+                              <div class="col-6 ml-5">';
                                     echo utf8_encode($item['textrec']);
                                 echo'  </div>
                               </div>
