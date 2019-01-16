@@ -19,12 +19,9 @@
         public function rechercheSpeciale(){
             $array=explode(',',$_GET['ingredients']);
             $tab = $this->modele->rechercheSpeciale($array);
-            $this->vue->afficherRechercheSpeciale($tab);
+            $this->vue->afficheInit($tab);
         }
 
-        public function rechercheSimple(){
-            //TODO
-        }
 
         public function affichageSpecial(){
             $id = $_GET['id'];

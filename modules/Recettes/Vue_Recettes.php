@@ -61,7 +61,7 @@
 
               echo '
                   <!-- Pagination -->
-                  <ul class="pagination justify-content-center">
+                  <ul class="pagination justify-content-center mt-5">
                     <li class="page-item">
                       <a class="page-link" href="#" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
@@ -95,7 +95,7 @@
 
         }
 
-        
+
 
         public function affichageRecette($item,$ingr){
 
