@@ -93,17 +93,9 @@
 
         ';
 
-<<<<<<< HEAD
-=======
-        public function afficherRechercheSpeciale($array){
-
-            foreach($array as $item){
-                 echo utf8_encode(' </br> Titre : '.$item['titre'].' </br> nb personne : '.$item['nbpers'].' </br> Categorie : '.$item['categorie'].' </br> Texte : '.$item['textrec']);
-           }
->>>>>>> 6712141d417d988e682a07ba27d1f41c4659df03
         }
 
-        
+
 
         public function affichageRecette($item,$ingr){
 
