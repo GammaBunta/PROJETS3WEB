@@ -4,82 +4,127 @@ function setId(idUser){
   id = idUser;
 }
 
+
 $(document).ready(function(){
+    var bouton = "<button type=\"button\" class=\"btn btn- btn-success\" onclick=\"refresh()\"><img style=\"height: 20px;\" src=\"./Images/refresh.png\" alt=\"pouce vers le haut \"</button>"
     $("#lait").click(function(){
-        document.getElementById("titre").innerHTML="Produits Laitiers";
+        document.getElementById("titre").innerHTML="Produits Laitiers"+bouton;
         document.getElementById("titre1").innerHTML="Ajouter Produits Laitiers";
         $.get("./ajax/ajaxFrigo.php", {famille : "Produits Laitiers", id: id}).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
+        });
+        $.get("./ajax/ajaxFrigoTout.php", {famille : "Produits Laitiers"}).done(function(data){
+            document.getElementById("listeIngrTout").innerHTML= data;
+            minDate();
         });
     }
 );
 
     $("#viandes").click(function(){
-        document.getElementById("titre").innerHTML="Viandes";
+        document.getElementById("titre").innerHTML="Viandes"+bouton;
         document.getElementById("titre1").innerHTML="Ajouter Viandes";
         $.get("./ajax/ajaxFrigo.php", {famille : "Viandes", id: id}).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
+        });
+        $.get("./ajax/ajaxFrigoTout.php", {famille : "Viandes"}).done(function(data){
+            document.getElementById("listeIngrTout").innerHTML= data;
+            minDate();
         });
     }
 );
 
     $("#legumes").click(function(){
-        document.getElementById("titre").innerHTML="Legumes";
+        document.getElementById("titre").innerHTML="Legumes"+bouton;
         document.getElementById("titre1").innerHTML="Ajouter Legumes";
         $.get("./ajax/ajaxFrigo.php", {famille : "Legumes", id : id }).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
+        });
+        $.get("./ajax/ajaxFrigoTout.php", {famille : "Legumes"}).done(function(data){
+            document.getElementById("listeIngrTout").innerHTML= data;
+            minDate();
         });
     }
 );
 
     $("#fruits").click(function(){
-        document.getElementById("titre").innerHTML="Fruits";
+        document.getElementById("titre").innerHTML="Fruits"+bouton;
         document.getElementById("titre1").innerHTML="Ajouter Fruits";
         $.get("./ajax/ajaxFrigo.php", {famille : "Fruits", id : id }).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
+        });
+        $.get("./ajax/ajaxFrigoTout.php", {famille : "Fruits"}).done(function(data){
+            document.getElementById("listeIngrTout").innerHTML= data;
+            minDate();
         });
     }
 );
 
     $("#feculents").click(function(){
-        document.getElementById("titre").innerHTML="Féculents";
+        document.getElementById("titre").innerHTML="Féculents"+bouton;
         document.getElementById("titre1").innerHTML="Ajouter Féculents";
         $.get("./ajax/ajaxFrigo.php", {famille : "Feculents", id : id }).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
+        });
+        $.get("./ajax/ajaxFrigoTout.php", {famille : "Feculents" }).done(function(data){
+            document.getElementById("listeIngrTout").innerHTML= data;
+            minDate();
         });
     }
 );
 
     $("#condiments").click(function(){
-        document.getElementById("titre").innerHTML="Condiments";
+        document.getElementById("titre").innerHTML="Condiments"+bouton;
         document.getElementById("titre1").innerHTML="Ajouter Condiments";
         $.get("./ajax/ajaxFrigo.php", {famille : "Condiments", id : id }).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
+        });
+        $.get("./ajax/ajaxFrigoTout.php", {famille : "Condiments" }).done(function(data){
+            document.getElementById("listeIngrTout").innerHTML= data;
+            minDate();
         });
     }
 );
 
 
     $("#autres").click(function(){
-        document.getElementById("titre").innerHTML="Autres";
+        document.getElementById("titre").innerHTML="Autres"+bouton;
         document.getElementById("titre1").innerHTML="Ajouter Autres";
         $.get("./ajax/ajaxFrigo.php", {famille : "Autre", id : id }).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
+        });
+        $.get("./ajax/ajaxFrigoTout.php", {famille : "Autre" }).done(function(data){
+            document.getElementById("listeIngrTout").innerHTML= data;
+            minDate();
         });
     }
 );
 
     $("#epicerie").click(function(){
-        document.getElementById("titre").innerHTML="Epicerie";
+        document.getElementById("titre").innerHTML="Epicerie"+bouton;
         $.get("./ajax/ajaxFrigo.php", {famille : "Epicerie", id : id }).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
         });
+        $.get("./ajax/ajaxFrigoTout.php", {famille : "Epicerie" }).done(function(data){
+            document.getElementById("listeIngrTout").innerHTML= data;
+            minDate();
+        });
     }
-);
-}
+
 );
 
-function moinsAvis(){
+
+});
+
+function submitAjoutFrigo(idingr){
+    var quantite = document.getElementById("quantite"+idingr).value;
+    var date = document.getElementById("date"+idingr).value;
+    if(date!=0 && quantite!=0){
+        $.get("./ajax/ajaxModifFrigo.php", {quantite : quantite, date : date , idUser : id , idingr : idingr}).done(function(data){
+                alert("Vous avez ajouté "+quantite+" "+data);
+        });
+    }
+
+
 
 }
 
@@ -107,4 +152,32 @@ function chercherRecettes(){
     }
 
 
+}
+
+function retirerun(idingr){
+    $.get("./ajax/ajaxFrigoRetirer.php", {idingr:idingr, idUser : id }).done(function(data){
+    });
+}
+
+function minDate(){
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+     if(dd<10){
+            dd='0'+dd
+        }
+        if(mm<10){
+            mm='0'+mm
+        }
+    today = yyyy+'-'+mm+'-'+dd;
+    var dates = document.getElementsByClassName("date");
+    for (i=0;i<dates.length;i++){
+        dates[i].setAttribute("min", today);
+    }
+}
+
+
+function refresh(){
+    location.reload();
 }

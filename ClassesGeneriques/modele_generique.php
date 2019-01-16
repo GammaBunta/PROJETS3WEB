@@ -11,7 +11,7 @@ class ModeleGenerique{
         $user = 'root';
         $password = 'samsam974';
         self::$bdd = new PDO($b, $user, $password);
-        self::$bdd->exec('SET CHARACTER SET UTF-8');
+
 */
 
 //Le array à la fin permet d'avoir les erreurs de mysql dans les requêtes et wallah c'est cool.

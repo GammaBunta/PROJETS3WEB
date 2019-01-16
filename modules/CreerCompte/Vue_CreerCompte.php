@@ -14,7 +14,7 @@
         public function afficheInit(){
         	echo '
         	<body>
-			 	<main class="text-center padding-bottom padding-top-xl">
+			 	<main class="text-center padding-bottom padding-top-xl" style="min-height: calc(72.5vh);">
 			        <a class="logo logo-lg" href="index.php">
 
 			        </a>
