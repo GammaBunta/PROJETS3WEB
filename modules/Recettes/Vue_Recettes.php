@@ -4,7 +4,6 @@
         public function __construct(){
             parent::__construct();
         }
-<<<<<<< HEAD
 
 
         public function afficheInit($array){
@@ -95,22 +94,8 @@
 
         }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6f538463aaf88fef5a91879673d3c5aebbbdb2ef
 
 
-=======
-        public function afficheInit(){
-            echo 'afficheInit';
-        }
-        public function afficherRechercheSpeciale($array){
-            foreach($array as $item){
-                 echo utf8_encode(' </br> Titre : '.$item['titre'].' </br> nb personne : '.$item['nbpers'].' </br> Categorie : '.$item['categorie'].' </br> Texte : '.$item['textrec']);
-           }
-        }
->>>>>>> 8f0db93f62bfd2c35756dbcedb94d2ad5b1898af
         public function affichageRecette($item,$ingr){
             //FAUT GERER LES ACCENTS AVEC UTF8 ENCODE AUSSI
             //si personne est co dans le onLoad on met en enable les boutons pour pouvoir voter
