@@ -18,10 +18,6 @@
             }
             switch($action){
 
-                case 'rechercheSpeciale':
-                    $this->controleur->rechercheSpeciale();
-                    break;
-
                 case 'rechercheSimple':
                     $this->controleur->rechercheSimple();
                     break;

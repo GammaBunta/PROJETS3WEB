@@ -5,6 +5,11 @@
         public function __construct(){
             ModeleGenerique::init();
         }
+        public function toutesRecette(){
+            $req = self::$bdd -> prepare('SELECT * FROM Recette');
+            $req -> execute();
+            return $req-> fetchAll();
+        }
 
         public function rechercheSpeciale($array){
             var_dump($array);
@@ -23,14 +28,14 @@
                     echo $idIngr[0];
 
                     if($i == count($array)-1){
-                        $sel .=' idIngr='.$idIngr[0];
+                        $sel .=' idingr='.$idIngr[0];
                     }else{
-                        $sel .=' idIngr='.$idIngr[0].' or ';
+                        $sel .=' idingr='.$idIngr[0].' or ';
                     }
                 }
             }
 
-            $sel .=' GROUP BY idrec';
+
             echo '</br>'.$sel;
             $result = self::$bdd -> prepare($sel);
             var_dump($result);

@@ -28,13 +28,13 @@ function onLoad(co){
 function moinsAvis(){
     idrecette =  document.URL.charAt( document.URL.length - 1 );
     $.get("./ajax/ajaxMoinsRecette.php", {idrec : idrecette, idUser : id}).done(function(data){
+        window.location.replace("index.php?module=Recettes&action=affichageSpecial&id="+idrecette);
     });
 }
 
 function plusAvis(){
     idrecette =  document.URL.charAt( document.URL.length - 1 );
     $.get("./ajax/ajaxPlusRecette.php", {idrec : idrecette, idUser : id}).done(function(data){
-        alert(data);
         window.location.replace("index.php?module=Recettes&action=affichageSpecial&id="+idrecette);
     });
 }

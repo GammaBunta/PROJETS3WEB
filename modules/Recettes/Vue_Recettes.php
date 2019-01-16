@@ -7,16 +7,95 @@
         }
 
 
-        public function afficheInit(){
-            echo 'afficheInit';
+        public function afficheInit($array){
+            echo '
+            <head>
+              <?php include "./composants/head.php"; ?>
+              <link rel="stylesheet" type="text/css" href="./CSS/Frigo.css">
+              <script type="text/javascript" src="./scripts/frigo.js"> </script>
+
+                <title>Frigo</title>
+            </head>
+
+            <body>
+                <main class="text-center padding-bottom padding-top-xl">
+
+            <!-- Page Content -->
+            <div class="container">
+
+              <!-- Page Heading -->
+              <h1 class="my-4 text-light bg-success mt-5">TOUTES LES RECETTES DISPONIBLES
+              </h1>
+
+              ';
+             $compteur = 0;
+             echo '<div class="row">';
+              foreach($array as $item){
+                   echo utf8_encode('
+
+                     <div class="col-lg-4 col-sm-6 portfolio-item">
+                       <div class="card h-60">  ');
+                       if($item['img']==NULL){
+                          $img='./Images/imagesRecettes/noimage.png';
+                      }else{
+                          $img=$item['img'];
+                      }
+                       echo utf8_encode('
+                         <a href="index.php?module=Recettes&action=affichageSpecial&id='.$item['idrec'].'"><img class="card-img-top" src="'.$img.'" alt=""></a>
+                         <div class="card-body">
+                           <h4 class="card-title">
+                             <a href="index.php?module=Recettes&action=affichageSpecial&id='.$item['idrec'].'">'.$item['titre'].'</a>
+                           </h4>
+                           <p class="card-text">Categorie : '.$item['categorie'].'</br> Niveau : '.$item['niveau'].' </br> Avis Positifs : '.$item['avisPositif'].'  </br> Avis Negatifs : '.$item['avisNegatif'].' </p>
+                         </div>
+                       </div>
+                     </div>');
+                     if($compteur==2){
+                         $compteur=0;
+                        echo '</div> <div class="row mt-5">';
+                     }
+                     $compteur++;
+
+              }
+              echo '</div>';
+
+              echo '
+                  <!-- Pagination -->
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </li>
+                  </ul>
+                  </div>
+            </div>
+            <!-- /.container -->
+
+
+          </body>
+
+        ';
+
         }
 
-        public function afficherRechercheSpeciale($array){
-            foreach($array as $item){
-                 echo utf8_encode(' </br> Titre : '.$item['titre'].' </br> nb personne : '.$item['nbpers'].' </br> Categorie : '.$item['categorie'].' </br> Texte : '.$item['textrec']);
-           }
-        }
-
+        
 
         public function affichageRecette($item,$ingr){
 
@@ -80,7 +159,7 @@
                 <script type="text/javascript" src="./scripts/recette.js"> </script>
             </head>
             <body onLoad="setId(' . $_SESSION['id'] . ');onLoad('.$co.');" >
-                <main class="mt-5 row align-items-center justify-content-center">
+                <main class="mt-5 row align-items-center justify-content-center mb-5">
                     <div class="container border border-secondary rounded mt-5 p-5">
 
                         <div class="row">

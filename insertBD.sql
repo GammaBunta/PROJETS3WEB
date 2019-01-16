@@ -4,7 +4,7 @@
 --
 
 INSERT INTO `Utilisateur` (`idUser`, `pseudo`, `password`, `email`, `img`) VALUES
-(1, 'smichel', 'CRnLhhfbfxpbs', 'sam@hotmail.fr', NULL);
+(1, 'SamDev', 'CRnLhhfbfxpbs', 'sam@hotmail.fr', NULL);
 
 --
 -- Contenu de la table `Ingredient`
@@ -72,7 +72,7 @@ INSERT INTO `Ingredient` (`idingr`, `nomingr`, `protide`, `lipide`, `glucide`, `
 (59, 'Figue fraîche',  1, 0.4, 17, 75.6, 0, 'Fruits'),
 (60, 'Fraise', 0.7, 0.5, 8.4, 40.9, 0, 'Fruits'),
 (61, 'Framboise',  0.9, 0.7, 11, 53.9, 0, 'Fruits'),
-(62, ' Camembert',  18, 22, 4, 286, 0, 'Produits Laitiers'),
+(62, 'Camembert',  18, 22, 4, 286, 0, 'Produits Laitiers'),
 (63, 'Brie',  18, 22, 4, 286, 0, 'Produits Laitiers'),
 (64, 'Pont-L''Evêque', 26, 23, 7, 339, 0, 'Produits Laitiers'),
 (65, 'Livarot',  26, 23, 7, 339, 0, 'Produits Laitiers'),
@@ -145,10 +145,25 @@ INSERT INTO `Ingredient` (`idingr`, `nomingr`, `protide`, `lipide`, `glucide`, `
 (132, 'Riz',0,0,0,0,0,'Condiments'),
 (133, 'Huile d\'olive',0,0,0,0,0,'Epicerie'),
 (134, 'Vin Blanc',0,0,0,0,0,'Epicerie'),
-(135, 'Parmesan',0,0,0,0,0,'Produit Laitiers'),
+(135, 'Parmesan',0,0,0,0,0,'Produits Laitiers'),
 (136, 'Ail',0,0,0,0,0,'Legumes'),
 (137, 'Echalote',0,0,0,0,0,'Legumes'),
-(138, 'Persil plat',0,0,0,0,0,'Legumes');
+(138, 'Persil plat',0,0,0,0,0,'Legumes'),
+(139,'Pâtes à lasagne',0,0,0,0,0,'Condiments'),
+(140,'Viande hachée boeuf',0,0,0,0,0,'Viandes'),
+(141, 'Saucisse',0,0,0,0,0,'Viandes'),
+(142,'Purée de tomates',0,0,0,0,0,'Legumes'),
+(143,'Mozzarela',0,0,0,0,0,'Produits Laitiers'),
+(144,'Pain de mie',0,0,0,0,0,'Epicerie'),
+(145,'Fromage spécial croque-monsieur',0,0,0,0,0,'Produit Laitiers'),
+(146,'Jambon',0,0,0,0,0,'Viandes'),
+(147,'Lait',0,0,0,0,0,'Produits Laitiers'),
+(148,'Tagliatelle',0,0,0,0,0,'Condiments'),
+(149, 'Lardons fumés',0,0,0,0,0,'Viandes'),
+(150, 'Biscuits à la cuillère',0,0,0,0,0,'Epicerie'),
+(151,'Sucre glace',0,0,0,0,0,'Epicerie'),
+(152,'Rhum',0,0,0,0,0,'Autres');
+
 -- --------------------------------------------------------
 
 --
@@ -156,7 +171,7 @@ INSERT INTO `Ingredient` (`idingr`, `nomingr`, `protide`, `lipide`, `glucide`, `
 --
 
 INSERT INTO Recette (idrec,idUser,titre, nbpers, categorie, vegetarien, gluteenFree, avisPositif,avisNegatif, niveau, tpsprepa, tpscuisson, tpsrepose, textrec, img, nombreAvis) values
-(1, 1, 'Risotto aux champignons','1','Plat',1,0,0,0,'Intermédiaire', 45,30,0,'Séparer les champignons en deux (préférer des cèpes) : une partie servira à élaborer le bouillon et cuira avec le riz.
+(1, 1, 'Risotto aux champignons','2','Plat',1,0,0,0,'Intermédiaire', 45,30,0,'Séparer les champignons en deux (préférer des cèpes) : une partie servira à élaborer le bouillon et cuira avec le riz.
 L\'autre partie sera poêlé au dernier moment pour la présentation et mettre en avant le champignon tout en conservant une texture ferme.
 Faire blondir dans une casserole un demi-oignon émincé dans un mélange de beurre et d\'huile d\'olive.
 Ajouter et poêler les champignons.
@@ -179,6 +194,42 @@ Servir avec un tour de moulin à poivre et du parmesan.
 Le gras du beurre va s\'opposer au salé du parmesan et à l\'amertume du cèpe en arrière plan.
 ','./Images/imagesRecettes/risoto.jpg',0);
 
+INSERT INTO Recette (idrec,idUser,titre, nbpers, categorie, vegetarien, gluteenFree, avisPositif,avisNegatif, niveau, tpsprepa, tpscuisson, tpsrepose, textrec, img, nombreAvis) values
+(2,1,'Lasagnes','4','Plat',0,0,0,0,'Intermédiaire',90,35,0,'Laver et hacher finement l\'oignon, la carotte et la branche de céleri (en ayant pris soin d\'en retirer les feuilles que l\'on réserve pour plus tard).
+Dans une marmite ou une cocotte, verser un fond d\'huile d\'olive et y ajouter la moitié du mélange préalablement préparé, puis y ajouter toute la tomate.
+Ajouter ensuite un bouquet constitué des feuilles de céleri et de deux branches de basilic entières, bouquet que l\'on retirera en fin de cuisson de la sauce
+Préparer une béchamel classique et la réserver.
+Prendre ensuite un autre récipient et y ajouter un fond d\'huile d\'olive, le reste de hachis (oignon + carotte + céleri), puis ajouter la chair à saucisse, laisser cuire environ 5 minutes et ajouter le boeuf.
+Lorsque le mélange a pris sa couleur, le retirer du feu et le mélanger avec la béchamel.
+Si vous avez le temps, laissez cuire la sauce tomate environ 1 heure à feux doux en rajoutant un peu d\'eau si nécessaire.
+Procéder ensuite de la manière habituelle en faisant une couche de pâtes, une couche de tomate, une couche de béchamel + viande, en rajoutant quelques feuilles de basilic entre chaque couche.','./Images/imagesRecettes/lasagnes.jpg',0);
+
+INSERT INTO Recette (idrec,idUser,titre, nbpers, categorie, vegetarien, gluteenFree, avisPositif,avisNegatif, niveau, tpsprepa, tpscuisson, tpsrepose, textrec, img, nombreAvis) values
+(3,1,'Croque-monsieur','4','Plat',0,0,0,0,'Facile',10,5,0,'Beurrez les 8 tranches de pain de mie sur une seule face. Posez 1 tranche de fromage sur chaque tranche de pain de mie. Posez 1 tranche de jambon plié en deux sur 4 tranches de pain de mie. Recouvrez avec les autres tartines (face non beurrée au dessus).
+Dans un bol mélanger le fromage râpé avec le lait, le sel, le poivre et la muscade.
+Répartissez le mélange sur les croque-monsieur.
+Placez sur une plaque au four sous le grill pendant 10 mn. ','Images/imagesRecettes/croque.jpg',0);
+
+INSERT INTO Recette (idrec,idUser,titre, nbpers, categorie, vegetarien, gluteenFree, avisPositif,avisNegatif, niveau, tpsprepa, tpscuisson, tpsrepose, textrec, img, nombreAvis) values
+(4,1,'Tagliatelle carbonara','4','Plat',0,0,0,0,'Facile',10,20,0,'
+    Faites revenir l\'oignon et l\'ail émincés dans un peu d\'huile d\'olive. Ajoutez ensuite les lardons. Faites les dégraisser à feu moyen quelques minutes. Versez le vin blanc et laisser réduire.
+Faite bouillir un large volume d\'eau, ajoutez du sel et une coulée d\'huile d\'olive, puis plongez-y les pâtes pour une cuisson al-dente.
+Une fois le vin blanc presque entièrement réduit, versez la crème fraîche, portez la à ébullition puis retirez le tout du feu. Gardez au chaud le temps que les pates soient prêtes.
+Sortez les pâtes, égouttez-les et servez-les dans les assiettes.
+Séparez les jaunes des oeufs et délayez-les très rapidement à la sauce, hors du feu. Verser une pincée de muscade, de poivre et servez la sauce sur les pâtes. Parsemez les assiettes de basilic fraîchement coupé.','./Images/imagesRecettes/carbo.jpeg',0);
+
+INSERT INTO Recette (idrec,idUser,titre, nbpers, categorie, vegetarien, gluteenFree, avisPositif,avisNegatif, niveau, tpsprepa, tpscuisson, tpsrepose, textrec, img, nombreAvis) values
+(5,1,'Charlotte au chocolat','6','Dessert',1,0,0,0,'Facile',45,0,0,'
+    Beurrer légèrement un moule à charlotte et disposer dans le fond un rond de papier sulfurisé.
+Verser 10 cl d\'eau et le rhum dans le fond d\'une assiette creuse.
+Tremper rapidement les biscuits et tapisser entièrement le fond et les bords du moule (côté bombé vers l\'extérieur).
+Séparer les jaunes d\'oeufs des blancs.
+Mettre à fondre le chocolat avec le lait dans un saladier à bain-marie doux. Le laisser fondre entièrement et le lisser avec une spatule en bois. En maintenant la préparation au bain-marie ajouter peu à peu le beurre en petits morceaux tout en remuant, puis les jaunes d\'oeuf l\'un après l\'autre. Travailler la crème quelques instants jusqu\'à ce qu\'elle soit bien lisse et brillante puis retirer la casserole du feu et laisser refroidir.
+Monter les blancs d\'oeuf en neige en ajoutant à la fin le sucre glace en pluie.
+Battre la crème liquide (très froide) en chantilly un peu molle.
+Incorporer les deux préparations à la crème afin d\'obtenir un mélange lisse et parfaitement homogène.
+Remplir le moule avec la mousse au chocolat en la tassant légèrement, terminer par une couche de biscuits imbibés. Couvrir d\'une assiette, un poids dessus et mettre au frigo jusqu\'au lendemain.
+Pour servir retourner le moule sur le plat de service, retirer le fond de papier sulfurisé. Décorer de copeaux de chocolat ou la saupoudrer simplement d\'un peu de cacao. ',NULL,0);
 
 --
 -- Contenu de la table `utiliser`
@@ -193,7 +244,39 @@ INSERT INTO `utiliser` (`idrec`,`idingr`,`quantite`) values
 (1,135,'1 cuillère à soupe'),
 (1,136,'1 gousse'),
 (1,137,'1'),
-(1,138,'2 brins');
+(1,138,'2 brins'),
+(2,139,'1/2 paquet'),
+(2,140,'250 g'),
+(2,141,'150 g'),
+(2,106,'100 g de dés'),
+(2,142,'1 bouteille'),
+(2,128,'1'),
+(2,27,'1'),
+(2,133,''),
+(2,143,'1'),
+(2,28,'1 branche'),
+(3,144,'8 tranches'),
+(3,14,'50g'),
+(3,146,'4 tranches'),
+(3,145,'8 tranches'),
+(3,71,'100 g'),
+(3,147,'4 cuillères à soupe'),
+(4,148,'250 g'),
+(4,149,'200 g'),
+(4,50,'20 cl'),
+(4,128,'1'),
+(4,136,'1 gousse'),
+(4,134,'20 cl'),
+(4,77,'2'),
+(5,150,'24'),
+(5,35,'250 g'),
+(5,50,'20 cl'),
+(5,147,'100 g'),
+(5,77,'4'),
+(5,151,'30 g'),
+(5,152,'10 cl');
+
+
 
 
 --

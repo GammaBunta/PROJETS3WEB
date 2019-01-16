@@ -12,7 +12,8 @@
         }
 
         public function init(){
-            $this->vue-> afficheInit();
+            $tab = $this ->modele->toutesRecette();
+            $this->vue-> afficheInit($tab);
         }
 
         public function rechercheSpeciale(){
