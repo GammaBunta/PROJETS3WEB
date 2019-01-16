@@ -20,8 +20,6 @@ function onLoad(co){
         });
 
 
-    }else{
-        alert("pas connecté")
     }
 }
 
