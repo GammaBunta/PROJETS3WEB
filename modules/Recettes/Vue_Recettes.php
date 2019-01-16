@@ -93,6 +93,14 @@
 
         ';
 
+<<<<<<< HEAD
+=======
+        public function afficherRechercheSpeciale($array){
+
+            foreach($array as $item){
+                 echo utf8_encode(' </br> Titre : '.$item['titre'].' </br> nb personne : '.$item['nbpers'].' </br> Categorie : '.$item['categorie'].' </br> Texte : '.$item['textrec']);
+           }
+>>>>>>> 6712141d417d988e682a07ba27d1f41c4659df03
         }
 
         
@@ -102,6 +110,7 @@
             //FAUT GERER LES ACCENTS AVEC UTF8 ENCODE AUSSI
 
             //si personne est co dans le onLoad on met en enable les boutons pour pouvoir voter
+            //$item['textRec']
             if(isset($_SESSION['id'])){
                 $co=true;
             }else{
@@ -126,19 +135,12 @@
 
             //BOUTONS pour noter :
             echo '
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-" id="plusAvis" onclick="plusAvis()" disabled><img src="./Images/thumbsup.svg" alt="pouce vers le haut "</button>
-              <button type="button" class="btn btn-" id="moinsAvis" onclick="moinsAvis()" disabled><img src="./Images/thumbsdown.svg" alt="pouce vers le bas"></button>
-            </div>
+
 
             ';
 
             echo '
             ';
-
-            //POUR l'image :
-            echo '
-            <img src="'.$item['img'].'" alt="Photo de la Recette">';
 
 
             //ET LE TEXTE :   $item['textrec']
@@ -148,52 +150,66 @@
                 $vege="oui";
             }
             if($item['gluteenFree']==0){
-                $glut="non";
+                $glut="Sans";
             }else{
-                $glut="oui";
+                $glut="Avec";
             }
 
-            echo '
+            echo'
             <head>
                 <?php include "./composants/head.php"; ?>
                 <script type="text/javascript" src="./scripts/recette.js"> </script>
+                <title>Recette</title>
             </head>
             <body onLoad="setId(' . $_SESSION['id'] . ');onLoad('.$co.');" >
                 <main class="mt-5 row align-items-center justify-content-center mb-5">
                     <div class="container border border-secondary rounded mt-5 p-5">
+                        <div class="row container">
+                            <div class="col-4 ml-5 mr-5">
+                              <p class="font-weight-bold text-center green-text">INFOS</p>
+                              <ul class="list-group">
 
-                        <div class="row">
-                            <h4 class="font-weight-bold text-success-dark">'.$item['titre'].'</h4>
-                        </div>
+                                  <li class="list-group-item"><span class="font-weight-bold">Catégorie : </span>';echo utf8_encode($item['categorie']); echo'</li>
+                                  <li class="list-group-item"><span class="font-weight-bold">Niveau : </span>';echo utf8_encode($item['niveau']);echo'</li>
 
-                        <div class="row mt-4">
-                            <div class="col-4">
-                                <p class="font-weight-bold text-center green-text">INFOS</p>
-                                <ul class="list-group">
+                                  <li class="list-group-item"><span class="font-weight-bold">Végétarien : </span>'.$vege.'</li>
+                                  <li class="list-group-item"><span class="font-weight-bold">Gluten : </span>'.$glut.'</li>
+                                  <li class="list-group-item"><span class="font-weight-bold">Pour  </span>'.$item['nbpers'].'<span class="font-weight-bold"> personnes</span></li>
+                                  <li class="list-group-item"><span class="font-weight-bold">Temps de préparation : </span>'.$item['tpsprepa'].'<span class="font-weight-bold"> min</span></li>
+                                  ';
+                                  if($item['tpsrepose']!=0){
+                                      echo utf8_encode('<li class="list-group-item"><span class="font-weight-bold">Temps de repos : </span>'.$item['tpsrepose'].'<span class="font-weight-bold"> min</span></li>');
+                                  }
+                                  if($item['tpscuisson']!=0){
+                                      echo utf8_encode(' <li class="list-group-item"><span class="font-weight-bold">Temps de cuisson : </span>'.$item['tpscuisson'].'<span class="font-weight-bold"> min</span></li>');
+                                  }
 
-                                    <li class="list-group-item"><span class="font-weight-bold">Catégorie : </span>'.$item['categorie'].'</li>
-                                    <li class="list-group-item"><span class="font-weight-bold">Niveau : </span>'.$item['niveau'].'</li>
-
-                                    <li class="list-group-item"><span class="font-weight-bold">Végétarien : </span>'.$vege.'</li>
-                                    <li class="list-group-item"><span class="font-weight-bold">Gluten : </span>'.$glut.'</li>
-                                    <li class="list-group-item"><span class="font-weight-bold">Pour  </span>'.$item['nbpers'].'<span class="font-weight-bold"> personnes</span></li>
-                                    <li class="list-group-item"><span class="font-weight-bold">Temps de préparation : </span>'.$item['tpsprepa'].'<span class="font-weight-bold"> min</span></li>
-                                    ';
-                                    if($item['tpsrepose']!=0){
-                                        echo '<li class="list-group-item"><span class="font-weight-bold">Temps de repos : </span>'.$item['tpsrepose'].'<span class="font-weight-bold"> min</span></li>';
-                                    }
-                                    if($item['tpscuisson']!=0){
-                                        echo ' <li class="list-group-item"><span class="font-weight-bold">Temps de cuisson : </span>'.$item['tpscuisson'].'<span class="font-weight-bold"> min</span></li>';
-                                    }
-
-                                    echo '
-                                </ul>
-                                </div>
-                                <div class="col-6">
-
-                                </div>
+                                  echo '
+                              </ul>
+                              <button type="button" class="btn btn-" id="plusAvis" onclick="plusAvis()" disabled><img src="./Images/thumbsup.svg" class="rounded mx-auto d-block img-fluid" alt="pouce vers le haut "</button>
+                              <button type="button" class="btn btn-" id="moinsAvis" onclick="moinsAvis()" disabled><img src="./Images/thumbsdown.svg" class="rounded mx-auto d-block img-fluid" alt="pouce vers le bas"></button>
                             </div>
-                        </div>
+
+                            <div class="ml-5">
+                              <div class="row ">
+                                  <h4 class="container-fluid font-weight-bold text-success-dark text-center">'.$item['titre'].'</h4>
+                              </div>
+                              <img src="'.$item['img'].'" class="rounded mx-auto d-block img-fluid" alt="Photo de la Recette">
+                            </div>
+                          </div>
+                          <div class="row">
+                              <h4 class="container-fluid font-weight-bold text-success-dark text-center">Recette</h4>
+                          </div>
+
+                          <div class="row mt-4">
+                              <div class="col-4">
+
+                              </div>
+                                  <div class="col-6">';
+                                    echo utf8_encode($item['textrec']);
+                                echo'  </div>
+                              </div>
+                            </div>
                     </div>
                 </main>
             </body>';
