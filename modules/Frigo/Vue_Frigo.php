@@ -108,21 +108,18 @@
                                         </ul>
                                     </div>
                                 </div>
+                                <h4 id="titre" class="text-light bg-dark border border-secondary mb-0">
+                              Ingrédients à cuisiner
+                                </h4>
+                            <div class="pre-scrollable bg-light border border-secondary" style="height: 266.2px;">
+                                <ul class="list-group" id="aCuisiner">
+
+                                </ul>
+                            </div>
+                             <button type="button" class="border border-secondary btn btn-secondary btn-block" onclick="chercherRecettes()" >Chercher une recette</button>
                               </div>
                             </div>
-                        <div class="row">
-                                <div class="col-4 offset-md-7 mt-5">
-                                    <h4 id="titre" class="text-light bg-dark border border-secondary mb-0">
-                                  Ingrédients à cuisiner
-                                    </h4>
-                                <div class="pre-scrollable bg-light border border-secondary" style="height: 266.2px;">
-                                    <ul class="list-group" id="aCuisiner">
 
-                                    </ul>
-                                </div>
-                                 <button type="button" class="border border-secondary btn btn-secondary btn-block" onclick="chercherRecettes()" >Chercher une recette</button>
-                              </div>
-                        </div>
                 </main>
             </body>';
 
