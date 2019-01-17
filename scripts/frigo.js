@@ -120,12 +120,15 @@ function submitAjoutFrigo(idingr){
     var date = document.getElementById("date"+idingr).value;
     if(date!=0 && quantite!=0){
         $.get("./ajax/ajaxModifFrigo.php", {quantite : quantite, date : date , idUser : id , idingr : idingr}).done(function(data){
-                alert("Vous avez ajouté "+quantite+" "+data);
         });
+        triggerFamille(idingr);
     }
+}
 
-
-
+function retirerun(idingr){
+    $.get("./ajax/ajaxFrigoRetirer.php", {idingr:idingr, idUser : id }).done(function(data){
+        triggerFamille(idingr);
+    });
 }
 
 function ajoutCuisiner(nomingr){
@@ -154,10 +157,7 @@ function chercherRecettes(){
 
 }
 
-function retirerun(idingr){
-    $.get("./ajax/ajaxFrigoRetirer.php", {idingr:idingr, idUser : id }).done(function(data){
-    });
-}
+
 
 function minDate(){
     var today = new Date();
@@ -178,6 +178,24 @@ function minDate(){
 }
 
 
-function refresh(){
-    location.reload();
+function triggerFamille(idingr){
+    $.get("./ajax/ajaxInfoIngr.php", {idingr:idingr}).done(function(data){
+        if(data=="Fruits"){
+            $("#fruits").trigger( "click" );
+        }else if(data=="Legumes"){
+            $("#legumes").trigger( "click" );
+        }else if(data=="Feculents"){
+            $("#feculents").trigger( "click" );
+        }else if(data=="Viandes"){
+            $("#viandes").trigger( "click" );
+        }else if(data=="Autres"){
+            $("#autres").trigger("click");
+        }else if(data=="Epicerie"){
+            $("#epicerie").trigger("click");
+        }else if(data=="Condiments"){
+            $("#condiments").trigger("click");
+        }else{
+            $("#lait").trigger("click");
+        }
+    });
 }

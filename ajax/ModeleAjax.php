@@ -5,6 +5,13 @@ class Modele_Ajax extends ModeleGenerique{
         ModeleGenerique::init();
     }
 
+    public function getinfoIngr($id){
+        $res = self::$bdd -> prepare('SELECT * from Ingredient where idingr=:id');
+        $res -> bindParam(':id',$id);
+        $res -> execute();
+        return $res -> fetch();
+    }
+
     public function getIngredients($famille, $id){
         $result = self::$bdd -> prepare('select * from possede natural join Ingredient where famille=:famille and idUser =:id');
         $result -> bindParam(':famille',$famille);
@@ -52,10 +59,8 @@ class Modele_Ajax extends ModeleGenerique{
             $result -> execute();
         }
 
-        $nomingr = self::$bdd -> prepare('SELECT * FROM Ingredient where idingr=:idingr');
-        $nomingr -> bindParam(':idingr',$idIngr);
-        $nomingr -> execute();
-        return $nomingr->fetch();
+
+        return $this->getinfoIngr($idIngr);
 
     }
 
@@ -79,7 +84,7 @@ class Modele_Ajax extends ModeleGenerique{
             $result -> bindParam('newquant',$newquant);
             $result -> execute();
         }
-
+        return $this->getinfoIngr($idIngr);
     }
 
     public function userAVote($idRec,$idUser){

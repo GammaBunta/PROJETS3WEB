@@ -91,7 +91,6 @@
                               <div class="col-4 offset-md-2">
                                 <h4 id="titre" class="text-light bg-dark border border-secondary mb-0">
                                   Produits Laitiers
-                                  <button type="button" class="btn btn- btn-success" onclick="refresh()"><img   style="height: 20px;" src="./Images/refresh.png" alt="pouce vers le haut "</button>
                                 </h4>
                                 <div  class="pre-scrollable bg-light border border-secondary" style="height: 266.2px;">
                                     <div id="listeIngr">
