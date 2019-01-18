@@ -10,39 +10,7 @@
             //FAUT GERER LES ACCENTS AVEC UTF8 ENCODE AUSSI
             //si personne est co dans le onLoad on met en enable les boutons pour pouvoir voter
             //$item['textRec']
-            if(isset($_SESSION['id'])){
-                $co=true;
-            }else{
-                $co=false;
-            }
-            foreach($ingr as $petit){
-                echo '</br> nom ingr : '.$petit['nomingr'];
-                echo ' quantite : '.$petit['quantite'];
-            }
-            //ET NOTE AVI :
-            echo '</br>nombre avis positifs : ';
-            echo $item['avisPositif'];
-            echo '</br>nombre avis negatif : ';
-            echo $item['avisNegatif'];
-            //NB AVIS :
-            echo '</br>nombre avis  : ';
-            echo $item['nombreAvis'];
-            //BOUTONS pour noter :
-            echo '
-            ';
-            echo '
-            ';
-            //ET LE TEXTE :   $item['textrec']
-            if($item['vegetarien']==0){
-                $vege="non";
-            }else{
-                $vege="oui";
-            }
-            if($item['gluteenFree']==0){
-                $glut="Sans";
-            }else{
-                $glut="Avec";
-            }
+
             echo'
             <head>
                 <?php include "./composants/head.php"; ?>
@@ -95,6 +63,41 @@
                     </div>
                 </main>
             </body>';
+            if(isset($_SESSION['id'])){
+                $co=true;
+            }else{
+                $co=false;
+            }
+            foreach($ingr as $petit){
+                echo '</br> nom ingr : '.$petit['nomingr'];
+                echo ' quantite : '.$petit['quantite'];
+            }
+            //ET NOTE AVI :
+            echo '</br>nombre avis positifs : ';
+            echo $item['avisPositif'];
+            echo '</br>nombre avis negatif : ';
+            echo $item['avisNegatif'];
+            //NB AVIS :
+            echo '</br>nombre avis  : ';
+            echo $item['nombreAvis'];
+            //BOUTONS pour noter :
+            echo '
+            ';
+            echo '
+            ';
+            //ET LE TEXTE :   $item['textrec']
+            if($item['vegetarien']==0){
+                $vege="non";
+            }else{
+                $vege="oui";
+            }
+            if($item['gluteenFree']==0){
+                $glut="Sans";
+            }else{
+                $glut="Avec";
+            }
         }
+
+
     }
 ?>
