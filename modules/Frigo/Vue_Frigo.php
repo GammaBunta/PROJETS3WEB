@@ -21,7 +21,7 @@
              	<main class="text-center padding-bottom padding-top-xl mt-5 mb-5">
                     <div class="container mt-5 mb-3">
                             <div class="row">
-                              <div id="ul1"  class="col-3">
+                              <div id="ul1"  class="col-3 mt-5">
                                   <div class="list-group" id="myList" role="tablist">
                                         <a class="list-group-item list-group-item-action active list-group-item-success" data-toggle="list" href="#" id="lait" role="tab" >Laitiers</a>
                                         <a class="list-group-item list-group-item-action list-group-item-success" data-toggle="list" href="#" role="tab"id="viandes">Viandes</a>
@@ -35,7 +35,7 @@
                                          <a class="list-group-item list-group-item-action list-group-item-secondary" data-toggle="list" href="#" role="tab" id="autres">Autres</a>
                                    </div>
                               </div>
-                              <div class="text-left col-3">
+                              <div class="text-left col-3 mt-5">
                                 <h4 id="titre1" class="text-light bg-dark border border-secondary mb-0 centered">
                                   Ajouter Produits Laitiers
                                 </h4>
@@ -89,7 +89,7 @@
                                 </div>
                               </div>
                               <div class="col-4 offset-md-2">
-                                <h4 id="titre" class="text-light bg-dark border border-secondary mb-0">
+                                <h4 id="titre" class=" mt-5 text-light bg-dark border border-secondary mb-0">
                                   Produits Laitiers
                                 </h4>
                                 <div  class="pre-scrollable bg-light border border-secondary" style="height: 266.2px;">

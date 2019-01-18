@@ -65,7 +65,7 @@
                                   <div class="form-check  mt-4">
                                         <input class="form-check-input" type="checkbox" name="gluten" value="gluten" id="defaultCheck2">
                                         <label class="form-check-label" for="defaultCheck2">
-                                        Gluten
+                                         Sans Gluten
                                         </label>
                                   </div>
 
