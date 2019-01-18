@@ -12,23 +12,6 @@
         }
 
         public function init(){
-            $tab = $this ->modele->toutesRecette();
-            $this->vue-> afficheInit($tab);
-        }
-
-        public function rechercheNormale(){
-            $tab = $this->modele->rechercheNormale();
-            $this->vue->afficheInit($tab);
-        }
-
-        public function rechercheSpeciale(){
-            $array=explode(',',$_GET['ingredients']);
-            $tab = $this->modele->rechercheSpeciale($array);
-            $this->vue->afficheInit($tab);
-        }
-
-
-        public function affichageSpecial(){
             $id = $_GET['id'];
             $ingr = $this->modele->infoIngrRecette($id);
             $info = $this->modele->infoRecette($id);

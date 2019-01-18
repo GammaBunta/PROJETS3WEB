@@ -10,7 +10,7 @@
 			  <li class="nav-item dropdown">
 			    <a class="nav-link dropdown-toggle text-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Recettes</a>
 			    <div class="dropdown-menu">
-			      <a class="dropdown-item" href="index.php?module=Recettes">Recettes disponibles</a>
+			      <a class="dropdown-item" href="index.php?module=RechercheRecettes">Recettes disponibles</a>
 				  <?php
 				  if(isset($_SESSION['id'])){
 					  echo '<a class="dropdown-item" href="index.php?module=ajoutRecette">Publier une recette</a>';

@@ -7,6 +7,7 @@
       require_once('./modules/Recettes/Recettes.php');
       require_once('./modules/CreerCompte/CreerCompte.php');
       require_once('./modules/ajoutRecette/ajoutRecette.php');
+       require_once('./modules/RechercheRecettes/RechercheRecettes.php');
 
 
        if(isset($_GET['module'])){
@@ -24,6 +25,7 @@
            case 'Recettes':
            case 'CreerCompte':
            case 'ajoutRecette':
+           case 'RechercheRecettes':
                $mod = new $module();
                $mod -> index();
                $vue = $mod->getAffichage();

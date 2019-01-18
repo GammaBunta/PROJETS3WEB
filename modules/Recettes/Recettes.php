@@ -10,36 +10,9 @@
 
         public function index(){
 
+                $this->controleur->init();
 
-            if(isset($_GET['action'])){
-                $action=htmlspecialchars($_GET['action']);
-            }else{
-                $action='';
-            }
-            switch($action){
-
-                case 'rechercheSpeciale':
-                    $this->controleur->rechercheSpeciale();
-                    break;
-                    
-                case 'rechercheNormale':
-                    $this->controleur->rechercheNormale();
-                    break;
-
-                case 'affichageSpecial':
-                    $this->controleur->affichageSpecial();
-                    break;
-
-                default:
-                    $this->controleur->init();
-                    break;
-            }
         }
-
-
-
-
-
     }
 
  ?>

@@ -7,7 +7,7 @@
         }
 
         public function afficheInitCo(){
-            
+
         }
 
         public function afficheInitPasCo(){
@@ -33,7 +33,7 @@
                             ou bien cherchez en fonction de la difficulté ou du type de plat voulu ! </br>
                             Vous pouvez aussi publiez vos propres recettes.
                            <hr>
-                           <a href="index.php?module=Recettes" class="mb-1">Voir toutes les Recettes</a>
+                           <a href="index.php?module=RechercheRecettes" class="mb-1">Voir toutes les Recettes</a>
                         </p>
                         </div>
                   </div>
