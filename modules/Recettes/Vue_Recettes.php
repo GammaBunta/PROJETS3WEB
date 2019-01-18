@@ -63,8 +63,14 @@
                             <div class="ml-5">
                               <div class="row ">
                                   <h4 class="container-fluid font-weight-bold text-success-dark text-center">'.$item['titre'].'</h4>
-                              </div>
-                              <img src="'.$item['img'].'" class="rounded mx-auto d-block img-fluid"  width="520" height="450" alt="Photo de la Recette">
+                              </div>';
+                              if($item['img']==NULL){
+                                 $img='./Images/imagesRecettes/noimage.png';
+                             }else{
+                                 $img=$item['img'];
+                             }
+                             echo'
+                              <img src="'.$img.'" class="rounded mx-auto d-block img-fluid"  width="520" height="450" alt="Photo de la Recette">
                             </div>
                           </div>
                           <div class="row mt-4">
