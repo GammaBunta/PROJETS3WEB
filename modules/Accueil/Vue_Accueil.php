@@ -9,8 +9,8 @@
 
         public function afficheInit(){
             echo '
-    <body>
-        <main class="text-center padding-bottom padding-top-xl" style="margin-bottom: 50px;">
+    <body class="mb-5">
+        <main class="text-center padding-bottom padding-top-xl mb-5 mt-5">
             <div class="container mt-5">
               <div class="row">
                 <img src="Images/imageIndex.jpg" class="img-fluid rounded mx-auto d-block" alt="Courses">

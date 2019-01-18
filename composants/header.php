@@ -1,5 +1,5 @@
 <header>
-	<nav class="navbar navbar-expand-lg navbar-success bg-success">
+	<nav class="navbar navbar-expand-lg navbar-success bg-success fixed-top mb-5">
 		<div class="container-fluid">
 			<div class="float-left">
 			<a id="ofrigo" class="navbar-brand float-left" href="index.php" ><img  src="./Images/logo_blanc.png" width="40" height="40" alt="logofrigo"/></a>
