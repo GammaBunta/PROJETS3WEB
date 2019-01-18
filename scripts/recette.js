@@ -32,7 +32,7 @@ function moinsAvis(){
 function plusAvis(){
     idrecette =  document.URL.charAt( document.URL.length - 1 );
     $.get("./ajax/ajaxPlusRecette.php", {idrec : idrecette, idUser : id}).done(function(data){
-        window.location.replace("index.php?module=RechercheRecettes&id="+idrecette);
+        window.location.replace("index.php?module=Recettes&id="+idrecette);
     });
 }
 

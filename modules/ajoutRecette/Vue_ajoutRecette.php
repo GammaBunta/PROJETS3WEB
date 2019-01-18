@@ -12,14 +12,18 @@ class Vue_ajoutRecette extends VueGenerique{
         echo '
         <head>
             <?php include "./composants/head.php"; ?>
+            <link rel="stylesheet" type="text/css" href="./CSS/Ajout.css">
             <script type="text/javascript" src="./scripts/ajoutRecette.js"> </script>
         </head>
 
         <body>
             <main class="mt-5 row align-items-center justify-content-center"">
             <form action="./index.php?module=ajoutRecette&action=publier" enctype="multipart/form-data" method="post" id="form" >
-                <div class="container ">
-                    <div class="row mt-5">
+                <div class="mt-5 containe bg-light border border-secondary rounded p-5">
+                    <div class="row mb-3">
+                        <h1>Ajouter une recette</h1>
+                    </div>
+                    <div class="row">
                         <div class="col-">
 
                                 <div class="form-group ">
