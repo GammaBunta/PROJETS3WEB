@@ -6,9 +6,8 @@ function setId(idUser){
 
 
 $(document).ready(function(){
-    var bouton = "<button type=\"button\" class=\"btn btn- btn-success\" onclick=\"refresh()\"><img style=\"height: 20px;\" src=\"./Images/refresh.png\" alt=\"pouce vers le haut \"</button>"
     $("#lait").click(function(){
-        document.getElementById("titre").innerHTML="Produits Laitiers"+bouton;
+        document.getElementById("titre").innerHTML="Produits Laitiers";
         document.getElementById("titre1").innerHTML="Ajouter Produits Laitiers";
         $.get("./ajax/ajaxFrigo.php", {famille : "Produits Laitiers", id: id}).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
@@ -21,7 +20,7 @@ $(document).ready(function(){
 );
 
     $("#viandes").click(function(){
-        document.getElementById("titre").innerHTML="Viandes"+bouton;
+        document.getElementById("titre").innerHTML="Viandes";
         document.getElementById("titre1").innerHTML="Ajouter Viandes";
         $.get("./ajax/ajaxFrigo.php", {famille : "Viandes", id: id}).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
@@ -34,7 +33,7 @@ $(document).ready(function(){
 );
 
     $("#legumes").click(function(){
-        document.getElementById("titre").innerHTML="Legumes"+bouton;
+        document.getElementById("titre").innerHTML="Legumes";
         document.getElementById("titre1").innerHTML="Ajouter Legumes";
         $.get("./ajax/ajaxFrigo.php", {famille : "Legumes", id : id }).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
@@ -47,7 +46,7 @@ $(document).ready(function(){
 );
 
     $("#fruits").click(function(){
-        document.getElementById("titre").innerHTML="Fruits"+bouton;
+        document.getElementById("titre").innerHTML="Fruits";
         document.getElementById("titre1").innerHTML="Ajouter Fruits";
         $.get("./ajax/ajaxFrigo.php", {famille : "Fruits", id : id }).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
@@ -60,7 +59,7 @@ $(document).ready(function(){
 );
 
     $("#feculents").click(function(){
-        document.getElementById("titre").innerHTML="Féculents"+bouton;
+        document.getElementById("titre").innerHTML="Féculents";
         document.getElementById("titre1").innerHTML="Ajouter Féculents";
         $.get("./ajax/ajaxFrigo.php", {famille : "Feculents", id : id }).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
@@ -73,7 +72,7 @@ $(document).ready(function(){
 );
 
     $("#condiments").click(function(){
-        document.getElementById("titre").innerHTML="Condiments"+bouton;
+        document.getElementById("titre").innerHTML="Condiments";
         document.getElementById("titre1").innerHTML="Ajouter Condiments";
         $.get("./ajax/ajaxFrigo.php", {famille : "Condiments", id : id }).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
@@ -87,7 +86,7 @@ $(document).ready(function(){
 
 
     $("#autres").click(function(){
-        document.getElementById("titre").innerHTML="Autres"+bouton;
+        document.getElementById("titre").innerHTML="Autres";
         document.getElementById("titre1").innerHTML="Ajouter Autres";
         $.get("./ajax/ajaxFrigo.php", {famille : "Autre", id : id }).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
@@ -100,7 +99,7 @@ $(document).ready(function(){
 );
 
     $("#epicerie").click(function(){
-        document.getElementById("titre").innerHTML="Epicerie"+bouton;
+        document.getElementById("titre").innerHTML="Epicerie";
         $.get("./ajax/ajaxFrigo.php", {famille : "Epicerie", id : id }).done(function(data){
             document.getElementById("listeIngr").innerHTML= data;
         });
