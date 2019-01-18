@@ -7,7 +7,8 @@ class Vue_ajoutRecette extends VueGenerique{
     }
 
 
-    public function afficheInit(){
+    public function afficheInit($tok){
+
         echo '
         <head>
             <?php include "./composants/head.php"; ?>
@@ -137,6 +138,9 @@ class Vue_ajoutRecette extends VueGenerique{
                                     <label>Instructions de la recette</label>
                                     <textarea class="form-control" name="texteRecette" rows="12"  required></textarea>
                                 </div>
+                                ';
+                                echo $this->getHiddenToken($tok);
+                                echo'
                                 <div class="row ml-5">
                                     <button type="submit" class="btn btn-success btn-lg">Publier ma recette</button>
                                 </div>

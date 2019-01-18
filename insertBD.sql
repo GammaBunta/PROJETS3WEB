@@ -4,7 +4,8 @@
 --
 
 INSERT INTO `Utilisateur` (`idUser`, `pseudo`, `password`, `email`, `img`) VALUES
-(1, 'SamDev', 'CRnLhhfbfxpbs', 'sam@hotmail.fr', NULL);
+(1, 'SamDev', 'CRnLhhfbfxpbs', 'sam@hotmail.fr', NULL),
+(2,'SarahDev','CRtgbFwrpudlY','sarahbrood@gmail.com',NULL);
 
 --
 -- Contenu de la table `Ingredient`

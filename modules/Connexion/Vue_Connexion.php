@@ -12,12 +12,13 @@
           $this->erreur = $er;
         }
 
-        public function afficheInit(){
+        public function afficheInit($tok){
             echo'
 
             <body>
               <main class="text-center padding-bottom padding-top-xl mt-5 ">
                 <div class ="row mt-5">
+
                     <div class="col-4 container bg-light border border-primary rounded mt-5   ">
                         <p>
                             <h1 class="display-5">
@@ -60,8 +61,9 @@
                                             <a href="forgot.php">Mot de passe oublié ?</a>
                                         </div>
                                     </div>
-                                </small>
-                                <button type="submit" class="btn btn-success btn-lg">Connexion</button>
+                                </small>';
+                                echo $this->getHiddenToken($tok);
+                                echo'<button type="submit" class="btn btn-success btn-lg">Connexion</button>
                             </form>
                             <hr>
                             <small class="form-text text-muted">

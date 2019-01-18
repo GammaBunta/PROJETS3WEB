@@ -12,7 +12,8 @@
         }
 
         public function init(){
-            $this->vue-> afficheInit();
+            $tok = $this->genereTokenSession();
+            $this->vue-> afficheInit($tok);
         }
 
         public function connexion(){
@@ -20,9 +21,13 @@
                     if($this->modele->connecte($_POST['login'],  $_POST['mdp'])){
                          echo'<script>location.replace("index.php"); </script>';
                     }
+                    if($this->modele->connecte($_POST['login'], $_POST['mdp'])=="non"){
+                            echo "token expiré";
+                    }
                     else{
                         $this->vue->setErreur("Login ou mot de passe incorrect");
-                        $this->vue->afficheInit();
+                        $tok = $this->genereTokenSession();
+                        $this->vue->afficheInit($tok);
                     }
                 }
 
@@ -30,7 +35,7 @@
 
         public function deconnexion(){
             $this->modele->deconnexion();
-            $this->vue->afficheInit();
+            echo'<script>location.replace("index.php"); </script>';
         }
     }
  ?>

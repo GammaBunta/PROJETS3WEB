@@ -23,9 +23,6 @@
                 $req->bindParam(':mdp', $mdp);
                 $req->bindParam(':email', $email);
                 $res1 = $req->execute();
-                    // if($req->execute()){
-                    //     return "ok";
-                    // }
                 return true;
 
             }

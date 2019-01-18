@@ -7,23 +7,24 @@
 
 
         public function connecte($l, $m){
-            $login = $l;
-            $mdp = crypt($m, 'CRYPT_STD_DES');
-            $req = self::$bdd-> prepare('select password, idUser from Utilisateur where pseudo like :login');
-            $req->bindParam(':login', $login);
-            if($req->execute()){
-                $res = $req -> fetch();
-                $id = $res['idUser'];
-                if(strcmp($mdp, $res['password'])==0){;
-                    $_SESSION['id'] = $id;
-                    return true;
+            if($this->verifToken()){
+                $login = $l;
+                $mdp = crypt($m, 'CRYPT_STD_DES');
+                $req = self::$bdd-> prepare('select password, idUser from Utilisateur where pseudo like :login');
+                $req->bindParam(':login', $login);
+                if($req->execute()){
+                    $res = $req -> fetch();
+                    $id = $res['idUser'];
+                    if(strcmp($mdp, $res['password'])==0){;
+                        $_SESSION['id'] = $id;
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
                 }
-                else {
-                    return false;
-                }
+                return false;
             }
-            return false;
-
         }
 
         public function deconnexion(){

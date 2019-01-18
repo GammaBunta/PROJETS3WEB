@@ -107,10 +107,10 @@
                              $img=$item['img'];
                          }
                           echo utf8_encode('
-                            <a href="index.php?module=Recettes&action=affichageSpecial&id='.$item['idrec'].'"><img class="card-img-top" src="'.$img.'" alt=""></a>
+                            <a href="index.php?module=Recettes&id='.$item['idrec'].'"><img class="card-img-top" src="'.$img.'" alt=""></a>
                             <div class="card-body">
                               <h4 class="card-title">
-                                <a href="index.php?module=Recettes&action=affichageSpecial&id='.$item['idrec'].'">'.$item['titre'].'</a>
+                                <a href="index.php?module=Recettes&id='.$item['idrec'].'">'.$item['titre'].'</a>
                               </h4>
                               <p class="card-text">Categorie : '.$item['categorie'].'</br> Niveau : '.$item['niveau'].' </br> Avis Positifs : '.$item['avisPositif'].'  </br> Avis Negatifs : '.$item['avisNegatif'].' </p>
                             </div>

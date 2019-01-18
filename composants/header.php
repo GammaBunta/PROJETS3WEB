@@ -18,7 +18,6 @@
 					  echo '<a class="dropdown-item disabled" >Publier une recette</a>';
 				  }
 				  ?>
-
 			    </div>
 			  </li>
 				<li class="nav-item">

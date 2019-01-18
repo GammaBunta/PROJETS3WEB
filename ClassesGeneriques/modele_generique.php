@@ -20,5 +20,20 @@ class ModeleGenerique{
 
     }
 
+
+    public function verifToken(){
+         $posttoken =$_POST['token'];
+        if( $posttoken== $_SESSION['token']){
+            $my_date=date("Y-m-d H:i:s");
+            if($my_date < $_SESSION['dateToken']){
+                return true;
+            }else{
+                unset($_SESSION['dateToken']);
+                unset($_SESSION['token']);
+            }
+        }
+        return false;
+    }
+
 }
 ?>

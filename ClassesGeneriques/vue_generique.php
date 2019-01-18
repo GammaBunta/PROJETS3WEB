@@ -9,6 +9,10 @@
             $contenu = ob_get_clean();
             return $contenu;
         }
+
+        public function getHiddenToken($token){
+            return '<input id="token" name="token" type="hidden" value='.$token.'>';
+        }
     }
 
 
