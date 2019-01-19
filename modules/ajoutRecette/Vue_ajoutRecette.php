@@ -140,7 +140,7 @@ class Vue_ajoutRecette extends VueGenerique{
                                 </div>
                                 <div class="form-group">
                                     <label>Instructions de la recette</label>
-                                    <textarea class="form-control" name="texteRecette" rows="12"  required></textarea>
+                                    <textarea class="form-control" name="texteRecette" rows="11"  required></textarea>
                                 </div>
                                 ';
                                 echo $this->getHiddenToken($tok);

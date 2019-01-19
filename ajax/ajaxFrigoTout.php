@@ -4,7 +4,7 @@
     $array = $modele->getToutIngredients($_GET['famille']);
     $compteur=0;
     foreach($array as $item){
-        $idcollapse="item".$compteur;
+      $idcollapse="item".$compteur;
       $id =$item['idingr'];
       $idquantite = "quantite".$id;
       $iddate = "date".$id;

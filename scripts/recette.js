@@ -17,8 +17,6 @@ function onLoad(co){
                 document.getElementById("moinsAvis").disabled = false;
             }
         });
-
-
     }
 }
 

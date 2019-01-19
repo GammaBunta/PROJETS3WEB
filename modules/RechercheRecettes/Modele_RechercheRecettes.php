@@ -11,6 +11,15 @@ class Modele_RechercheRecettes extends ModeleGenerique{
         return $req-> fetchAll();
     }
 
+    public function rechercheParNom(){
+        $_POST['nomRec'] = "%".$_POST['nomRec']."%";
+        $nomRec = $_POST['nomRec'];
+        $req = self::$bdd -> prepare('SELECT * FROM Recette where titre like :nomRec ');
+        $req->bindParam(':nomRec',$nomRec);
+        $req->execute();
+        return $req->fetchAll();
+    }
+
     public function rechercheNormale(){
         $compt=0;
         $sel = 'select * from Recette';

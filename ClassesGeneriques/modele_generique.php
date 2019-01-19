@@ -16,7 +16,7 @@ class ModeleGenerique{
 
 //Le array à la fin permet d'avoir les erreurs de mysql dans les requêtes et wallah c'est cool.
         $servername = "localhost";
-        self::$bdd = new PDO("mysql:host=$servername;dbname=ProjetFrigo", 'root', 'samsam974',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+        self::$bdd = new PDO("mysql:host=$servername;dbname=frigo", 'root', '!Minou240499!',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
 
     }
 

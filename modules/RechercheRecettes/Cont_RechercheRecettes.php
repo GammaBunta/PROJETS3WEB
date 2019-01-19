@@ -27,6 +27,11 @@
             $this->vue->afficheInit($tab);
         }
 
+        public function rechercheNav(){
+            $tab = $this->modele->rechercheParNom();
+            $this->vue->afficheInit($tab);
+        }
+
 
 
     }

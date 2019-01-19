@@ -1,4 +1,27 @@
-README PLEASE !
+PROJET O•FR!GO
 
-PROJET DE SAMUEL ARTHUR ET SARAH
-ETUDIANTS DE DEUXIÈME ANNÉE À L'IUT DE MONTREUIL
+Participants :
+    - Samuel Michel
+    - Sarah Brood
+    - Arthur Vadrot
+
+BUT :
+    Site Web permettant de gérer son frigo, de publier et partager des Recettes
+
+Timelapse:
+    2018/10 à 2019/01
+
+Where - Why :
+    DUT informatique - 2ème Année
+    Projet de Programmation Web côté Serveur
+
+Progression :
+    Fini pour l'école mais peut être largement amélioré
+
+Installation :
+    Déziper
+    Exécuter "dumpSQL.sql"
+
+Langages :
+    PHP - MYSQL - JAVASCRIPT - JQUERY
+    HTML - CSS (merci Bootstrap)
