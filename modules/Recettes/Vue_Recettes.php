@@ -20,9 +20,9 @@
                 $vege="oui";
             }
             if($item['gluteenFree']==0){
-                $glut="Sans";
-            }else{
                 $glut="Avec";
+            }else{
+                $glut="Sans";
             }
             echo'
             <head>
