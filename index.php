@@ -1,6 +1,7 @@
 <?php
       session_start();
       require_once('./composants/head.php');
+      require_once('./modules/Compte/Compte.php');
       require_once('./modules/Frigo/Frigo.php');
       require_once('./modules/Connexion/Connexion.php');
       require_once('./modules/Accueil/Accueil.php');
@@ -20,6 +21,7 @@
        switch($module){
 
            case 'Accueil':
+           case 'Compte':
            case 'Frigo':
            case 'Connexion':
            case 'Recettes':

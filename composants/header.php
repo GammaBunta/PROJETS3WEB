@@ -41,6 +41,9 @@
 			}else{
 				echo '<li><a class="text-white" href="index.php?module=Connexion"><img class="mr-1" src="./Images/logo_connexion.png"width="30" height="30" alt="logoConnexion"/>Connexion</a></li>';
 			}
+			if(isset($_SESSION['id'])){
+				echo '<li class="border-left border-white mt-1 ml-2 pl-2"><a class="text-white" href="index.php?module=Compte">Compte</a></li>';
+			}
 			 ?>
     	</ul>
 		</div>
