@@ -1,4 +1,4 @@
-function change(id) {
+function change(id,hidden) {
 	if (id == "1"){
 		var text = "<hr>\n<form  action='?module=Compte&action=pseudo' method='post' id='needs-validation' novalidate>" +
           "<div class='form-group row'>" +
