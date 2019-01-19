@@ -19,9 +19,12 @@
               <script type="text/javascript" src="./scripts/compte.js"> </script>
             <head>
             <body >
-              <main class="container padding-bottom padding-top-xl mt-5 mb-5 justify-content-center">
+            <br>
+            <br>
+            <br>
+              <main class="container-fluid padding-bottom padding-top-xl mt-5 mb-5 justify-content-center">
                 <div class="row mt-5 justify-content-center">
-                  <div class="col-md-8 offset-md-9">
+                  <div class="col-md-8">
                       <div class="card">
                           <div class="card-body">
                               <div class="row">
