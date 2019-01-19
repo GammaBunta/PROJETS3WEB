@@ -46,14 +46,17 @@
 
 			</div>
 			<ul class="nav navbar-nav navbar-right">
-				<?php
-				if(isset($_SESSION['id'])){
-					echo '<li><a class="text-white mb-3" href="index.php?module=Connexion&action=deconnexion"><img class="mr-2" src="./Images/log-out.png" width="30" height="30" alt="logoConnexion"/>Déconnexion</a></li>';
-				}else{
-					echo '<li><a class="text-white mb-3" href="index.php?module=Connexion"><img class="mr-2" src="./Images/log-out.png" width="30" height="30" alt="logoConnexion"/>Connexion</a></li>';
-				}
-				?>
-			</ul>
+			<?php
+			if(isset($_SESSION['id'])){
+				echo '<li><a class="text-white" href="index.php?module=Connexion&action=deconnexion"><img class="mr-2" src="./Images/log-out.png"width="30" height="30" alt="logoConnexion"/>Déconnexion</a></li>';
+			}else{
+				echo '<li><a class="text-white" href="index.php?module=Connexion"><img class="mr-2" src="./Images/log-out.png"width="30" height="30" alt="logoConnexion"/>Connexion</a></li>';
+			}
+			if(isset($_SESSION['id'])){
+				echo '<li class="border-left border-white mt-1 ml-2 pl-2"><a class="text-white" href="index.php?module=Compte">Compte</a></li>';
+			}
+			 ?>
+    	</ul>
 		</div>
 	</nav>
 </header>
