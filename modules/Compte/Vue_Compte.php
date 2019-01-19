@@ -40,7 +40,6 @@
                                         echo "        </li>\n";
                                 echo '</ul>';
                             }
-
                 			echo'
                                             <div class="form-group row">
                                               <label for="Pseudo" class="col-4 col-form-label">Pseudo </label>

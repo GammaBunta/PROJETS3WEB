@@ -13,9 +13,10 @@
 
         public function init(){
             $id = $_GET['id'];
+            $auteur = $this->modele->getAuteur($id);
             $ingr = $this->modele->infoIngrRecette($id);
             $info = $this->modele->infoRecette($id);
-            $this->vue->affichageRecette($info,$ingr);
+            $this->vue->affichageRecette($info,$ingr,$auteur);
         }
     }
 

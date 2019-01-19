@@ -6,7 +6,7 @@
         }
 
 
-        public function affichageRecette($item,$ingr){
+        public function affichageRecette($item,$ingr,$nomUser){
 
             if(isset($_SESSION['id'])){
                 $co=true;
@@ -36,8 +36,12 @@
                     <div class="container bg-light border border-secondary rounded mt-5 p-5">
                         <div class="row container">
                             <div class="col-4 ml-5 mr-5">
+                            ';
+                            echo'
+
                               <p class="font-weight-bold text-center green-text">INFOS</p>
                               <ul class="list-group">
+                                  <li class="list-group-item"><span class="font-weight-bold">Auteur : </span>';echo utf8_encode($nomUser['pseudo']); echo'</li>
                                   <li class="list-group-item"><span class="font-weight-bold">Catégorie : </span>';echo utf8_encode($item['categorie']); echo'</li>
                                   <li class="list-group-item"><span class="font-weight-bold">Niveau : </span>';echo utf8_encode($item['niveau']);echo'</li>
                                   <li class="list-group-item"><span class="font-weight-bold">Végétarien : </span>'.$vege.'</li>
@@ -53,7 +57,7 @@
                                   }
                                   echo '
                               </ul>
-                              <div class="container">
+                              <div class="container mt-2">
                                 <button type="button" class="ml-5 btn btn-" id="plusAvis" onclick="plusAvis()" disabled><img src="./Images/thumbsup.svg" class="rounded mx-auto d-block img-fluid" alt="pouce vers le haut ">Like : '.$item['avisPositif'].'</button>
                                 <button type="button" class="btn btn-" id="moinsAvis" onclick="moinsAvis()" disabled><img src="./Images/thumbsdown.svg" class="rounded mx-auto d-block img-fluid" alt="pouce vers le bas">Dislike : '.$item['avisNegatif'].'</button>
                               </div>

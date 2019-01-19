@@ -21,5 +21,12 @@ class Modele_Recettes extends ModeleGenerique{
         return $req->fetchAll();
 
     }
+
+    public function getAuteur($id){
+        $req = self::$bdd -> prepare('SELECT * from Recette inner join Utilisateur using(idUser) where idrec=:id');
+        $req->bindParam(':id',$id);
+        $req -> execute();
+        return $req->fetch();
+    }
 }
 ?>
