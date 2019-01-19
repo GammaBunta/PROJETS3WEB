@@ -10,21 +10,29 @@
             <head>
               <?php include "./composants/head.php"; ?>
               <link rel="stylesheet" type="text/css" href="./CSS/Recette.css">
-              <script type="text/javascript" src="./scripts/frigo.js"> </script>
+              <script type="text/javascript" src="./scripts/rechercheRecettes.js"> </script>
 
                 <title>Frigo</title>
             </head>
 
             <body>
-                <main class="text-center padding-bottom padding-top-xl mt-5 mb-5">
+            ';
+
+            if(sizeof($array)<4){
+                echo '<main class="text-center padding-bottom padding-top-xl pb-5 mb-5 mt-5 ">';
+            }else{
+                echo '<main class="text-center padding-top-xl mt-5 ">';
+            }
+
+            echo '    </br></br>
 
             <!-- Page Content -->
             <div class="container">
 
               <!-- Page Heading -->
               <div>
-                  <h1 class="text-light bg-success mt-5 mb-0">RECETTES DISPONIBLES
-                      <button type="button" class="btn btn-black float-right" data-toggle="collapse" data-target="#recherche" aria-expanded="false" aria-controls="recherche">
+                  <h1 class="text-light bg-success mt-5 mb-0 border-rounded">RECETTES DISPONIBLES
+                      <button type="button" class="btn btn-light float-right rounded m-0"  data-toggle="collapse" data-target="#recherche" aria-expanded="false" aria-controls="recherche">
                           filtrer la recherche
                       </button>
                   </h1>
@@ -87,15 +95,17 @@
 
               ';
              $compteur = 0;
-             echo '<div class="mt-3">
+             $compteurrow=0;
+             echo '<div class="mt-3">';
 
-             <div class="row">';
+
              if($array==NULL){
                  echo '<div class="row justify-content-center font-weight-bold mt-5 mb-0 ml-5 text-center">
                      <h3 class="text-light  bg-black centered text-center "> :\'( ... OUPS, on a rien trouvé pour vous ! </h3>
-                      <button type="submit" onclick="window.location.href=\'index.php?module=Recettes\';"class="btn btn-success ml-5">Afficher toutes les recettes</button>
+                      <button type="submit" onclick="window.location.href=\'index.php?module=RechercheRecettes\';"class="btn btn-success ml-5">Afficher toutes les recettes</button>
                  </div>';
              }else{
+                 echo'<div class="row">';
                  foreach($array as $item){
                       echo utf8_encode('
 
@@ -107,55 +117,44 @@
                              $img=$item['img'];
                          }
                           echo utf8_encode('
-                            <a href="index.php?module=Recettes&action=affichageSpecial&id='.$item['idrec'].'"><img class="card-img-top" src="'.$img.'" alt=""></a>
+                            <a href="index.php?module=Recettes&id='.$item['idrec'].'"><img class="card-img-top" width="258" height="310" src="'.$img.'" alt=""></a>
                             <div class="card-body">
                               <h4 class="card-title">
-                                <a href="index.php?module=Recettes&action=affichageSpecial&id='.$item['idrec'].'">'.$item['titre'].'</a>
+                                <a href="index.php?module=Recettes&id='.$item['idrec'].'">'.$item['titre'].'</a>
                               </h4>
                               <p class="card-text">Categorie : '.$item['categorie'].'</br> Niveau : '.$item['niveau'].' </br> Avis Positifs : '.$item['avisPositif'].'  </br> Avis Negatifs : '.$item['avisNegatif'].' </p>
                             </div>
                           </div>
                         </div>');
-                        if($compteur==2){
-                            $compteur=0;
-                           echo '</div> <div class="row mt-5">';
-                        }
                         $compteur++;
+                        if($compteur==3){
+                            $compteurrow++;
+                            $compteur=0;
+                           echo '</div> <div class="row mt-5 mb-5">';
+                        }
+
 
                  }
             }
-                 echo '</div></div>';
 
-                 echo '
-                     <!-- Pagination -->
-                     <ul class="pagination justify-content-center mt-5">
-                       <li class="page-item">
-                         <a class="page-link" href="#" aria-label="Previous">
-                           <span aria-hidden="true">&laquo;</span>
-                           <span class="sr-only">Previous</span>
-                         </a>
-                       </li>
-                       <li class="page-item">
-                         <a class="page-link" href="#">1</a>
-                       </li>
-                       <li class="page-item">
-                         <a class="page-link" href="#">2</a>
-                       </li>
-                       <li class="page-item">
-                         <a class="page-link" href="#">3</a>
-                       </li>
-                       <li class="page-item">
-                         <a class="page-link" href="#" aria-label="Next">
-                           <span aria-hidden="true">&raquo;</span>
-                           <span class="sr-only">Next</span>
-                         </a>
-                       </li>
-                     </ul>
+                 echo '</div></div>
+
                      </div>
-               </div>
-             }
+               </div>';
 
-            <!-- /.container -->
+               if(sizeof($array)<4){
+                   echo '<footer class="fixed-bottom card-footer font-small bg-success mt-5">';
+               }else{
+                   echo '    <footer class="card-footer font-small bg-success mt-5">';
+               }
+
+            echo'      <div class="container-fluid ">
+                      <div class="text-center text-white">
+                           <a href="http://www.iut.univ-paris8.fr/" id="ofrigo" class="text-center h4">    <img width="45" height ="35" src="./Images/logo_iut.png" /></a>
+                              <a href="index.php" id="ofrigo" class="text-center h5">O•FR!GO - Michel Samuel - Brood Sarah - Vadrot Arthur</a>
+                      </div>
+                  </div>
+            </footer>
 
 
           </body>

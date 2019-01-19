@@ -7,9 +7,7 @@
 
 
         public function affichageRecette($item,$ingr){
-            //FAUT GERER LES ACCENTS AVEC UTF8 ENCODE AUSSI
-            //si personne est co dans le onLoad on met en enable les boutons pour pouvoir voter
-            //$item['textRec']
+
             if(isset($_SESSION['id'])){
                 $co=true;
             }else{
@@ -80,8 +78,9 @@
                               </div>';
                               echo '<ul class="list-group">';
                               foreach($ingr as $petit){
-                                  echo utf8_encode('<li class="list-group-item">'.$petit['nomingr']);
-                                  echo ' quantite :'; echo utf8_encode($petit['quantite']."</li>");
+
+                                  echo utf8_encode('<li class="list-group-item">'.$petit['quantite'].' de ');
+                                   echo utf8_encode($petit['nomingr']."</li>");
                               }
                               echo "</ul>";
                               echo '</div>

@@ -29,6 +29,10 @@
                     $this->controleur->affichageSpecial();
                     break;
 
+                case 'rechercheNav':
+                    $this->controleur->rechercheNav();
+                    break;
+
                 default:
 
                     $this->controleur->init();

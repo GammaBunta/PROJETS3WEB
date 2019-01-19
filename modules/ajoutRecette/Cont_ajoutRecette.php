@@ -12,13 +12,20 @@
         }
 
         public function init(){
-            $this->vue-> afficheInit();
+            $tok = $this->genereTokenSession();
+            $this->vue-> afficheInit($tok);
         }
 
 
         public function publier(){
             $idRecette = $this->modele->publier();
-            header('Location: index.php?module=Recettes&action=affichageSpecial&id='.$idRecette);
+
+            if($idRecette == false){
+                header('Location: index.php');
+
+            }else{
+                header('Location: index.php?module=Recettes&action=affichageSpecial&id='.$idRecette);
+            }
             exit();
 
 

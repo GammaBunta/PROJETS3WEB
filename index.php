@@ -20,30 +20,44 @@
 
        switch($module){
 
-           case 'Accueil':
            case 'Compte':
            case 'Frigo':
            case 'Connexion':
            case 'Recettes':
            case 'CreerCompte':
            case 'ajoutRecette':
-           case 'RechercheRecettes':
+
                $mod = new $module();
                $mod -> index();
                $vue = $mod->getAffichage();
+               require_once('./composants/header.php');
+               echo $vue;
+               require_once('./composants/footer.php');
 
             break;
+
+            //changement de style du footer (collé ou pas en bas de page)
+            case 'RechercheRecettes':
+            case 'Accueil':
+                 $mod = new $module();
+                 $mod -> index();
+                 $vue = $mod->getAffichage();
+                 require_once('./composants/header.php');
+                 echo $vue;
+            break;
+
+
 
            default:
               $mod = new Accueil();
               $mod -> index();
               $vue = $mod->getAffichage();
+              require_once('./composants/header.php');
+              echo $vue;
             break;
 
        }
 
 
-       require_once('./composants/header.php');
-       echo $vue;
-       require_once('./composants/footer.php');
+
 ?>

@@ -15,8 +15,10 @@
         	echo '
 
         	<body>
-			 	<main class="text-center padding-bottom padding-top-xl mt-5   " style="min-height: calc(72.5vh);">
+			 	<main class="text-center padding-bottom padding-top-xl mt-5 " style="min-height: calc(72.5vh);">
 			        <a class="logo logo-lg" href="index.php">
+                    </br></br></br></br></br>
+
 
 			        </a>
 			        <div class="col-4 container bg-light border border-primary mt-5 rounded ">

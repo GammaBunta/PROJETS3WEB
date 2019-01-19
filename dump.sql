@@ -1,10 +1,216 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.10deb1ubuntu0.1
+-- http://www.phpmyadmin.net
+--
+-- Client: localhost
+-- Généré le: Mer 19 Décembre 2018 à 17:31
+-- Version du serveur: 5.5.62-0ubuntu0.14.04.1
+-- Version de PHP: 5.5.9-1ubuntu4.26
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Structure de la table `contient`
+--
+
+CREATE TABLE IF NOT EXISTS `contient` (
+  `idListe` int(11) NOT NULL,
+  `idingr` int(11) NOT NULL,
+  PRIMARY KEY (`idListe`,`idingr`),
+  KEY `contient_Ingredient0_FK` (`idingr`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Ingredient`
+--
+
+CREATE TABLE IF NOT EXISTS `Ingredient` (
+  `idingr` int(11) NOT NULL AUTO_INCREMENT,
+  `nomingr` varchar(64) CHARACTER SET utf8 NOT NULL,
+  `protide` double DEFAULT NULL,
+  `lipide` double DEFAULT NULL,
+  `glucide` double DEFAULT NULL,
+  `calorie` double DEFAULT NULL,
+  `congele` tinyint(1) NOT NULL,
+  `famille` varchar(64) NOT NULL,
+  PRIMARY KEY (`idingr`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=130 ;
+
+--
+-- Structure de la table `ListeDeCourse`
+--
+
+CREATE TABLE IF NOT EXISTS `ListeDeCourse` (
+  `idListe` int(11) NOT NULL AUTO_INCREMENT,
+  `nomListe` varchar(32) NOT NULL,
+  `idUser` int(11) NOT NULL,
+  PRIMARY KEY (`idListe`),
+  KEY `ListeDeCourse_Utilisateur_FK` (`idUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `possede`
+--
+
+CREATE TABLE IF NOT EXISTS `possede` (
+  `idingr` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL,
+  `quantite` int(11) NOT NULL,
+  `datePeremption` DATE NOT NULL,
+  PRIMARY KEY (`idingr`,`idUser`),
+  KEY `possede_Utilisateur0_FK` (`idUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Recette`
+--
+
+CREATE TABLE IF NOT EXISTS `Recette` (
+  `idrec` int(11) NOT NULL AUTO_INCREMENT,
+  `idUser` int(11) NOT NULL,
+  `titre` varchar(128) NOT NULL,
+  `nbpers` int(11) NOT NULL,
+  `categorie` varchar(32) NOT NULL,
+  `vegetarien` tinyint(1) NOT NULL,
+  `gluteenFree` tinyint(1) NOT NULL,
+  `avisPositif` int(11) DEFAULT NULL,
+  `avisNegatif` int(11) DEFAULT NULL,
+  `niveau` varchar(32) NOT NULL,
+  `tpsprepa` smallint(6) NOT NULL,
+  `tpscuisson` smallint(6) NOT NULL,
+  `tpsrepose` smallint(6) DEFAULT NULL,
+  `textrec` text NOT NULL,
+  `img` text,
+  `nombreAvis` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idrec`,`idUser`),
+  KEY `Recette_Utilisateur_FK` (`idUser`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+
+--
+-- Structure de la table `suit`
+--
+
+CREATE TABLE IF NOT EXISTS `suit` (
+  `idUser` int(11) NOT NULL,
+  `idUser_Utilisateur` int(11) NOT NULL,
+  PRIMARY KEY (`idUser`,`idUser_Utilisateur`),
+  KEY `suit_Utilisateur0_FK` (`idUser_Utilisateur`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Utilisateur`
+--
+
+CREATE TABLE IF NOT EXISTS `Utilisateur` (
+  `idUser` int(11) NOT NULL AUTO_INCREMENT,
+  `pseudo` varchar(32) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `img` text,
+  PRIMARY KEY (`idUser`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `utiliser`
+--
+
+CREATE TABLE IF NOT EXISTS `utiliser` (
+  `idrec` int(11) NOT NULL,
+  `idingr` int(11) NOT NULL,
+  `quantite` varchar(32) NOT NULL,
+  PRIMARY KEY (`idrec`,`idingr`),
+  KEY `utiliser_Ingredient0_FK` (`idingr`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+--
+-- Structure de la table `aVote`
+--
+
+CREATE TABLE IF NOT EXISTS `aVote` (
+  `idrec` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL,
+
+  PRIMARY KEY (`idrec`,`idUser`),
+  KEY `aVote_Recette0_FK` (`idrec`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+--
+-- Contraintes pour la table `contient`
+--
+
+ALTER TABLE `contient`
+  ADD CONSTRAINT `contient_Ingredient0_FK` FOREIGN KEY (`idingr`) REFERENCES `Ingredient` (`idingr`),
+  ADD CONSTRAINT `contient_ListeDeCourse_FK` FOREIGN KEY (`idListe`) REFERENCES `ListeDeCourse` (`idListe`);
+
+--
+-- Contraintes pour la table `ListeDeCourse`
+--
+ALTER TABLE `ListeDeCourse`
+  ADD CONSTRAINT `ListeDeCourse_Utilisateur_FK` FOREIGN KEY (`idUser`) REFERENCES `Utilisateur` (`idUser`);
+
+--
+-- Contraintes pour la table `possede`
+--
+ALTER TABLE `possede`
+  ADD CONSTRAINT `possede_Ingredient_FK` FOREIGN KEY (`idingr`) REFERENCES `Ingredient` (`idingr`),
+  ADD CONSTRAINT `possede_Utilisateur0_FK` FOREIGN KEY (`idUser`) REFERENCES `Utilisateur` (`idUser`);
+
+--
+-- Contraintes pour la table `suit`
+--
+ALTER TABLE `suit`
+  ADD CONSTRAINT `suit_Utilisateur0_FK` FOREIGN KEY (`idUser_Utilisateur`) REFERENCES `Utilisateur` (`idUser`),
+  ADD CONSTRAINT `suit_Utilisateur_FK` FOREIGN KEY (`idUser`) REFERENCES `Utilisateur` (`idUser`);
+
+--
+-- Contraintes pour la table `utiliser`
+--
+ALTER TABLE `utiliser`
+  ADD CONSTRAINT `utiliser_Ingredient0_FK` FOREIGN KEY (`idingr`) REFERENCES `Ingredient` (`idingr`),
+  ADD CONSTRAINT `utiliser_Recette_FK` FOREIGN KEY (`idrec`) REFERENCES `Recette` (`idrec`);
+
+
+ALTER TABLE `Recette`
+    ADD CONSTRAINT `Recette_Utilisateur_FK` FOREIGN KEY (`idUser`) REFERENCES Utilisateur(`idUser`);
+
+
+--
+-- Contraintes pour la table `aVote`
+--
+
+ALTER TABLE `aVote`
+    ADD CONSTRAINT `aVote_Recette0_FK` FOREIGN KEY (`idrec`) REFERENCES Recette(`idrec`),
+    ADD CONSTRAINT `aVote_Utilisateur_FK` FOREIGN KEY (`idUser`) REFERENCES Utilisateur(`idUser`);
+
+
+
 
 --
 -- Contenu de la table `Utilisateur`
 --
 
 INSERT INTO `Utilisateur` (`idUser`, `pseudo`, `password`, `email`, `img`) VALUES
-(1, 'SamDev', 'CRnLhhfbfxpbs', 'sam@hotmail.fr', NULL);
+(1, 'SamDev', 'CRnLhhfbfxpbs', 'sam@hotmail.fr', NULL),
+(2,'SarahDev','CRtgbFwrpudlY','sarahbrood@gmail.com',NULL);
 
 --
 -- Contenu de la table `Ingredient`
@@ -162,7 +368,9 @@ INSERT INTO `Ingredient` (`idingr`, `nomingr`, `protide`, `lipide`, `glucide`, `
 (149, 'Lardons fumés',0,0,0,0,0,'Viandes'),
 (150, 'Biscuits à la cuillère',0,0,0,0,0,'Epicerie'),
 (151,'Sucre glace',0,0,0,0,0,'Epicerie'),
-(152,'Rhum',0,0,0,0,0,'Autres');
+(152,'Rhum',0,0,0,0,0,'Autres'),
+(153, 'Sucre semoule',0,0,0,0,0,'Epicerie'),
+(154,'Béchamel',0,0,0,0,0,'Produits Laitiers');
 
 -- --------------------------------------------------------
 
@@ -231,6 +439,33 @@ Incorporer les deux préparations à la crème afin d\'obtenir un mélange lisse
 Remplir le moule avec la mousse au chocolat en la tassant légèrement, terminer par une couche de biscuits imbibés. Couvrir d\'une assiette, un poids dessus et mettre au frigo jusqu\'au lendemain.
 Pour servir retourner le moule sur le plat de service, retirer le fond de papier sulfurisé. Décorer de copeaux de chocolat ou la saupoudrer simplement d\'un peu de cacao. ',NULL,0);
 
+INSERT INTO Recette (idrec,idUser,titre, nbpers, categorie, vegetarien, gluteenFree, avisPositif,avisNegatif, niveau, tpsprepa, tpscuisson, tpsrepose, textrec, img, nombreAvis) values
+(6,1,'Fondant au chocolat','8','Dessert',1,0,0,0,'Facile',15,20,0,'
+    Préchauffer le four à 180°C (thermostat 6).
+Faire fondre le chocolat et le beurre au bain-marie à feu doux, ou au micro-ondes sur le programme "décongélation". </br>
+Pendant ce temps, séparer les jaunes des blancs d\'oeuf. </br>
+Monter les blancs en neige ferme. Réserver. </br>
+Quand le mélange chocolat-beurre est bien fondu, ajouter les jaunes d’oeufs et fouetter. </br>
+Incorporer le sucre et la farine, puis ajouter les blancs d’oeufs sans les casser. </br>
+Beurrer et fariner un moule à manqué et y verser la pâte à gâteau. </br>
+Enfourner pendant 20 minutes. </br>
+Quand le gâteau est cuit, le laisser refroidir avant de le démouler. ','./Images/imagesRecettes/fondant.jpg',0);
+
+INSERT INTO Recette (idrec,idUser,titre, nbpers, categorie, vegetarien, gluteenFree, avisPositif,avisNegatif, niveau, tpsprepa, tpscuisson, tpsrepose, textrec, img, nombreAvis) values
+(7,1,'Lasagnes végétariennes','4','Plat',1,0,0,0,'Facile',45,35,0,'
+Si vous utilisez des oignons, faites-les revenir (dans une sauteuse ou un wok) jusqu\'à ce qu\'ils soient fondants.</br>
+Coupez les tomates, ajoutez-les aux oignons, puis faites mijoter avec des herbes de Provence (n\'hésitez pas !), sel et poivre.</br>
+Coupez les courgettes en rondelles puis incorporez-les au mélange.</br>
+Ajoutez de la sauce tomate (ou de la purée de tomate, à défaut), et 1 cuillère à café de sucre en poudre (plus en hiver, quand les tomates sont plus fades). </br>
+Laissez mijoter l\'ensemble, 20 min environ, à feu moyen. </br>
+Une fois le mélange prêt, procédez à l\'empilement dans un grand plat : </br>
+1 couche de lasagnes, 1 couche de préparation, 1 couche de béchamel, 1 couche de gruyère, et ainsi de suite (en rajoutant un peu de sel à chaque fois), en mettant beaucoup de gruyère sur la dernière couche. </br>
+Faites cuire à four chaud (thermostat 7-200°C), 35 minutes </br>
+Servez, lorsque c\'est bien gratiné. </br>
+','./Images/imagesRecettes/lasagnesvege.jpg',0);
+
+
+
 --
 -- Contenu de la table `utiliser`
 --
@@ -274,7 +509,22 @@ INSERT INTO `utiliser` (`idrec`,`idingr`,`quantite`) values
 (5,147,'100 g'),
 (5,77,'4'),
 (5,151,'30 g'),
-(5,152,'10 cl');
+(5,152,'10 cl'),
+(6,35,'200 g'),
+(6,14,'100 g'),
+(6,153,'100 g'),
+(6,77,'5 '),
+(6,57,'4 cuillères à soupe'),
+(7,106,'6'),
+(7,48,'4'),
+(7,139,'Plusieurs'),
+(7,71,'400 g'),
+(7,142,'200 g'),
+(7,128,'4'),
+(7,154,'50 cl');
+
+
+
 
 
 
@@ -285,4 +535,8 @@ INSERT INTO `utiliser` (`idrec`,`idingr`,`quantite`) values
 
 INSERT INTO `possede` (`idingr`, `idUser`, `quantite`, `datePeremption`) VALUES
 (1, 1, 3,'2019/01/02'),
-(50, 1, 4,'2019/01/02');
+(50, 1, 4,'2019/01/02'),
+(133,2,2,'2019/01/02'),
+(152,2,1,'2040/02/03'),
+(42,2,2,'2023/10/05'),
+(39,2,2,'2019/03/01');
