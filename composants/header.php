@@ -1,4 +1,5 @@
 <header>
+
 	<nav class="navbar navbar-expand-lg navbar-success bg-success fixed-top mb-5">
 		<div class="container-fluid">
 			<div class="float-left">
@@ -48,12 +49,12 @@
 			<ul class="nav navbar-nav navbar-right">
 			<?php
 			if(isset($_SESSION['id'])){
-				echo '<li><a class="text-white mt-1 " href="index.php?module=Connexion&action=deconnexion"><img class="mr-2" src="./Images/log-out.png"width="30" height="30" alt="logoConnexion"/>Déconnexion</a></li>';
+				echo '<li><a class="text-white  " href="index.php?module=Connexion&action=deconnexion"><img class="mr-2" src="./Images/log-out.png"width="20" height="20" alt="logoConnexion"/>Déconnexion</a></li>';
 			}else{
-				echo '<li><a class="text-white mt-1 " href="index.php?module=Connexion"><img class="mr-2" src="./Images/log-out.png"width="30" height="30" alt="logoConnexion"/>Connexion</a></li>';
+				echo '<li><a class="text-white " href="index.php?module=Connexion"><img class="mr-2" src="./Images/log-out.png"width="20" height="20" alt="logoConnexion"/>Connexion</a></li>';
 			}
 			if(isset($_SESSION['id'])){
-				echo '<li class="border-left border-white mt-1 ml-2 pl-2"><a class="text-white" href="index.php?module=Compte">Compte</a></li>';
+				echo '<li class="border-left border-white  ml-2 pl-2"><a class="text-white" href="index.php?module=Compte">Compte</a></li>';
 			}
 			 ?>
     	</ul>

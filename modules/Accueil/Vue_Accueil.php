@@ -36,7 +36,7 @@
 
                 <header class="masthead text-center text-white">
                   <div class="masthead-content">
-                    <div class="container">
+                    <div class="container-fluid">
                       <h1 class="masthead-heading mb-0">UN FRIGO O NIVEAU</h1>
                       <h2 class="masthead-subheading mb-0">avec O•FR!GO</h2>
                       ';
@@ -54,7 +54,7 @@
                 </header>
 
                 <section>
-                  <div class="container">
+                  <div class="container-fluid">
                     <div class="row align-items-center">
                       <div class="col-lg-6 order-lg-2">
                         <div class="p-5">
@@ -72,7 +72,7 @@
                 </section>
 
                 <section>
-                  <div class="container">
+                  <div class="container-fluid">
                     <div class="row align-items-center">
                       <div class="col-lg-6">
                         <div class="p-5">
@@ -90,7 +90,7 @@
                 </section>
 
                 <section>
-                  <div class="container">
+                  <div class="container-fluid">
                     <div class="row align-items-center">
                       <div class="col-lg-6 order-lg-2">
                         <div class="p-5">
