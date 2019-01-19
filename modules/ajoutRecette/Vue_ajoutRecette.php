@@ -153,6 +153,8 @@ class Vue_ajoutRecette extends VueGenerique{
                     </div>
                 </form>
             </main>
+            <br>
+            <br>
         </body>';
 
 
