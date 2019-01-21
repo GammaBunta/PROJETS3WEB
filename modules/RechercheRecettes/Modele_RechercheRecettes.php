@@ -67,8 +67,12 @@ class Modele_RechercheRecettes extends ModeleGenerique{
     public function rechercheSpeciale($array){
         if($array[0]==""){
             $sel = 'select * from Recette';
+            $result = self::$bdd -> prepare($sel);
+            $res = $result -> execute();
+            return $result->fetchAll();
+
         }else{
-            $sel = 'select * from Recette natural join utiliser where';
+            $sel = 'select distinct Recette.idrec from Recette natural join utiliser where';
             for($i=0 ; $i < count($array); $i++){
                 $select = 'SELECT idingr FROM Ingredient WHERE nomingr ="'.utf8_decode($array[$i]).'"';
                 $id=self::$bdd -> query($select);
@@ -80,12 +84,48 @@ class Modele_RechercheRecettes extends ModeleGenerique{
                     $sel .=' idingr='.$idIngr[0].' or ';
                 }
             }
+
+            $result = self::$bdd -> prepare($sel);
+            $result -> execute();
+            $res = $result->fetchAll();
+
+            if(count($res)!=0){
+                $id = [];
+
+                foreach($res as $item){
+                    array_push($id, $item['idrec']);
+                }
+
+
+                $fin = 'select  * from Recette where';
+
+                for($i=0 ; $i < count($id); $i++){
+                    if($i != count($id)-1){
+                        $fin .= ' idrec='.$id[$i].' or ';
+                    }else{
+                        $fin .=' idrec='.$id[$i];
+                    }
+
+                }
+
+                var_dump($fin);
+
+                $oui = self::$bdd -> query($fin);
+                $oui -> execute();
+                return $oui -> fetchAll();
+            }
+
+
+
+
+
+
         }
 
 
-        $result = self::$bdd -> prepare($sel);
-        $res = $result -> execute();
-        return $result->fetchAll();
+
+
+
 
 
     }

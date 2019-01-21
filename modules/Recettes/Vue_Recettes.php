@@ -42,7 +42,7 @@
                               <p class="font-weight-bold text-center green-text">INFOS</p>
                               <ul class="list-group">
                                   <li class="list-group-item"><span class="font-weight-bold">Auteur : </span>';echo utf8_encode($nomUser['pseudo']); echo'</li>
-                                  <li class="list-group-item"><span class="font-weight-bold">Catégorie : </span>';echo utf8_encode($item['categorie']); echo'</li>
+                                  <li class="list-group-item"><span class="font-weight-bold">Catégorie : </span>';echo($item['categorie']); echo'</li>
                                   <li class="list-group-item"><span class="font-weight-bold">Niveau : </span>';echo utf8_encode($item['niveau']);echo'</li>
                                   <li class="list-group-item"><span class="font-weight-bold">Végétarien : </span>'.$vege.'</li>
                                   <li class="list-group-item"><span class="font-weight-bold">Gluten : </span>'.$glut.'</li>
@@ -64,7 +64,13 @@
                             </div>
                             <div class="ml-5">
                               <div class="row ">
-                                  <h4 class="container-fluid font-weight-bold text-success-dark text-center">'.$item['titre'].'</h4>
+                                  <h4 class="container-fluid font-weight-bold text-success-dark text-center">';
+                                  if($nomUser['idUser']!=1){
+                                      echo $item['titre'];
+                                  }else{
+                                      echo utf8_encode($item['titre']);
+                                  }
+                                  echo '</h4>
                               </div>';
                               if($item['img']==NULL){
                                  $img='./Images/imagesRecettes/noimage.png';

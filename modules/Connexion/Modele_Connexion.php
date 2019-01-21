@@ -10,7 +10,7 @@
             if($this->verifToken()){
                 $login = $l;
                 $mdp = crypt($m, 'CRYPT_STD_DES');
-                $req = self::$bdd-> prepare('select password, idUser from Utilisateur where pseudo like :login');
+                $req = self::$bdd-> prepare('select password, idUser from Utilisateur where pseudo like :login or email like :login');
                 $req->bindParam(':login', $login);
                 if($req->execute()){
                     $res = $req -> fetch();

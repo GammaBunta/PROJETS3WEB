@@ -63,7 +63,7 @@
                       </div>
                       <div class="col-lg-6 order-lg-1">
                         <div class="p-5">
-                          <h2 class="display-4">Recherche de Recettes</h2>
+                          <h2 class="display-4">Recherchez des Recettes</h2>
                           <p>  Vous pouvez choisir les recettes qui vont conviennent en faisant un recherche par rapport au contenu de votre frigo ou bien en sélectionnant vos préférences.</p>
                         </div>
                       </div>

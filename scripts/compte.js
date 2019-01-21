@@ -42,7 +42,7 @@ function change(id,hidden) {
       "<div class='form-group row'>" +
         "<label for='mdp' class='col-4 col-form-label'>Confirmer mot de passe </label>" +
         "<div class='col-8'>" +
-          "<input id='mdp2' name='mdp2' placeholder='Confirmer ot de passe' class='form-control here' required='required' type='password'>" +
+          "<input id='mdp2' name='mdp2' placeholder='Confirmer mot de passe' class='form-control here' required='required' type='password'>" +
         "</div>" +
       "</div>" +
       "<div class='form-group row'>" +

@@ -43,7 +43,6 @@ class Vue_ajoutRecette extends VueGenerique{
                                 <div class="form-group">
                                     <label>Niveau</label>
                                     <select class="form-control-sm float-right " name="niveau" required>
-                                        <option>Très Facile</option>
                                         <option>Facile</option>
                                         <option>Intermédiaire</option>
                                         <option>Difficile</option>

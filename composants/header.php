@@ -16,7 +16,7 @@
 							if(isset($_SESSION['id'])){
 								echo '<a class="dropdown-item" href="index.php?module=ajoutRecette">Publier une recette</a>';
 							}else{
-								echo '<a class="dropdown-item disabled" >Publier une recette</a>';
+								echo '<a class="dropdown-item disabled" href="index.php?module=Connexion">Publier une recette</a>';
 							}
 							?>
 

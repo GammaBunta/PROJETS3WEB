@@ -19,41 +19,52 @@
 
             if($this->verifToken()){
                 if(!empty($_FILES['imageRecette'])){
+                    echo 'image';
                     $imageRecette = $_FILES['imageRecette'];
                     if(!empty($imageRecette['tmp_name'])){
+                        echo 'nom';
                         $extension = explode('.', $imageRecette['name']);
                         $extension = strtolower(end($extension));
                         $extensions = array("jpg","png","jpeg","gif");
                         if(in_array($extension,$extensions)){
+                            echo 'extension';
                             $type_mime = array('image/gif', 'image/jpeg', 'image/jpg', 'image/png');
                             $image_mime_type = mime_content_type($imageRecette['tmp_name']);
                             if(in_array($image_mime_type, $type_mime)){
+                                echo 'taille';
                                 $taille_image = $imageRecette['size'];
                                 $taille_max = 8000000;
                                 if($taille_max > $taille_image){
                                     $nouveauNom = md5(uniqid(rand(), true)) . '.' . $extension;
                                     $chemin = './Images/imagesRecettes/' . $nouveauNom;
                                     if(move_uploaded_file($imageRecette['tmp_name'],$chemin)){
+                                        echo 'upload';
                                         $img = $chemin;
                                     }else{
+                                        echo'pas d\'upload';
                                         $img = NULL;
                                     }
 
                                 }else{
+                                    echo'pas d\'upload';
                                     $img = NULL;
                                 }
 
                             }else{
+                                echo'pas d\'upload';
                                 $img = NULL;
                             }
 
                         }else{
+                            echo'pas d\'upload';
                             $img = NULL;
                         }
                     }else{
+                        echo'pas d\'upload';
                         $img = NULL;
                     }
                 }else{
+                    echo'pas d\'upload';
                     $img = NULL;
                 }
 

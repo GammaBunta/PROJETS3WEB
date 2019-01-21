@@ -8,7 +8,7 @@ class ModeleGenerique{
 
     public static function init(){
         $servername = "localhost";
-        self::$bdd = new PDO("mysql:host=$servername;dbname=frigo", 'root', '!Minou240499!',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+        self::$bdd = new PDO("mysql:host=$servername;dbname=nombase", 'root', 'motdepasse',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
 
     }
 

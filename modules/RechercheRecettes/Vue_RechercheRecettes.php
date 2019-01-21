@@ -101,7 +101,7 @@
 
              if($array==NULL){
                  echo '<div class="row justify-content-center font-weight-bold mt-5 mb-0 ml-5 text-center">
-                     <h3 class="text-light  bg-black centered text-center "> :\'( ... OUPS, on a rien trouvé pour vous ! </h3>
+                     <h3 class="text-black  bg-light centered text-center "> :\'( ... OUPS, on a rien trouvé pour vous ! </h3>
                       <button type="submit" onclick="window.location.href=\'index.php?module=RechercheRecettes\';"class="btn btn-success ml-5">Afficher toutes les recettes</button>
                  </div>';
              }else{
@@ -120,9 +120,19 @@
                             <a href="index.php?module=Recettes&id='.$item['idrec'].'"><img class="card-img-top" width="258" height="310" src="'.$img.'" alt=""></a>
                             <div class="card-body">
                               <h4 class="card-title">
-                                <a href="index.php?module=Recettes&id='.$item['idrec'].'">'.$item['titre'].'</a>
+                                <a href="index.php?module=Recettes&id='.$item['idrec'].'">');
+                                if($item['idUser']!=1){
+                                    echo $item['titre'];
+                                }else{
+                                    echo utf8_encode($item['titre']);
+                                }
+                                echo'</a>
                               </h4>
-                              <p class="card-text">Categorie : '.$item['categorie'].'</br> Niveau : '.$item['niveau'].' </br> Avis Positifs : '.$item['avisPositif'].'  </br> Avis Negatifs : '.$item['avisNegatif'].' </p>
+                              <p class="card-text">Categorie : ';
+                              echo $item['categorie'];
+                              echo '</br> Niveau : ';
+                              echo utf8_encode( $item['niveau']);
+                              echo utf8_encode(' </br> Avis Positifs : '.$item['avisPositif'].'  </br> Avis Negatifs : '.$item['avisNegatif'].' </p>
                             </div>
                           </div>
                         </div>');
@@ -142,11 +152,17 @@
                      </div>
                </div>';
 
-               if(sizeof($array)<4){
-                   echo '<footer class="fixed-bottom card-footer font-small bg-success mt-5">';
+               if($array != NULL){
+                   if(sizeof($array)<4 ){
+                       echo '<footer class="fixed-bottom card-footer font-small bg-success mt-5">';
+                   }else{
+                       echo '    <footer class="card-footer font-small bg-success mt-5">';
+                   }
                }else{
-                   echo '    <footer class="card-footer font-small bg-success mt-5">';
+                     echo '<footer class="fixed-bottom card-footer font-small bg-success mt-5">';
                }
+
+
 
             echo'      <div class="container-fluid ">
                       <div class="text-center text-white">
